@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    background-color: black;/* cambiar */
+    color: white;
+}
+
+.loggin{
+    width: 100%;
+    max-width: 53rem;
+    text-align: center;
+}
+
+.loggin img{
+    width: 25%;
+    max-width: 20rem;
+}

@@ -1,0 +1,49 @@
+.content{
+  background-color: #9cd4e742;
+  width: auto;
+  max-width: 20rem;
+  font-family: sans-serif;
+  border-radius: 15px;
+  padding: 1rem;
+  justify-content: center;
+  text-align: center;
+  /* define la altura para que todos sean del mismo tamaño */
+}
+
+
+
+.img_card img{
+  width: 80%;
+  border-radius: 10px;
+}
+
+.description_card{
+  width: 80%;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.stars{
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 1rem;
+}
+
+.coste_card{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.coste_card p{
+  font-weight: 800;
+  font-size: 20px;
+}
