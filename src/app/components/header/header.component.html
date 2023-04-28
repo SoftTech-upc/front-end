@@ -8,18 +8,17 @@
           <div class="container">
             <img src="../../../assets/img/logo.png" />
           </div>
-          <button mat-button [matMenuTriggerFor]="animals">
             <button
               mat-icon-button
               class="example-icon"
               aria-label="Example icon-button with share icon"
+              [matMenuTriggerFor]="options"
             >
               <mat-icon>menu</mat-icon>
             </button>
-          </button>
-          <mat-menu #animals="matMenu">
-            <button mat-menu-item routerLink="/inicio/">Mi perfil</button>
-            <button mat-menu-item routerLink="/inicio/offers">Cerrar session</button>
+          <mat-menu #options="matMenu">
+            <button mat-menu-item routerLink="/home/profile">Mi perfil</button>
+            <button mat-menu-item routerLink="/home/offers">Cerrar session</button>
             <!--
               1. servicios
               2. agencias
@@ -33,9 +32,9 @@
           <!-- fin -->
 
           <div class="services">
-            <button mat-button routerLink="/inicio/account">Inicio</button>
-            <button mat-button routerLink="/inicio/account">Servicios</button>
-            <button mat-button routerLink="/inicio/account">Agencias</button>
+            <button mat-button routerLink="/home/account">Inicio</button>
+            <button mat-button routerLink="/home/account">Servicios</button>
+            <button mat-button routerLink="/home/account">Agencias</button>
           </div>
           <div class="search">
             <button

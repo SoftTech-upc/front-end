@@ -8,13 +8,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { LogginComponent } from './components/loggin/loggin.component';
 import { MainComponent } from './components/main/main.component';
 import { SharedModule } from './components/shared/shared.module';
+import { AgencyProfileComponent } from './components/agency-profile/agency-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LogginComponent,
-    MainComponent
+    MainComponent,
+    AgencyProfileComponent
   ],
   imports: [
     BrowserModule,
