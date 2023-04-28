@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="loggin">
+    
+      <img src="../../../assets/img/logo.png" alt="logo login" />
+      <div>
+        <h1>Login</h1>
+      </div>
+      <div>
+        <mat-form-field class="ancho" appearance="fill">
+          <mat-label>Usuario</mat-label>
+          <input
+            type="text"
+            matInput
+            autocomplete="off"
+            formControlName="usuario"
+          />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="ancho" appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input
+            type="password"
+            matInput
+            autocomplete="on"
+            formControlName="password"
+          />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <button mat-raised-button class="ancho boton" color="primary" routerLink="/inicio">
+          Ingresar
+        </button>
+      </div>
+   
+  </div>
+</div>
