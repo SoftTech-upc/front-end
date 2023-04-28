@@ -6,12 +6,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccountComponent } from './account/account.component';
 import { OffersComponent } from './offers/offers.component';
 import { SharedModule } from '../shared/shared.module';
+import { NewServiceComponent } from './new-service/new-service.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     AccountComponent,
-    OffersComponent
+    OffersComponent,
+    NewServiceComponent
   ],
   imports: [
     CommonModule,
