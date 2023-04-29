@@ -1,0 +1,93 @@
+.all{
+  height: auto;
+  width: auto;
+  background-color:#EDEDED;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 3fr 12fr;
+}
+.secction{
+  /* background-color: yellow; */
+  width: 100%;
+  height: auto;
+  /* max-height: 30rem; */
+  margin-left: 3%;
+  border-radius: 20px;
+  padding: 2rem;
+  background-color: white;
+  margin-top: 2rem;
+}
+
+.secction p{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.content_cards{
+  border-radius: 10px;
+  width: auto;
+  height: 100%;
+  max-height: 20rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* card: inicio */
+.card{
+  width: 100%;
+  max-width: 20rem;
+  font-family: sans-serif;
+  border-radius: 15px;
+  padding: 1rem;
+  justify-content: center;
+  text-align: center;
+
+  /* define la altura para que todos sean del mismo tamaño */
+}
+
+.img_card img{
+  width: 60%;
+  border-radius: 10px;
+}
+
+.description_card{
+  width: 50%;
+  font-weight: 900;
+  font-size: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.7rem;
+}
+
+.stars{
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.star_{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.star_ mat-icon{
+  color: #FFFF00;
+  font-weight: 700;
+  font-size: 20px;
+}
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
