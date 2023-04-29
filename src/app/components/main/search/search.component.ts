@@ -3,9 +3,9 @@ import {ServiceClass} from "../../../Clases/Card";
 import {ServicesService} from "../../../services/services.service";
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
 
