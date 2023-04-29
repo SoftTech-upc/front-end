@@ -9,6 +9,9 @@ import { LogginComponent } from './components/loggin/loggin.component';
 import { MainComponent } from './components/main/main.component';
 import { SharedModule } from './components/shared/shared.module';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,8 @@ import { SharedModule } from './components/shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from 'src/app/Clases/Card';
+import { ServiceClass } from 'src/app/Clases/Card';
+import { ServicesService } from '../../../services/services.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,17 +9,34 @@ import { Card } from 'src/app/Clases/Card';
 })
 export class DashboardComponent implements OnInit{
 
-  data: Card[]=[]
-  img: string="../../../../assets/img/target.jpg"
-  description:string="Disfruta de una aventura en la montaña El Huascaran"
-  count_stars:number=4;//implementar funcion
-  coste: number[]=[1200,1300]
-ngOnInit(): void {
-  for(let i:number=0; i<3;i++){
-    this.data.push(new Card(this.img,this.description,this.count_stars,this.coste));
-  }
+  data_: any;
+  // img: string="../../../../assets/img/target.jpg"
+  // description:string="Disfruta de una aventura en la montaña El Huascaran"
+  // count_stars:number=4;//implementar funcion
+  // coste: number[]=[1200,1300]
 
-  console.log(this.data)
+  constructor(private ser: ServicesService){}
+ngOnInit(): void {
+  // for(let i:number=0; i<3;i++){
+  //   this.data.push(new Card(this.img,this.description,this.count_stars,this.coste));
+  // }
+
+  // console.log(this.data)
+
+
+  this.ser.get()
+  .subscribe((data: any)=>{
+    this.data_= data;
+    console.log(this.data_)
+  })
+}
+
+getDates(){
+  this.ser.get()
+  .subscribe((data: any)=>{
+    this.data_= data;
+    console.log(this.data_)
+  })
 }
 
 }

@@ -45,15 +45,15 @@
         <p>Ofertas del día</p>
 
         <div class="content_cards">
-          <mat-card class="card" *ngFor="let elemento of data">
+          <mat-card class="card" *ngFor="let elemento of data_">
             <mat-card-content>
               <div class="img_card">
-                <img src="{{ elemento.img }}" alt="imagen card" />
+                <img src="{{ elemento.photo}}" alt="imagen card" />
               </div>
 
               <div class="description_card">
                 <div class="descripcion_card">
-                  {{ elemento.description }}
+                  {{ elemento.name }}
                 </div>
               </div>
 
@@ -95,8 +95,8 @@
               </div>
 
               <div class="coste_card">
-                <p>$ {{ elemento.coste[0] }}</p>
-                <p>$ {{ elemento.coste[1] }}</p>
+                <p>$ {{ elemento.price}}</p>
+                <p>$ {{ elemento.new_price}}</p>
               </div>
             </mat-card-content>
           </mat-card>
@@ -168,21 +168,21 @@
         </mat-card>
       </div>
     </div> -->
-
+<!-- ================================================================================================================ -->
     <mat-card class="secction">
       <mat-card-content>
         <p>Los más populares</p>
 
         <div class="content_cards">
-          <mat-card class="card" *ngFor="let elemento of data">
+          <mat-card class="card" *ngFor="let elemento of data_">
             <mat-card-content>
               <div class="img_card">
-                <img src="{{ elemento.img }}" alt="imagen card" />
+                <img src="{{ elemento.photo}}" alt="imagen card" />
               </div>
 
               <div class="description_card">
                 <div class="descripcion_card">
-                  {{ elemento.description }}
+                  {{ elemento.name }}
                 </div>
               </div>
 
@@ -224,8 +224,8 @@
               </div>
 
               <div class="coste_card">
-                <p>$ {{ elemento.coste[0] }}</p>
-                <p>$ {{ elemento.coste[1] }}</p>
+                <p>$ {{ elemento.price }}</p>
+                <p>$ {{ elemento.new_price }}</p>
               </div>
             </mat-card-content>
           </mat-card>
@@ -238,15 +238,15 @@
         <p>Para tí</p>
 
         <div class="content_cards">
-          <mat-card class="card" *ngFor="let elemento of data">
+          <mat-card class="card" *ngFor="let elemento of data_">
             <mat-card-content>
               <div class="img_card">
-                <img src="{{ elemento.img }}" alt="imagen card" />
+                <img src="{{ elemento.photo }}" alt="imagen card" />
               </div>
 
               <div class="description_card">
                 <div class="descripcion_card">
-                  {{ elemento.description }}
+                  {{ elemento.name }}
                 </div>
               </div>
 
@@ -288,8 +288,8 @@
               </div>
 
               <div class="coste_card">
-                <p>$ {{ elemento.coste[0] }}</p>
-                <p>$ {{ elemento.coste[1] }}</p>
+                <p>$ {{ elemento.price }}</p>
+                <p>$ {{ elemento.new_price }}</p>
               </div>
             </mat-card-content>
           </mat-card>
