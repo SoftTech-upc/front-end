@@ -20,7 +20,7 @@
           </button>
           <mat-menu #animals="matMenu">
             <button mat-menu-item >Mi perfil</button>
-            <button mat-menu-item routerLink="/inicio/search">Cerrar session</button>
+            <button mat-menu-item >Cerrar session</button>
             <!--
               1. servicios
               2. agencias
@@ -39,12 +39,12 @@
             <button mat-button routerLink="/inicio/account">Agencias</button>
           </div>
           <div class="search">
-            <button
+            <button routerLink="/inicio/search"
               mat-icon-button
               class="example-icon"
               aria-label="Example icon-button with share icon"
             >
-              <mat-icon color="primary">search</mat-icon>
+              <mat-icon color="primary" >search</mat-icon>
             </button>
             <input
               type="text"
