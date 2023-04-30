@@ -1,20 +1,22 @@
 import { OffersComponent } from '../components/main/offers/offers.component';
 
 export class ServiceClass {
-  id: number;
-  name: string;
+  id: any;
+  name: any;
   score: number; //estrellas
   price: number;
   new_price: number;
   location: string;
   creation_date: string;
-  photo: string;
+  photo: any;
   is_ofter: boolean;
-  description: string;
   agencia_id: number;
-  constructor(id: number,name: string,score: number,price: number,new_price: number,
-                location: string,creation_date: string,photo: string,is_ofter: boolean,
-                description: string,agencia_id: number) 
+  constructor(id: any,name: any,
+    score: number,price: number,
+    new_price: number,
+                location: string,
+                creation_date: string,
+                photo: any,is_ofter: boolean,agencia_id: number) 
     {
     this.id = id;
     this.name = name;
@@ -25,7 +27,19 @@ export class ServiceClass {
     this.creation_date = creation_date;
     this.photo = photo;
     this.is_ofter = is_ofter;
-    this.description = description;
     this.agencia_id = agencia_id;
+  }
+
+  erase(){
+    this.id = null;
+    this.name = "";
+    this.score = 0;
+    this.price = 0;
+    this.new_price = 0;
+    this.location = "";
+    this.creation_date = "";
+    this.photo = "";
+    this.is_ofter = false;
+    this.agencia_id = 0;
   }
 }

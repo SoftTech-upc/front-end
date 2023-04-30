@@ -10,6 +10,7 @@ import { MainComponent } from './components/main/main.component';
 import { SharedModule } from './components/shared/shared.module';
 
 import { HttpClientModule } from '@angular/common/http';
+// import { FormsModule } from '@angular/forms';//importar para el formGroup
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

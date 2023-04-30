@@ -8,6 +8,11 @@ import { OffersComponent } from './offers/offers.component';
 import { SharedModule } from '../shared/shared.module';
 import { AddServiceComponent } from './add-service/add-service.component';
 import { SearchComponent } from './search/search.component';
+import { MatInputModule } from '@angular/material/input'; // Importa MatInputModule
+
+import { FormsModule } from '@angular/forms';
+import { EditarServiceComponent } from './editar-service/editar-service.component';
+
 
 @NgModule({
   declarations: [
@@ -15,12 +20,15 @@ import { SearchComponent } from './search/search.component';
     AccountComponent,
     OffersComponent,
     AddServiceComponent,
-    SearchComponent
+    SearchComponent,
+    EditarServiceComponent,
   ],
   imports: [
     CommonModule,
     MainRoutingModule,
-    SharedModule
+    SharedModule,
+    MatInputModule,
+    FormsModule
   ]
 })
 export class MainModule { }
