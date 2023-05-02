@@ -4,7 +4,7 @@ import { MainComponent } from './main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccountComponent } from './account/account.component';
 import { OffersComponent } from './offers/offers.component';
-import {AgencyProfileComponent} from "../agency-profile/agency-profile.component";
+import {AgencyProfileComponent} from "../../agencies/pages/agency-profile/agency-profile.component";
 
 const routes: Routes = [
   {path:'', component: MainComponent, children: [
