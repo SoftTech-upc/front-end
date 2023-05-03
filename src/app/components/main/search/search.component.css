@@ -7,10 +7,9 @@
   display: grid;
   grid-template-columns: 3fr 12fr;
 }
-
 .secction{
   /* background-color: yellow; */
-  width: 80%;
+  width: 100%;
   height: auto;
   /* max-height: 30rem; */
   margin-left: 3%;
@@ -84,65 +83,11 @@
   font-weight: 700;
   font-size: 20px;
 }
-
-.coste_card{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
+.example-card {
+  max-width: 400px;
 }
 
-.coste_card p{
-  font-weight: 900;
-  font-size: 18px;
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
 }
-
-/* card: fin */
-
-.barra{
-  /* background-color:tomato; */
-}
-
-.lateral{
-  border-radius: 15px;
-  /* background-color: white; */
-  width: 65%;
-  text-align: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-top: 2rem;
-}
-
-.titulo, .sub_titulo{
-  font-weight: 700;
-  font-size: 20px;
-  width: 100%;
-  /* margin-left: 5%; */
-  /* text-align: left; */
-  border-radius: 15px;
-}
-.titulo{
-  height: 4rem;
-  /* margin: ; */
-}
-.sub_titulo{
-  font-weight: 400;
-  height: 10rem;
-  margin-top: 0.2rem;
-}
-
-.parrafos{
-  /* background-color: red; */
-  width: 70%;
-  margin-left: 10%;
-  text-align: left;
-  margin-top: auto;
-  margin-bottom: auto;
-}
- 
-.parrafos_{
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-}
-

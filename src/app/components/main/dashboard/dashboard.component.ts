@@ -1,10 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ServiceClass } from 'src/app/Clases/Card';
+import { ServicesService } from '../../../services/services.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
+
+  data_: any;
+
+  constructor(private ser: ServicesService){}
+ngOnInit(): void {
+
+  this.getDates()
+}
+
+getDates(){
+  this.ser.get()
+  .subscribe((data: any)=>{
+    this.data_= data;
+    console.log(this.data_)
+  })
+}
 
 }

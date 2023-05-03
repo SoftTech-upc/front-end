@@ -67,6 +67,18 @@
       "photo": "https://static.emol.cl/emol50/Fotos/2020/12/18/file_20201218125224.jpg",
       "is_offer": false,
       "agencie_id": 2
+    },
+    {
+      "id": 2,
+      "name": 3434,
+      "score": 4,
+      "price": 3434,
+      "new_price": 343,
+      "location": "dfvdfv",
+      "creation_date": "30/4/2023",
+      "photo": null,
+      "is_ofter": true,
+      "agencia_id": 0
     }
   ],
   "activities": [
