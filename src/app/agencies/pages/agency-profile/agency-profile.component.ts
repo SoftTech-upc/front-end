@@ -14,7 +14,7 @@ export class AgencyProfileComponent implements OnInit {
   agencyData: Agency
   edit: Boolean
 
-  @ViewChild('studentForm', {static: false})
+  @ViewChild('agencyForm', {static: false})
   agencyForm!: NgForm;
 
   constructor(private agencyService: AgencyService) {

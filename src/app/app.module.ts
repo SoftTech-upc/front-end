@@ -12,10 +12,12 @@ import { AgencyProfileComponent } from './agencies/pages/agency-profile/agency-p
 
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
 
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {AgencyService} from "./agencies/services/agency/agency.service";
 import {FormsModule} from "@angular/forms";
+import { CustomerProfileComponent } from './customers/pages/customer-profile/customer-profile.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import {FormsModule} from "@angular/forms";
     LogginComponent,
     MainComponent,
     AgencyProfileComponent,
+    CustomerProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import {FormsModule} from "@angular/forms";
     MatCardModule,
     HttpClientModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ],
   providers: [AgencyService],
   bootstrap: [AppComponent]

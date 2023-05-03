@@ -2,7 +2,7 @@
   "customers": [
     {
       "id": 1,
-      "name": "Manuel",
+      "name": "Manuelito",
       "last_name": "Hernández",
       "email": "manuelhernandez@gmail.com",
       "password": "12345",
