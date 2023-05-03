@@ -7,15 +7,19 @@ import { OffersComponent } from './offers/offers.component';
 import { AddServiceComponent } from './add-service/add-service.component';
 import { SearchComponent } from './search/search.component';
 import { EditarServiceComponent } from './editar-service/editar-service.component';
+import {AgencyProfileComponent} from "../../agencies/pages/agency-profile/agency-profile.component";
+import {CustomerProfileComponent} from "../../customers/pages/customer-profile/customer-profile.component";
 
 const routes: Routes = [
-  {path:'', component: MainComponent, children:[
+    {path:'', component: MainComponent, children:[
     {path:'', component: DashboardComponent},
     {path:'account', component: AccountComponent},
     {path:'offers', component: OffersComponent},
     {path:'service', component: AddServiceComponent},
     {path: 'search', component: SearchComponent},
-    {path: 'edit', component: EditarServiceComponent}
+    {path: 'edit', component: EditarServiceComponent},
+    {path: 'agency-profile', component: AgencyProfileComponent},
+    {path: 'customer-profile', component: CustomerProfileComponent}
   ]}
 ];
 
