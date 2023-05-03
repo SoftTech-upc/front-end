@@ -19,7 +19,6 @@ import {AgencyService} from "./agencies/services/agency/agency.service";
 import {FormsModule} from "@angular/forms";
 import { CustomerProfileComponent } from './customers/pages/customer-profile/customer-profile.component';
 
-import { HttpClientModule } from '@angular/common/http';
 // import { FormsModule } from '@angular/forms';//importar para el formGroup
 
 
