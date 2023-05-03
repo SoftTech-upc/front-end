@@ -76,7 +76,55 @@
       "new_price": 343,
       "location": "dfvdfv",
       "creation_date": "30/4/2023",
-      "photo": null,
+      "photo": "https://static.emol.cl/emol50/Fotos/2020/12/18/file_20201218125224.jpg",
+      "is_ofter": true,
+      "agencia_id": 0
+    },
+    {
+      "id": 3,
+      "name": "Fer",
+      "score": 4,
+      "price": 100,
+      "new_price": 100,
+      "location": "Perú",
+      "creation_date": "3/5/2023",
+      "photo": "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg",
+      "is_ofter": true,
+      "agencia_id": 0
+    },
+    {
+      "id": 4,
+      "name": "F3r",
+      "score": 4,
+      "price": 1222,
+      "new_price": 1212,
+      "location": "Perú",
+      "creation_date": "3/5/2023",
+      "photo": "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg",
+      "is_ofter": true,
+      "agencia_id": 0
+    },
+    {
+      "id": 5,
+      "name": "fER",
+      "score": 4,
+      "price": 12,
+      "new_price": 214,
+      "location": "Perú",
+      "creation_date": "3/5/2023",
+      "photo": "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg",
+      "is_ofter": true,
+      "agencia_id": 0
+    },
+    {
+      "id": 6,
+      "name": "FER",
+      "score": 4,
+      "price": 12,
+      "new_price": 121,
+      "location": "Perú",
+      "creation_date": "3/5/2023",
+      "photo": "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg",
       "is_ofter": true,
       "agencia_id": 0
     }

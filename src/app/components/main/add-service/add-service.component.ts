@@ -16,7 +16,7 @@ export class AddServiceComponent {
   nombree: any='';
 
   // input4: string[]=[""];
-  contador: number[];
+  contador: number= 0;
   formm: FormGroup;
   constructor(private ser: ServicesService, private fb: FormBuilder){
     
@@ -30,11 +30,26 @@ export class AddServiceComponent {
       price:[''],
       new_price: [''],
       publicar_inicio: [''],
-      publicar_fin: ['']
+      publicar_fin: [''],
+      input1:[''],
+      input2:[''],
+      input3:[''],
+      input4:[''],
+      input5:[''],
+      input6:[''],
+      input7:[''],
+      input8:[''],
+      Dinput1:[''],
+      Dinput2:[''],
+      Dinput3:[''],
+      Dinput4:[''],
+      Dinput5:[''],
+      Dinput6:[''],
+      Dinput7:[''],
+      Dinput8:['']
     })
 
-    this.contador=new Array()
-    this.contador.push(0);
+    
   }
 
   
@@ -52,7 +67,7 @@ export class AddServiceComponent {
 
   saveData(){
     // console.log(aaa);
-    // console.log(this.formm.value)
+    console.log(this.formm.value)
     this.new_service=new ServiceClass(
      null,this.formm.value.name,4,this.formm.value.price,
      this.formm.value.new_price,"Perú",this.getFecha(),
@@ -68,7 +83,7 @@ export class AddServiceComponent {
   }
 
   add_acitivities(){
-    this.contador.push(this.contador.length)
+    this.contador++
     
 
   }
