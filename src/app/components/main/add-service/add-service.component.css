@@ -80,3 +80,21 @@
 .negrita{
   font-weight: 700;
 }
+
+.activitie{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.activitie mat-form-field{
+  width: 95%;
+}
+
+.right{
+  text-align: left;
+}
+
+.left{
+  text-align: left;
+
+}

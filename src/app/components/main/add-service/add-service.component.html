@@ -25,15 +25,103 @@
     </mat-form-field>
   
     <mat-label>Actividades a realizar</mat-label>
-    <div *ngFor="let item of contador">
+
+    <div class="activitie">
       <mat-form-field class="example-full-width">
-        <mat-label>Actividades a realizar</mat-label>
-        <input matInput formControlName="actividades">
+        <mat-label>Titulo</mat-label>
+        <input matInput formControlName="actividades" formControlName="input1">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <input matInput formControlName="actividades" formControlName="Dinput1">
+      </mat-form-field>
+    </div>
+  
+    <div class="activitie" *ngIf="contador>0">
+      <mat-form-field class="example-full-width">
+        <mat-label>Titulo</mat-label>
+        <input matInput formControlName="actividades" formControlName="input2">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <input matInput formControlName="actividades" formControlName="Dinput2">
+      </mat-form-field>
+    </div>
+
+    <div class="activitie" *ngIf="contador>1">
+      <mat-form-field class="example-full-width">
+        <mat-label>Titulo</mat-label>
+        <input matInput formControlName="actividades" formControlName="input3">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <input matInput formControlName="actividades" formControlName="Dinput3">
+      </mat-form-field>
+    </div>
+
+    <div class="activitie" *ngIf="contador>2">
+      <mat-form-field class="example-full-width">
+        <mat-label>Titulo</mat-label>
+        <input matInput formControlName="actividades" formControlName="input4">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <input matInput formControlName="actividades" formControlName="Dinput4">
+      </mat-form-field>
+    </div>
+    <div class="activitie" *ngIf="contador>3">
+      <mat-form-field class="example-full-width">
+        <mat-label>Titulo</mat-label>
+        <input matInput formControlName="actividades" formControlName="input5">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <input matInput formControlName="actividades" formControlName="Dinput5">
+      </mat-form-field>
+    </div>
+
+    <div class="activitie" *ngIf="contador>4">
+      <mat-form-field class="example-full-width">
+        <mat-label>Titulo</mat-label>
+        <input matInput formControlName="actividades" formControlName="input6">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <input matInput formControlName="actividades" formControlName="Dinput6">
+      </mat-form-field>
+    </div>
+
+    <div class="activitie" *ngIf="contador>5">
+      <mat-form-field class="example-full-width">
+        <mat-label>Titulo</mat-label>
+        <input matInput formControlName="actividades" formControlName="input7">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <input matInput formControlName="actividades" formControlName="Dinput7">
       </mat-form-field>
     </div>
     
+    <div class="activitie" *ngIf="contador>6">
+      <mat-form-field class="example-full-width right" >
+        <mat-label>Titulo</mat-label>
+        <input matInput formControlName="actividades" formControlName="input8">
+      </mat-form-field>
+      <mat-form-field class="example-full-width left">
+        <mat-label>Descripcion</mat-label>
+        <input matInput formControlName="actividades" formControlName="Dinput8">
+      </mat-form-field>
+    </div>
+
+ 
+
+    <!--
+      CREAR 8 ngIf y que en base a un contador vayan mostrandose
+      en cada input del ngif un input1,2,3,4,5...
+     -->
   
-    <div class="add_activities" (click)="add_acitivities()">
+
+    <div *ngIf="contador<7" class="add_activities" (click)="add_acitivities()">
       <a class="cursorPointer" matTooltip="Agregar actividad">
         <mat-icon class="add_activities_p">add</mat-icon>
       </a>
