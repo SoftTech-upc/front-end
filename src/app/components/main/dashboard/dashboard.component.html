@@ -45,7 +45,9 @@
         <p>Ofertas del día</p>
 
         <div class="content_cards">
-          <mat-card class="card" *ngFor="let elemento of data_">
+          <mat-card class="card" *ngFor="let elemento of arrayPrice">
+          
+            
             <mat-card-content>
               <div class="img_card">
                 <img src="{{ elemento.photo}}" alt="imagen card" />
@@ -59,7 +61,7 @@
 
               <div class="stars">
                 <div class="star_">
-                  <button
+                  <button *ngIf="elemento.score>0"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -67,7 +69,7 @@
                   >
                     <mat-icon class="icon_size">star</mat-icon>
                   </button>
-                  <button
+                  <button *ngIf="elemento.score>1"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -75,7 +77,7 @@
                   >
                     <mat-icon class="icon_size">star</mat-icon>
                   </button>
-                  <button
+                  <button *ngIf="elemento.score>2"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -83,7 +85,7 @@
                   >
                     <mat-icon class="icon_size">star</mat-icon>
                   </button>
-                  <button
+                  <button *ngIf="elemento.score>3"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -174,7 +176,8 @@
         <p>Los más populares</p>
 
         <div class="content_cards">
-          <mat-card class="card" *ngFor="let elemento of data_">
+          <mat-card class="card" *ngFor="let elemento of arrayScore">
+          
             <mat-card-content>
               <div class="img_card">
                 <img src="{{ elemento.photo}}" alt="imagen card" />
@@ -188,7 +191,7 @@
 
               <div class="stars">
                 <div class="star_">
-                  <button
+                  <button *ngIf="elemento.score>0"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -196,7 +199,7 @@
                   >
                     <mat-icon class="icon_size">star</mat-icon>
                   </button>
-                  <button
+                  <button *ngIf="elemento.score>1"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -204,7 +207,7 @@
                   >
                     <mat-icon class="icon_size">star</mat-icon>
                   </button>
-                  <button
+                  <button *ngIf="elemento.score>2"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -212,7 +215,7 @@
                   >
                     <mat-icon class="icon_size">star</mat-icon>
                   </button>
-                  <button
+                  <button *ngIf="elemento.score>3"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -232,16 +235,17 @@
         </div>
       </mat-card-content>
     </mat-card>
-
+    
     <mat-card class="secction">
       <mat-card-content>
         <p>Para tí</p>
 
         <div class="content_cards">
-          <mat-card class="card" *ngFor="let elemento of data_">
+          <mat-card class="card" *ngFor="let elemento of arrayParaTi">
+            
             <mat-card-content>
               <div class="img_card">
-                <img src="{{ elemento.photo }}" alt="imagen card" />
+                <img src="{{ elemento.photo}}" alt="imagen card" />
               </div>
 
               <div class="description_card">
@@ -252,7 +256,7 @@
 
               <div class="stars">
                 <div class="star_">
-                  <button
+                  <button *ngIf="elemento.score>0"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -260,7 +264,7 @@
                   >
                     <mat-icon class="icon_size">star</mat-icon>
                   </button>
-                  <button
+                  <button *ngIf="elemento.score>1"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -268,7 +272,7 @@
                   >
                     <mat-icon class="icon_size">star</mat-icon>
                   </button>
-                  <button
+                  <button *ngIf="elemento.score>2"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -276,7 +280,7 @@
                   >
                     <mat-icon class="icon_size">star</mat-icon>
                   </button>
-                  <button
+                  <button *ngIf="elemento.score>3"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -288,13 +292,14 @@
               </div>
 
               <div class="coste_card">
-                <p>$ {{ elemento.price }}</p>
-                <p>$ {{ elemento.new_price }}</p>
+                <p>$ {{ elemento.price}}</p>
+                <p>$ {{ elemento.new_price}}</p>
               </div>
             </mat-card-content>
           </mat-card>
         </div>
       </mat-card-content>
     </mat-card>
+
   </div>
 </div>

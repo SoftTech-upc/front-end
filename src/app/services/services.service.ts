@@ -11,7 +11,7 @@ export class ServicesService {
   constructor(private http: HttpClient) { }
 
   get(){
-    return this.http.get(this.url)
+    return this.http.get<any>(this.url)
   }
 
   agregarService(service: ServiceClass): Observable<ServiceClass> {
