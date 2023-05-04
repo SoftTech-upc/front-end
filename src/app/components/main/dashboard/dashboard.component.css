@@ -1,22 +1,19 @@
 .all{
   height: 100%;
   width: auto;
-  background-color:#EDEDED;
+  background-color:#ededed;
   padding-top: 1rem;
   padding-bottom: 2rem;
   display: grid;
   grid-template-columns: 3fr 12fr;
 }
 
+
 .secction{
-  /* background-color: yellow; */
   width: 80%;
   height: auto;
-  /* max-height: 30rem; */
   margin-left: 3%;
   border-radius: 20px;
-  padding: 2rem;
-  background-color: white;
   margin-top: 2rem;
 }
 
@@ -28,21 +25,49 @@
 
 .content_cards{
   border-radius: 10px;
-  width: auto;
+  width: 100%;
   height: 90%;
-  max-height: 20rem;
-  background-color: red;
-  /* padding: 1rem; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-left: auto;
-  padding-right: auto;
-  /* margin-left: 3rem; */
+  margin: auto;
+}
+
+@media (max-width: 1300px){
+  .content_cards{
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100%;
+  }
+
+  .parrafos{
+    font-size: 14px;
+   }
+}
+
+@media (max-width: 1000px){
+  .content_cards{
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+  }
+
+  .secction{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lateral{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+ .parrafos{
+  font-size: 12px;
+ }
 }
 
 /* card: inicio */
 .card{
-  width: 70%;
+  width: 12rem;
   max-width: 20rem;
   font-family: sans-serif;
   border-radius: 15px;
@@ -54,18 +79,18 @@
  margin-bottom: auto;
 margin-left: auto;
 margin-right: auto;
-  /* define la altura para que todos sean del mismo tamaño */
 }
 
+
 .img_card img{
-  width: 60%;
+  width: 100%;
   border-radius: 10px;
 }
 
 .description_card{
   width: 50%;
-  font-weight: 900;
-  font-size: 12px;
+  font-weight: 700;
+  font-size: 14px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.7rem;
@@ -87,6 +112,8 @@ margin-right: auto;
   justify-content: center;
 }
 
+
+
 .star_ mat-icon{
   color: #FFFF00;
   font-weight: 700;
@@ -96,25 +123,19 @@ margin-right: auto;
 .coste_card{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 60%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .coste_card p{
-  font-weight: 900;
+  font-weight: 700;
   font-size: 18px;
 }
-
 /* card: fin */
-
-.barra{
-  /* background-color:tomato; */
-}
 
 .lateral{
   border-radius: 15px;
-  /* background-color: white; */
   width: 65%;
   text-align: center;
   justify-content: center;
@@ -126,14 +147,13 @@ margin-right: auto;
   font-weight: 700;
   font-size: 20px;
   width: 100%;
-  /* margin-left: 5%; */
-  /* text-align: left; */
   border-radius: 15px;
 }
+
 .titulo{
   height: 4rem;
-  /* margin: ; */
 }
+
 .sub_titulo{
   font-weight: 400;
   height: 10rem;
@@ -141,7 +161,6 @@ margin-right: auto;
 }
 
 .parrafos{
-  /* background-color: red; */
   width: 70%;
   margin-left: 10%;
   text-align: left;
