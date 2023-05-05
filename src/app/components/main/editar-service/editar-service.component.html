@@ -1,0 +1,64 @@
+<mat-card class="example-card">
+    <!--  -->
+    <form  [formGroup]="formm" (ngSubmit)="updateData()">
+      <mat-card-title >Agregar nuevo servicio</mat-card-title>
+      <mat-card-subtitle>Datos generales</mat-card-subtitle>
+      <br><br>
+      <mat-label>Nombre del servicio</mat-label>
+      <br>
+      <h1>{{data_[2].name}}</h1>
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName="name">
+        <mat-label>Nombre del servicio</mat-label>
+      </mat-form-field>
+    <br><br>
+      <mat-label>Lugar</mat-label>
+      <h1>{{data_[2].location}}</h1>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Lugar</mat-label>
+        <input matInput formControlName="location">
+      </mat-form-field>
+      <br><br>
+      <div class="two_colums">
+        <div class="precio">
+          <mat-label>Precio USD</mat-label>
+          <h1>{{data_[2].price}}</h1>
+          <div class="precio_input">
+            <mat-form-field appearance="fill" floatLabel="always">
+              <mat-label>Precio USD</mat-label>
+              <input matInput type="number" class="example-right-align" placeholder="0" formControlName="price">
+              <span matTextPrefix>$&nbsp;</span>
+              <span matTextSuffix>.00</span>
+            </mat-form-field>
+          </div>
+        </div>
+        
+      </div>
+
+      <br><br>
+
+      <mat-label>Precio oferta</mat-label>
+      <h1>{{data_[2].new_price}}</h1>
+      <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Precio de oferta</mat-label>
+          <input type="number" matInput formControlName="new_price">
+        </mat-form-field>
+      
+    <br>
+     
+      
+      <br>
+        
+      <div class="example-button-row">
+        <button class="aaa" color="primary" mat-button [disabled]="formm.invalid" >Continuar</button>
+      </div>
+    
+    </form>
+      
+</mat-card>
+  
+   
+  
+    

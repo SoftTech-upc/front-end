@@ -1,0 +1,112 @@
+.example-card {
+    margin-top: 8px;
+    margin: 30px;
+    padding: 30px;
+    display: flex;
+    border-radius: 40px;
+  }
+
+.add_less {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.precio_input{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+  
+  
+  input{
+    height: 1.5rem;
+    background-color: transparent;
+    border: blue;
+    width: 100%;
+    font-size: 1.05rem;
+  }
+  
+  
+  .aaa{
+    background-color: #9CD4E7;
+    background-color-raised: #9CD4E7;
+  }
+  
+  .imagena input{
+  
+  }
+
+  .add_activity{
+    background-color: #9CD4E7;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 10rem;
+    
+    text-align: center;
+    height: 2rem;
+    padding-top: 100%;
+  }
+
+  
+
+  .add_activities{
+    width: 2%;
+    height: auto;
+    background-color: #9CD4E7;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .cursorPointer{
+    text-align: left;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding-left: auto;
+    padding-right: auto;
+  }
+  
+
+  .add_activities_p{
+    height: auto;
+    width: auto;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+.example-full-width{
+  width: 100%;
+}
+
+.two_colums{
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+}
+
+.negrita{
+  font-weight: 700;
+}
+
+.activitie{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.activitie mat-form-field{
+  width: 95%;
+}
+
+.right{
+  text-align: left;
+}
+
+.left{
+  text-align: left;
+
+}
