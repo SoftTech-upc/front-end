@@ -52,4 +52,11 @@ export class AgencyService {
         catchError(this.handleError));
   }
 
+  delete(id: any) {    
+    return this.http.delete(`${this.basePath}/${id}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
 }

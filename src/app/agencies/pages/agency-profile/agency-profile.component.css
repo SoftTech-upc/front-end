@@ -127,3 +127,7 @@ mat-card-content {
   justify-content: space-between;
   width: 65vw;
 }
+
+.delete{
+  color:red;
+}

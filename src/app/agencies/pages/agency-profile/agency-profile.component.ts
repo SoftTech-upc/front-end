@@ -3,6 +3,8 @@ import { OnInit } from "@angular/core";
 import { AgencyService } from "../../services/agency/agency.service";
 import {Agency} from "../../model/agency";
 import {NgForm} from "@angular/forms";
+import { DataSource } from '@angular/cdk/collections';
+import { ServiceClass } from 'src/app/services/model/service';
 
 @Component({
   selector: 'app-agency-profile',
@@ -19,6 +21,7 @@ export class AgencyProfileComponent implements OnInit {
 
   constructor(private agencyService: AgencyService) {
     this.agencyData = {} as Agency
+    this.agencyService = {} as ServiceClass
     this.edit = false
   }
 
@@ -38,6 +41,15 @@ export class AgencyProfileComponent implements OnInit {
       this.edit = false
       console.log(this.agencyData)
     });
+  }
+
+  deleteService(id: number){
+    this.agencyService.delete(id)
+    console.log("delete")
+  }
+
+  getByIdAgency(id: number){
+    this.agencyService.getById(id);
   }
 
 }
