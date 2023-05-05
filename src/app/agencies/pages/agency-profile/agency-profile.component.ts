@@ -5,6 +5,7 @@ import {Agency} from "../../model/agency";
 import {NgForm} from "@angular/forms";
 import { DataSource } from '@angular/cdk/collections';
 import { ServiceClass } from 'src/app/services/model/service';
+import { ServicesService } from 'src/app/services/services/service/services.service';
 
 @Component({
   selector: 'app-agency-profile',
@@ -15,13 +16,13 @@ export class AgencyProfileComponent implements OnInit {
 
   agencyData: Agency
   edit: Boolean
+  data_!: ServiceClass[];
 
   @ViewChild('agencyForm', {static: false})
   agencyForm!: NgForm;
 
-  constructor(private agencyService: AgencyService) {
+  constructor(private agencyService: AgencyService, private service: ServicesService) {
     this.agencyData = {} as Agency
-    this.agencyService = {} as ServiceClass
     this.edit = false
   }
 
@@ -29,6 +30,7 @@ export class AgencyProfileComponent implements OnInit {
     this.agencyService.getById(1).subscribe((response: any) => {
       this.agencyData = response
     })
+    this.getServices()
   }
 
   editAgency(): void {
@@ -50,6 +52,14 @@ export class AgencyProfileComponent implements OnInit {
 
   getByIdAgency(id: number){
     this.agencyService.getById(id);
+  }
+
+  
+  getServices(){
+    this.service.getAll()
+        .subscribe((data: ServiceClass[])=>{
+          this.data_=data;
+        })
   }
 
 }

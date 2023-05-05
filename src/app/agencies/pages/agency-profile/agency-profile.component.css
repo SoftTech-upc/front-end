@@ -131,3 +131,205 @@ mat-card-content {
 .delete{
   color:red;
 }
+
+.all{
+  height: 100%;
+  width: auto;
+  background-color:#ededed;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  display: grid;
+}
+
+
+.secction{
+  width: 80%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+}
+
+.secction p{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.content_cards{
+  border-radius: 10px;
+  width: 100%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: auto;
+}
+
+@media (max-width: 1300px){
+  .content_cards{
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 100%;
+  }
+
+  .parrafos{
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 1000px){
+  .content_cards{
+      grid-template-columns: 1fr 1fr;
+      height: 100%;
+  }
+
+  .secction{
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .lateral{
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .parrafos{
+      font-size: 12px;
+  }
+}
+
+/* card: inicio */
+.card{
+  width: 15rem;
+  font-family: sans-serif;
+  border-radius: 15px;
+  padding: 1rem;
+  justify-content: center;
+  text-align: center;
+  height: 20rem;
+  margin-top: 3rem;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.img_card img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+.description_card{
+  width: 50%;
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.7rem;
+}
+
+.stars{
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.star_{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+
+
+.star_ mat-icon{
+  color: #FFFF00;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.coste_card{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.coste_card p{
+  font-weight: 700;
+  font-size: 18px;
+}
+/* card: fin */
+
+.lateral{
+  border-radius: 15px;
+  width: 65%;
+  text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-top: 2rem;
+}
+
+.titulo, .sub_titulo{
+  font-weight: 700;
+  font-size: 20px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.titulo{
+  height: 4rem;
+}
+
+.sub_titulo{
+  font-weight: 400;
+  height: 10rem;
+  margin-top: 0.2rem;
+}
+
+.parrafos{
+  width: 70%;
+  margin-left: 10%;
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.parrafos_{
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* .two_colums{
+display: grid;
+grid-template-columns: 1fr 1fr;
+width: 100%;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+.boton1, .boton2{
+width: 2rem;
+height: 4rem;
+border-radius: 100px;
+
+}
+
+.boton1 mat-icon{
+font-size: 20px;
+height: 30px;
+} */
+
+.contenedora{
+  display: grid;
+  grid-template-columns: 2fr 6fr;
+}
