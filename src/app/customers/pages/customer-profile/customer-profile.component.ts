@@ -2,6 +2,7 @@ import {Component, ViewChild, OnInit} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {CustomerService} from "../../services/customer.service";
 import {Customer} from "../../model/customer";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-customer-profile',
@@ -13,13 +14,16 @@ export class CustomerProfileComponent implements OnInit {
   edit: Boolean
   hiredServices: any
   displayedColumns: string[] = ['scheduled_date', 'amount', 'price'];
+  customer_id: any;
 
   @ViewChild('customerForm', {static: false})
   customerForm!: NgForm;
 
-  constructor(private customerService: CustomerService) {
+  constructor(private customerService: CustomerService, private route: ActivatedRoute) {
     this.customerData = {} as Customer
     this.edit = false
+
+    this.customer_id = this.route.snapshot.paramMap.get('id');
 
     this.hiredServices = [
       {scheduled_date: "19/04/2023", amount: 2, price: 150.75},
@@ -28,7 +32,7 @@ export class CustomerProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.customerService.getById(1).subscribe((response: any) => {
+    this.customerService.getById(this.customer_id).subscribe((response: any) => {
       this.customerData = response
     })
 
