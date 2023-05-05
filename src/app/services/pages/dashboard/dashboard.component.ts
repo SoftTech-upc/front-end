@@ -54,7 +54,9 @@ ordenar(){
   this.arrayParaTi = (this.arrayParaTi.slice(0,4))
 }
 
-
+openDialog(id:number){
+  
+}
 
 
 }

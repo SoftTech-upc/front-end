@@ -23,4 +23,9 @@ export class ServicesService {
     return this.http.patch<ServiceClass>(url, service);
   }
 
+  getItem(id: number): Observable<any> {
+    const url = `http://localhost:3000/services/${id}`;
+    return this.http.get(url);
+  }
+
 }

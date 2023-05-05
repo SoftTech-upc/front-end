@@ -57,18 +57,6 @@
       "agencie_id": 1
     },
     {
-      "id": 1,
-      "name": "Tour premium en Junin",
-      "score": 3,
-      "price": 120,
-      "new_price": 100,
-      "location": "Cerro Junin",
-      "creation_date": "09-02-2023",
-      "photo": "https://static.emol.cl/emol50/Fotos/2020/12/18/file_20201218125224.jpg",
-      "is_offer": false,
-      "agencie_id": 2
-    },
-    {
       "id": 2,
       "name": 3434,
       "score": 1,

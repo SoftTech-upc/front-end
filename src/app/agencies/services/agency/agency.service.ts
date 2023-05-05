@@ -20,7 +20,7 @@ export class AgencyService {
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // Default error handling
-      console.log(`An error occurred: ${error.error.message} `);
+      console.log(`An error occurred: ${error.error.message}`);
     } else {
       // Unsuccessful Response Error Code returned from Backend
       console.error(
@@ -44,6 +44,13 @@ export class AgencyService {
         retry(2),
         catchError(this.handleError));
   }
+
+  getItem(id: number): Observable<any> {
+    const url = `http://localhost:3000/agencies/${id}`;
+    return this.http.get(url);
+  }
+
+
 
   update(id: any, item: any): Observable<Agency> {
     return this.http.put<Agency>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)

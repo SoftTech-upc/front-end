@@ -1,9 +1,9 @@
 <mat-card class="contend_card">
   <div class="titulo">
-    <mat-card-title>Titulo servicio</mat-card-title>
+    <mat-card-title>{{objService.name}}</mat-card-title>
   </div>
   <div class="img_servicio">
-    <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Zm90byUyMGRlJTIwcG9ydGFkYXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="imagen servicio">
+    <img src="{{objService.photo}}" alt="imagen servicio">
   </div>
 
   <div class="agencia">
@@ -13,8 +13,8 @@
         alt="imagen logo"
       />
     </div>
-    <div class="nombre_agencia">Nombre de la agencia</div>
-    <div class="precio_servicio">$480 $</div>
+    <div class="nombre_agencia">Montañismo SAC</div>
+    <div class="precio_servicio">${{objService.price}}.00</div>
   </div>
 
   <div class="descripcion_servicio">

@@ -77,9 +77,9 @@
         <p>Los más populares</p>
 
         <div class="content_cards">
-          <mat-card class="card" *ngFor="let elemento of arrayScore">
+          <mat-card class="card" *ngFor="let elemento of arrayScore" >
           
-            <mat-card-content>
+            <mat-card-content (click)="openDialog(elemento.id)">
               <div class="img_card">
                 <img src="{{ elemento.photo}}" alt="imagen card" />
               </div>
