@@ -8,6 +8,7 @@ import {AgencyProfileComponent} from "./agencies/pages/agency-profile/agency-pro
 import {CustomerProfileComponent} from "./customers/pages/customer-profile/customer-profile.component";
 import {AgenciesComponent} from "./agencies/pages/agencies/agencies.component";
 import {ServicesComponent} from "./services/pages/services/services.component";
+import { ServiceDescriptionComponent } from './services/pages/service-description/service-description.component';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'agency-profile/:id', component: AgencyProfileComponent},
   {path: 'customer-profile/:id', component: CustomerProfileComponent},
   {path: 'add-service/:id', component: AddServiceComponent},
+  {path: 'service-description', component: ServiceDescriptionComponent},
   {path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];
 
