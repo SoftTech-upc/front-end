@@ -58,9 +58,9 @@
     </mat-card-header>
     <mat-card-content>
       <div class="services">
-        <div class="service-container">
-          <img class="service-image" src="https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg">
-          <h3>Tour económico en Ancash</h3>
+        <div class="service-container" *ngFor="let elemento of agencyData">
+          <img class="service-image" src="{{elemento.image}}">
+          <h3>{{elemento.name}}/h3>
           <div class="star-container">
             <p>5</p>
             <img src="../../../../assets/img/star.png">
