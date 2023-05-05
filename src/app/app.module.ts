@@ -14,6 +14,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
 
 import {HttpClientModule} from "@angular/common/http";
 import {AgencyService} from "./agencies/services/agency/agency.service";
@@ -44,7 +45,8 @@ import { ServicesComponent } from './services/pages/services/services.component'
     MatDialogModule,
     FormsModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],
   providers: [AgencyService],
   bootstrap: [AppComponent]
