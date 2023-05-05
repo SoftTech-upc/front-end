@@ -31,7 +31,7 @@ export class AgencyProfileComponent implements OnInit {
     })
   }
 
-  
+
 
   editAgency(): void {
     this.edit = true
