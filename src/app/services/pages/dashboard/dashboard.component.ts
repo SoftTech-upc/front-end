@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceClass } from 'src/app/Clases/Card';
-import { ServicesService } from '../../../services/services.service';
+import { ServiceClass } from 'src/app/services/model/service';
+import { ServicesService } from '../../services/services.service';
 
 @Component({
   selector: 'app-dashboard',

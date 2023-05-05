@@ -1,4 +1,3 @@
-import { OffersComponent } from '../components/main/offers/offers.component';
 
 export class ServiceClass {
   id: any;
@@ -10,13 +9,13 @@ export class ServiceClass {
   creation_date: string;
   photo: any;
   is_ofter: boolean;
-  agencia_id: number;
+  agencie_id: number;
   constructor(id: any,name: any,
     score: number,price: number,
     new_price: number,
                 location: string,
                 creation_date: string,
-                photo: any,is_ofter: boolean,agencia_id: number) 
+                photo: any,is_ofter: boolean,agencie_id: number)
     {
     this.id = id;
     this.name = name;
@@ -27,7 +26,7 @@ export class ServiceClass {
     this.creation_date = creation_date;
     this.photo = photo;
     this.is_ofter = is_ofter;
-    this.agencia_id = agencia_id;
+    this.agencie_id = agencie_id;
   }
 
   erase(){
@@ -40,6 +39,6 @@ export class ServiceClass {
     this.creation_date = "";
     this.photo = "";
     this.is_ofter = false;
-    this.agencia_id = 0;
+    this.agencie_id = 0;
   }
 }

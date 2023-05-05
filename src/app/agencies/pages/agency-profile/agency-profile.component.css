@@ -121,3 +121,9 @@ mat-card-content {
   flex-wrap: wrap;
   gap: 20px;
 }
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  width: 65vw;
+}

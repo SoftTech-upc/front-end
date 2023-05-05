@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ServicesService } from 'src/app/services/services.service';
+import { ServicesService } from 'src/app/services/services/services.service';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ServiceClass } from 'src/app/Clases/Card';
+import { ServiceClass } from 'src/app/services/model/service';
 
 
 @Component({
@@ -72,7 +72,7 @@ export class AddServiceComponent {
      null,this.formm.value.name,4,this.formm.value.price,
      this.formm.value.new_price,"Perú",this.getFecha(),
      "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg",
-     true,0
+     true,1
     )
     console.log(this.new_service)
     ///pas, con fe

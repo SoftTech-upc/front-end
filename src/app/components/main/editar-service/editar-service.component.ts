@@ -2,8 +2,8 @@ import { validateHorizontalPosition } from '@angular/cdk/overlay';
 import { Conditional } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ServiceClass } from 'src/app/Clases/Card';
-import { ServicesService } from 'src/app/services/services.service';
+import { ServiceClass } from 'src/app/services/model/service';
+import { ServicesService } from 'src/app/services/services/services.service';
 
 @Component({
   selector: 'app-editar-service',
