@@ -4,4 +4,106 @@
     margin-left: auto;
     margin-right: auto;
     padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.img_servicio img{
+    width: 100%;
+    height: 15rem;
+    border-radius: 20px;
+}
+
+.agencia{
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+}
+
+.img_agencia, .nombre_agencia, .precio_servicio{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.img_agencia{
+    text-align: center;
+}
+
+.img_agencia img{
+    width: 100%;
+    text-align: right;
+}
+
+.nombre_agencia{
+    margin-right: auto;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.precio_servicio{
+    text-align: right;
+    font-size: 20px;
+    font-weight: 500;
+}
+.descripcion_servicio{
+    width: 100%;
+    text-align: justify;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.actividades{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.actividades mat-card{
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titulo{
+    font-weight: 500;
+    font-size: 17px;
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+.actividad_contend{
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    margin-top: 1rem;
+    text-align: justify;
+}
+
+.titulo_actividad{
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.descripcion_actividad{
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.actividad_contend mat-icon{
+    color: rgb(21, 102, 201);
+    font-weight: 900;
+}
+
+.content_saber{
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.vigencia{
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(90, 93, 93);
+}
+
+mat-card{
+    box-shadow: 0 5px 4px rgba(0,0,0,0.24), 0 2px 6px rgba(0,0,0,0.12);
 }

@@ -1,26 +1,80 @@
-<mat-card class="contend_card" >
-    <div class="titulo">
-        <mat-card-title >Titulo servicio</mat-card-title>
-    </div>
-    <div class="img">
+<mat-card class="contend_card">
+  <div class="titulo">
+    <mat-card-title>Titulo servicio</mat-card-title>
+  </div>
+  <div class="img_servicio">
+    <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Zm90byUyMGRlJTIwcG9ydGFkYXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="imagen servicio">
+  </div>
 
+  <div class="agencia">
+    <div class="img_agencia">
+      <img
+        src="https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_640.png"
+        alt="imagen logo"
+      />
     </div>
-    <div class="agencia">
-        <div class="img_agencia">
-            <img src="https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_640.png" alt="imagen logo">
+    <div class="nombre_agencia">Nombre de la agencia</div>
+    <div class="precio_servicio">$480 $</div>
+  </div>
+
+  <div class="descripcion_servicio">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor
+    sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </div>
+  <div class="actividades">
+    <mat-card>
+        <div class="titulo">Actividades</div>
+        <div class="lista_actividades"> <!-- Aqui pones el for -->
+            <div class="actividad_contend"> <!-- Este es el elemento -->
+                <mat-icon aria-hidden="false" style="font-size: blue;" aria-label="Example home icon" fontIcon="drag_indicator"></mat-icon>
+                <div class="actividad">
+                    <div class="titulo_actividad">Titulo actividad</div>
+                    <div class="descripcion_actividad"> Descripcion actividad. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                </div>
+            </div>
+
+            <div class="actividad_contend"> <!-- Este es el elemento -->
+                <mat-icon aria-hidden="false" style="font-size: blue;" aria-label="Example home icon" fontIcon="drag_indicator"></mat-icon>
+                <div class="actividad">
+                    <div class="titulo_actividad">Titulo actividad</div>
+                    <div class="descripcion_actividad"> Descripcion actividad. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                </div>
+            </div>
+
+            <div class="actividad_contend"> <!-- Este es el elemento -->
+                <mat-icon aria-hidden="false" style="font-size: blue;" aria-label="Example home icon" fontIcon="drag_indicator"></mat-icon>
+                <div class="actividad">
+                    <div class="titulo_actividad">Titulo actividad</div>
+                    <div class="descripcion_actividad"> Descripcion actividad. Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                </div>
+            </div>
         </div>
-        <div class="nombre_agencia">
-            Nombre de la agencia
+    </mat-card>
+    <mat-card>
+        <div class="saber">
+            <div class="titulo" style="text-align: left;">Es bueno saber</div>
+            <div class="content_saber"> <!--Este es el elemento-->
+                <div class="descripcion_actividad">anuncio, Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                <div class="vigencia">Descripcion saber</div>
+            </div>
+            <div class="content_saber"> <!--Este es el elemento-->
+                <div class="descripcion_actividad">anuncio, Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                <div class="vigencia">Descripcion saber</div>
+            </div>
+            <div class="content_saber"> <!--Este es el elemento-->
+                <div class="descripcion_actividad">anuncio, Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                <div class="vigencia">Descripcion saber</div>
+            </div>
+            <div class="content_saber"> <!--Este es el elemento-->
+                <div class="descripcion_actividad">anuncio, Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                <div class="vigencia">Descripcion saber</div>
+            </div>
         </div>
-        <div class="precio_servicio">
-            $480 $
-        </div>
-    </div>
-    <mat-label>Nombre del servicio</mat-label>
-      <mat-form-field class="example-full-width">
-        <input matInput formControlName="name">
-        <mat-label>Nombre del servicio</mat-label>
-      </mat-form-field>
-    <!--  -->
-   
+
+        
+    </mat-card>
+  </div>
 </mat-card>
+
+
