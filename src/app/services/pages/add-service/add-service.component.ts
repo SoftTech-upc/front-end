@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ServicesService} from 'src/app/services/services/services.service';
+import {ServicesService} from 'src/app/services/services/service/services.service';
 
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {ServiceClass} from 'src/app/services/model/service';

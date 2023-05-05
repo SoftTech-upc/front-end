@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HeaderComponent } from '../../components/header/header.component';
-import { ServiceClass } from '../model/service';
+import { HeaderComponent } from '../../../components/header/header.component';
+import { ServiceClass } from '../../model/service';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class ServicesService {
   private url='http://localhost:3000/services'
   constructor(private http: HttpClient) { }
 
-  get(){
+  getAll(){
     return this.http.get<any>(this.url)
   }
 

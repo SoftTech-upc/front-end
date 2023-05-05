@@ -19,6 +19,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {AgencyService} from "./agencies/services/agency/agency.service";
 import {FormsModule} from "@angular/forms";
 import { CustomerProfileComponent } from './customers/pages/customer-profile/customer-profile.component';
+import { AgenciesComponent } from './agencies/pages/agencies/agencies.component';
+import { ServicesComponent } from './services/pages/services/services.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { CustomerProfileComponent } from './customers/pages/customer-profile/cus
     MainComponent,
     AgencyProfileComponent,
     CustomerProfileComponent,
+    AgenciesComponent,
+    ServicesComponent,
   ],
   imports: [
     BrowserModule,

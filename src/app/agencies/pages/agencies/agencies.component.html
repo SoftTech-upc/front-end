@@ -1,0 +1,38 @@
+<div class="all">
+
+    <div class="search">
+        <mat-card class="secction">
+
+            <mat-card-content>
+                <p>Agencias</p>
+
+                <div class="content_cards">
+                    <mat-card class="card" *ngFor="let elemento of data_">
+                        <mat-card-content>
+
+                            <mat-card-header>
+                                <div mat-card-avatar class="example-header-image"></div>
+                                <mat-card-title>Tourism Agency</mat-card-title>
+                                <mat-card-subtitle>Discover</mat-card-subtitle>
+                            </mat-card-header>
+
+                            <div class="img_card">
+                                <img src="{{ elemento.photo }}" alt="imagen card" />
+                            </div>
+
+                            <div class="description_card">
+                                <div class="descripcion_card">
+                                    {{ elemento.name }}
+                                </div>
+                            </div>
+
+
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+
+    </div>
+</div>

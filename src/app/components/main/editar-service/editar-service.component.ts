@@ -3,7 +3,7 @@ import { Conditional } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServiceClass } from 'src/app/services/model/service';
-import { ServicesService } from 'src/app/services/services/services.service';
+import { ServicesService } from 'src/app/services/services/service/services.service';
 
 @Component({
   selector: 'app-editar-service',
@@ -34,7 +34,7 @@ export class EditarServiceComponent implements OnInit {
   }
 
   getDates(){
-    this.ser.get()
+    this.ser.getAll()
   .subscribe((data: any)=>{
     this.data_= data;
     console.log(this.data_)

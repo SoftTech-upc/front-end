@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceClass } from 'src/app/services/model/service';
-import { ServicesService } from '../../services/services.service';
+import { ServicesService } from '../../services/service/services.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,7 +21,7 @@ ngOnInit(): void {
 }
 
 getDates(){
-  this.ser.get()
+  this.ser.getAll()
   .subscribe((data: ServiceClass[])=>{
     this.data_= data;
     // console.log(this.data_)
