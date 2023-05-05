@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import { ServicesService } from 'src/app/services/services/services.service';
+import {Component} from '@angular/core';
+import {ServicesService} from 'src/app/services/services/services.service';
 
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ServiceClass } from 'src/app/services/model/service';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {ServiceClass} from 'src/app/services/model/service';
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -14,23 +15,23 @@ export class AddServiceComponent {
 
   new_service!: ServiceClass;
   nombree: any='';
+  agency_id: any;
 
   // input4: string[]=[""];
   contador: number= 0;
   formm: FormGroup;
-  constructor(private ser: ServicesService, private fb: FormBuilder){
-    
+  constructor(private ser: ServicesService, private fb: FormBuilder, private route: ActivatedRoute){
+
+    this.agency_id = this.route.snapshot.paramMap.get('id');
+
     this.formm= this.fb.group({
       name: [''],
       descripcion: [''],
       location: [''],
       actividades: [''],
-      hora_inicio: [''],
-      hora_fin: [''],
       price:[''],
       new_price: [''],
-      publicar_inicio: [''],
-      publicar_fin: [''],
+      image: [''],
       input1:[''],
       input2:[''],
       input3:[''],
@@ -61,8 +62,7 @@ export class AddServiceComponent {
     const mes = fecha.getMonth()+1;
     const anio = fecha.getFullYear();
 
-    const date = dia+"/"+mes+"/"+anio;
-    return date
+    return dia + "/" + mes + "/" + anio
   }
 
   saveData(){
@@ -71,8 +71,8 @@ export class AddServiceComponent {
     this.new_service=new ServiceClass(
      null,this.formm.value.name,4,this.formm.value.price,
      this.formm.value.new_price,"Perú",this.getFecha(),
-     "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg",
-     true,1
+     this.formm.value.photo,
+     true, this.agency_id
     )
     console.log(this.new_service)
     ///pas, con fe
@@ -84,8 +84,12 @@ export class AddServiceComponent {
 
   add_acitivities(){
     this.contador++
-    
-
   }
+
+  less_acitivities(){
+    this.contador--
+  }
+
+
 
 }

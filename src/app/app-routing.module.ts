@@ -15,9 +15,9 @@ const routes: Routes = [
   {path: 'service', component: AddServiceComponent},
   {path: 'search', component: SearchComponent},
   {path: 'edit', component: EditarServiceComponent},
-  {path: 'agency-profile', component: AgencyProfileComponent},
-  {path: 'customer-profile', component: CustomerProfileComponent},
-  {path: 'add-service', component: AddServiceComponent},
+  {path: 'agency-profile/:id', component: AgencyProfileComponent},
+  {path: 'customer-profile/:id', component: CustomerProfileComponent},
+  {path: 'add-service/:id', component: AddServiceComponent},
   {path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];
 

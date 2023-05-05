@@ -18,8 +18,8 @@
               <mat-icon>menu</mat-icon>
             </button>
           <mat-menu #options="matMenu">
-            <button mat-menu-item routerLink="/agency-profile">Mi perfil - Agencia</button>
-            <button mat-menu-item routerLink="/customer-profile">Mi perfil - Cliente</button>
+            <button mat-menu-item [routerLink]="['/agency-profile', 1]">Mi perfil - Agencia</button>
+            <button mat-menu-item [routerLink]="['/customer-profile', 1]">Mi perfil - Cliente</button>
             <button mat-menu-item routerLink="/offers">Cerrar session</button>
             <!--
               1. servicios

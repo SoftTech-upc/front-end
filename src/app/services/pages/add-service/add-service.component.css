@@ -5,6 +5,18 @@
     display: flex;
     border-radius: 40px;
   }
+
+.add_less {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.precio_input{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
   
   
   input{
