@@ -2,10 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceClass } from 'src/app/Clases/Card';
 import { ServicesService } from '../../../services/services.service';
 
+import {MatDialog} from '@angular/material/dialog';
+import { Route, Router } from '@angular/router';
+import { EditarServiceComponent } from '../editar-service/editar-service.component';
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
+  template: '<button mat-button (click)="openDialog()">Open dialog</button>',
   styleUrls: ['./dashboard.component.css']
+
 })
 export class DashboardComponent implements OnInit{
 
@@ -13,11 +20,11 @@ export class DashboardComponent implements OnInit{
   arrayScore: ServiceClass[]=[]
   arrayPrice: ServiceClass[]=[]
   arrayParaTi: ServiceClass[]=[]
-  constructor(private ser: ServicesService){}
+  constructor(private ser: ServicesService, public dialog: MatDialog){}
 ngOnInit(): void {
 
   this.getDates()
-  
+
 }
 
 getDates(){
@@ -55,6 +62,22 @@ ordenar(){
 }
 
 
+openDialog(id: Number) {
+ const dialogRef = this.dialog.open(EditarServiceComponent,{
+  data: {id}
+ });
 
+  dialogRef.afterClosed().subscribe(result => {
+    console.log(`Dialog result: ${result}`);
+  });
+}
 
 }
+
+
+
+// export class DialogContentExampleDialog {
+
+
+
+// }

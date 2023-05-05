@@ -9,24 +9,23 @@ import {ServicesService} from "../../../services/services.service";
 })
 export class SearchComponent implements OnInit {
 
-  data_: any;
+  data_!: ServiceClass[];
+  arrayScore: ServiceClass[]=[]
+  arrayPrice: ServiceClass[]=[]
+  arrayParaTi: ServiceClass[]=[]
+  constructor(private ser: ServicesService){}
+ngOnInit(): void {
 
-  constructor(private ser: ServicesService) {
-  }
+  this.getDates()
 
-  ngOnInit(): void {
+}
 
-    this.getDates()
-  }
-
-  getDates() {
-    this.ser.get()
-      .subscribe((data: any) => {
-        this.data_ = data;
-        console.log(this.data_)
-      })
-
-  }
+getDates(){
+  this.ser.get()
+  .subscribe((data: ServiceClass[])=>{
+    this.data_= data;
+  })
+}
 }
 
 

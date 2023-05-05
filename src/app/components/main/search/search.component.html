@@ -1,91 +1,20 @@
 <div class="all">
-  <div class="barra">
-    <div class="lateral">
-      <mat-card class="titulo">
-        <mat-card-content>
-          <div class="parrafos">
-            <p>Categorias</p>
-          </div>
-        </mat-card-content>
-      </mat-card>
-      <mat-card class="sub_titulo">
-        <mat-card-content>
-          <div class="parrafos">
-            <p class="parrafos_">Ofertas del día</p>
-            <p class="parrafos_">Los más populares</p>
-            <p class="parrafos_">Para ti</p>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
-
-    <div class="lateral">
-      <mat-card class="titulo">
-        <mat-card-content>
-          <div class="parrafos">
-            <p>AAAAAAAAAA</p>
-          </div>
-        </mat-card-content>
-      </mat-card>
-      <mat-card class="sub_titulo">
-        <mat-card-content>
-          <div class="parrafos">
-            <p class="parrafos_">Servicios</p>
-            <p class="parrafos_">Agencias</p>
-            <p class="parrafos_" routerLink="/inicio/service">Agregar servicio</p>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
-  </div>
-  <!-- search -->
-  <div class="search">
-    <mat-card class="secction">
-
+  <div class="dashboard">
+    <mat-card class="secction" style="padding-top: 2rem; padding-left: 2rem;">
       <mat-card-content>
-        <p>Agencias</p>
+        <p>Todos los servicios</p>
+
+
+
+
 
         <div class="content_cards">
           <mat-card class="card" *ngFor="let elemento of data_">
-            <mat-card-content>
-
-              <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>Tourism Agency</mat-card-title>
-                <mat-card-subtitle>Discover</mat-card-subtitle>
-              </mat-card-header>
-
-              <div class="img_card">
-                <img src="{{ elemento.photo }}" alt="imagen card" />
-              </div>
-
-              <div class="description_card">
-                <div class="descripcion_card">
-                  {{ elemento.name }}
-                </div>
-              </div>
-              <mat-card-actions>
-                <button mat-button>LIKE</button>
-                <button mat-button>SHARE</button>
-              </mat-card-actions>
 
 
-            </mat-card-content>
-          </mat-card>
-        </div>
-      </mat-card-content>
-    </mat-card>
-
-
-    <mat-card class="secction">
-      <mat-card-content>
-        <p>Servicios</p>
-
-        <div class="content_cards">
-          <mat-card class="card" *ngFor="let elemento of data_">
             <mat-card-content>
               <div class="img_card">
-                <img src="{{ elemento.photo }}" alt="imagen card" />
+                <img src="{{ elemento.photo}}" alt="imagen card" />
               </div>
 
               <div class="description_card">
@@ -96,7 +25,7 @@
 
               <div class="stars">
                 <div class="star_">
-                  <button
+                  <button *ngIf="elemento.score>0"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -104,7 +33,7 @@
                   >
                     <mat-icon class="icon_size">star</mat-icon>
                   </button>
-                  <button
+                  <button *ngIf="elemento.score>1"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -112,7 +41,7 @@
                   >
                     <mat-icon class="icon_size">star</mat-icon>
                   </button>
-                  <button
+                  <button *ngIf="elemento.score>2"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -120,7 +49,7 @@
                   >
                     <mat-icon class="icon_size">star</mat-icon>
                   </button>
-                  <button
+                  <button *ngIf="elemento.score>3"
                     mat-icon-button
                     matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
@@ -131,17 +60,15 @@
                 </div>
               </div>
 
-              <div class="contact_card">
-                <p>{{ elemento.price }}</p>
+              <div class="coste_card">
+                <p>$ {{ elemento.price}}</p>
+                <p>$ {{ elemento.new_price}}</p>
               </div>
             </mat-card-content>
           </mat-card>
         </div>
       </mat-card-content>
     </mat-card>
+
   </div>
 </div>
-
-
-
-

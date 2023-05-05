@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input'; // Importa MatInputMod
 
 import { FormsModule } from '@angular/forms';
 import { EditarServiceComponent } from './editar-service/editar-service.component';
+import { AgenciesComponent } from './agencies/agencies.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { EditarServiceComponent } from './editar-service/editar-service.componen
     AddServiceComponent,
     SearchComponent,
     EditarServiceComponent,
+    AgenciesComponent
   ],
   imports: [
     CommonModule,

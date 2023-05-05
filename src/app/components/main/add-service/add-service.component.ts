@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { ServicesService } from 'src/app/services/services.service';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServiceClass } from 'src/app/Clases/Card';
 
+// import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-service',
@@ -15,11 +16,13 @@ export class AddServiceComponent {
   new_service!: ServiceClass;
   nombree: any='';
 
+
   // input4: string[]=[""];
   contador: number= 0;
   formm: FormGroup;
   constructor(private ser: ServicesService, private fb: FormBuilder){
-    
+
+
     this.formm= this.fb.group({
       name: [''],
       descripcion: [''],

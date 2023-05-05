@@ -20,7 +20,7 @@
     </div>
 
     <div class="lateral">
-      
+
       <mat-card class="sub_titulo">
         <mat-card-content>
           <div class="parrafos">
@@ -38,10 +38,14 @@
       <mat-card-content>
         <p>Ofertas del día</p>
 
+
+
+
+
         <div class="content_cards">
           <mat-card class="card" *ngFor="let elemento of arrayPrice">
-          
-            
+
+
             <mat-card-content>
               <div class="img_card">
                 <img src="{{ elemento.photo}}" alt="imagen card" />
@@ -57,7 +61,6 @@
                 <div class="star_">
                   <button *ngIf="elemento.score>0"
                     mat-icon-button
-                    matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
                     aria-label="Example icon-button with a heart icon"
                   >
@@ -65,7 +68,6 @@
                   </button>
                   <button *ngIf="elemento.score>1"
                     mat-icon-button
-                    matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
                     aria-label="Example icon-button with a heart icon"
                   >
@@ -73,7 +75,6 @@
                   </button>
                   <button *ngIf="elemento.score>2"
                     mat-icon-button
-                    matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
                     aria-label="Example icon-button with a heart icon"
                   >
@@ -81,7 +82,6 @@
                   </button>
                   <button *ngIf="elemento.score>3"
                     mat-icon-button
-                    matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
                     aria-label="Example icon-button with a heart icon"
                   >
@@ -106,7 +106,7 @@
 
         <div class="content_cards">
           <mat-card class="card" *ngFor="let elemento of arrayScore">
-          
+
             <mat-card-content>
               <div class="img_card">
                 <img src="{{ elemento.photo}}" alt="imagen card" />
@@ -122,7 +122,6 @@
                 <div class="star_">
                   <button *ngIf="elemento.score>0"
                     mat-icon-button
-                    matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
                     aria-label="Example icon-button with a heart icon"
                   >
@@ -130,7 +129,6 @@
                   </button>
                   <button *ngIf="elemento.score>1"
                     mat-icon-button
-                    matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
                     aria-label="Example icon-button with a heart icon"
                   >
@@ -138,7 +136,6 @@
                   </button>
                   <button *ngIf="elemento.score>2"
                     mat-icon-button
-                    matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
                     aria-label="Example icon-button with a heart icon"
                   >
@@ -146,7 +143,6 @@
                   </button>
                   <button *ngIf="elemento.score>3"
                     mat-icon-button
-                    matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
                     aria-label="Example icon-button with a heart icon"
                   >
@@ -164,7 +160,7 @@
         </div>
       </mat-card-content>
     </mat-card>
-    
+
     <mat-card class="secction">
       <mat-card-content>
         <p>Para tí</p>
@@ -187,7 +183,6 @@
                 <div class="star_">
                   <button *ngIf="elemento.score>0"
                     mat-icon-button
-                    matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
                     aria-label="Example icon-button with a heart icon"
                   >
@@ -195,7 +190,6 @@
                   </button>
                   <button *ngIf="elemento.score>1"
                     mat-icon-button
-                    matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
                     aria-label="Example icon-button with a heart icon"
                   >
@@ -203,7 +197,6 @@
                   </button>
                   <button *ngIf="elemento.score>2"
                     mat-icon-button
-                    matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
                     aria-label="Example icon-button with a heart icon"
                   >
@@ -211,7 +204,6 @@
                   </button>
                   <button *ngIf="elemento.score>3"
                     mat-icon-button
-                    matTooltip="Primary"
                     style="color: rgb(9, 9, 9)"
                     aria-label="Example icon-button with a heart icon"
                   >
@@ -224,6 +216,16 @@
                 <p>$ {{ elemento.price}}</p>
                 <p>$ {{ elemento.new_price}}</p>
               </div>
+
+              <!-- <div class="two_colums">
+              <button class="boton1" mat-button style="background-color: rgb(103, 179, 234);" color="primary" (click)="openDialog(elemento.id)"> 
+                <mat-icon >edit</mat-icon>
+              </button>
+              <button class="boton2" mat-button style="background-color: rgb(238, 107, 125);" (click)="openDialog(elemento.id)">
+                <mat-icon style="font-size: 20px;">delete</mat-icon>
+              </button>
+              
+              </div> -->
             </mat-card-content>
           </mat-card>
         </div>

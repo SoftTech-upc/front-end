@@ -15,6 +15,7 @@
   margin-left: 3%;
   border-radius: 20px;
   margin-top: 2rem;
+  padding: 2rem;
 }
 
 .secction p{
@@ -67,14 +68,13 @@
 
 /* card: inicio */
 .card{
-  width: 12rem;
-  max-width: 20rem;
+  width: 15rem;
   font-family: sans-serif;
   border-radius: 15px;
   padding: 1rem;
   justify-content: center;
   text-align: center;
- height: 80%;
+ height: 20rem;
  margin-top: auto;
  margin-bottom: auto;
 margin-left: auto;
@@ -173,3 +173,23 @@ margin-right: auto;
   margin-bottom: 1rem;
 }
 
+/* .two_colums{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.boton1, .boton2{
+  width: 2rem;
+  height: 4rem;
+  border-radius: 100px;
+  
+}
+
+.boton1 mat-icon{
+  font-size: 20px;
+  height: 30px;
+} */
