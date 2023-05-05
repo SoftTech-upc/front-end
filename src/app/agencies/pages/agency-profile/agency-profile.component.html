@@ -1,139 +1,227 @@
-<div class="grid">
-  <mat-card class="description-agency">
-    <mat-card-content>
-      <img src="{{this.agencyData.photo}}" class="foto_perfil">
-      <div *ngIf="!edit" class="description-content">
-        <h3 class="name">{{this.agencyData.name}}</h3>
-        <h5 class="email">{{this.agencyData.email}}</h5>
-        <p class="description">{{this.agencyData.description}}</p>
-        <h5 class="location-header">Ubicación:</h5>
-        <p class="location">{{this.agencyData.location}}</p>
-        <h5 class="location-header">RUC:</h5>
-        <p class="location">{{this.agencyData.ruc}}</p>
-        <h5 class="location-header">Teléfono:</h5>
-        <p class="location">{{this.agencyData.phone_number}}</p>
-        <button mat-raised-button color="primary" (click)="editAgency()" >Editar información</button>
+
+<div class="contenedora">
+  
+    <mat-card class="Perfil">
+      <mat-card-content>
+        <img src="{{this.agencyData.photo}}" class="foto_perfil">
+        <div *ngIf="!edit" class="description-content">
+          <h3 class="name">{{this.agencyData.name}}</h3>
+          <h5 class="email">{{this.agencyData.email}}</h5>
+          <p class="description">{{this.agencyData.description}}</p>
+          <h5 class="location-header">Ubicación:</h5>
+          <p class="location">{{this.agencyData.location}}</p>
+          <h5 class="location-header">RUC:</h5>
+          <p class="location">{{this.agencyData.ruc}}</p>
+          <h5 class="location-header">Teléfono:</h5>
+          <p class="location">{{this.agencyData.phone_number}}</p>
+          <button mat-raised-button color="primary" (click)="editAgency()" >Editar información</button>
+        </div>
+  
+        <form *ngIf="edit" (submit)="onSubmit()" #agencyForm='ngForm'>
+          <mat-form-field class="example-full-width">
+            <mat-label>Imagen</mat-label>
+            <input matInput name="photo" required [(ngModel)]="this.agencyData.photo">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Nombre</mat-label>
+            <input matInput name="name" required [(ngModel)]="this.agencyData.name">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput name="email" required [(ngModel)]="this.agencyData.email">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Descripción</mat-label>
+            <textarea matInput name="description" required [(ngModel)]="this.agencyData.description"></textarea>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Ubicación</mat-label>
+            <input matInput name="location" required [(ngModel)]="this.agencyData.location">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>RUC</mat-label>
+            <input type="number" name="ruc" required matInput [(ngModel)]="this.agencyData.ruc">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Teléfono</mat-label>
+            <input type="number" name="phone_number" required matInput [(ngModel)]="this.agencyData.phone_number">
+          </mat-form-field>
+          <br>
+          <button mat-raised-button color="primary" >Guardar cambios</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  
+  
+    
+  
+  
+    <div class="dashboard">
+      <mat-card class="secction" style="padding-top: 2rem; padding-left: 2rem;">
+          <mat-card-content>
+              <p>Todos los servicios</p>
+  
+  
+              <div class="content_cards">
+                  <mat-card class="card" *ngFor="let elemento of data_">
+  
+  
+                      <mat-card-content>
+                          <div class="img_card">
+                              <img src="{{ elemento.photo}}" alt="imagen card" />
+                          </div>
+  
+                          <div class="description_card">
+                              <div class="descripcion_card">
+                                  {{ elemento.name }}
+                              </div>
+                          </div>
+  
+                          <div class="stars">
+                              <div class="star_">
+                                  <button *ngIf="elemento.score>0"
+                                          mat-icon-button
+                                          matTooltip="Primary"
+                                          style="color: rgb(9, 9, 9)"
+                                          aria-label="Example icon-button with a heart icon"
+                                  >
+                                      <mat-icon class="icon_size">star</mat-icon>
+                                  </button>
+                                  <button *ngIf="elemento.score>1"
+                                          mat-icon-button
+                                          matTooltip="Primary"
+                                          style="color: rgb(9, 9, 9)"
+                                          aria-label="Example icon-button with a heart icon"
+                                  >
+                                      <mat-icon class="icon_size">star</mat-icon>
+                                  </button>
+                                  <button *ngIf="elemento.score>2"
+                                          mat-icon-button
+                                          matTooltip="Primary"
+                                          style="color: rgb(9, 9, 9)"
+                                          aria-label="Example icon-button with a heart icon"
+                                  >
+                                      <mat-icon class="icon_size">star</mat-icon>
+                                  </button>
+                                  <button *ngIf="elemento.score>3"
+                                          mat-icon-button
+                                          matTooltip="Primary"
+                                          style="color: rgb(9, 9, 9)"
+                                          aria-label="Example icon-button with a heart icon"
+                                  >
+                                      <mat-icon class="icon_size">star</mat-icon>
+                                  </button>
+                              </div>
+                          </div>
+  
+                          <div class="coste_card">
+                              <p>$ {{ elemento.price}}</p>
+                              <p>$ {{ elemento.new_price}}</p>
+                          </div>
+                          <button mat-button style="background-color: rgb(238, 107, 107); color: #ffffff" (click)="deleteService(elemento.id)">Eliminar</button>
+                      </mat-card-content>
+                  </mat-card>
+              </div>
+          </mat-card-content>
+      </mat-card>
       </div>
-
-      <form *ngIf="edit" (submit)="onSubmit()" #agencyForm='ngForm'>
-        <mat-form-field class="example-full-width">
-          <mat-label>Imagen</mat-label>
-          <input matInput name="photo" required [(ngModel)]="this.agencyData.photo">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>Nombre</mat-label>
-          <input matInput name="name" required [(ngModel)]="this.agencyData.name">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>Email</mat-label>
-          <input matInput name="email" required [(ngModel)]="this.agencyData.email">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>Descripción</mat-label>
-          <textarea matInput name="description" required [(ngModel)]="this.agencyData.description"></textarea>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>Ubicación</mat-label>
-          <input matInput name="location" required [(ngModel)]="this.agencyData.location">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>RUC</mat-label>
-          <input type="number" name="ruc" required matInput [(ngModel)]="this.agencyData.ruc">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>Teléfono</mat-label>
-          <input type="number" name="phone_number" required matInput [(ngModel)]="this.agencyData.phone_number">
-        </mat-form-field>
-        <button mat-raised-button color="primary" >Guardar cambios</button>
-      </form>
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card class="service">
-    <mat-card-header>
-      <mat-card-title class="card-title">
-        <p>Servicios</p>
-        <button mat-raised-button color="primary" [routerLink]="['/add-service', 1]">Añadir servicio</button>
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="services">
-        <div class="service-container" *ngFor="let elemento of agencyData">
-          <img class="service-image" src="{{elemento.image}}">
-          <h3>{{elemento.name}}/h3>
-          <div class="star-container">
-            <p>5</p>
-            <img src="../../../../assets/img/star.png">
+  
+  
+  
+  
+  
+  
+  
+    <!-- <mat-card class="service">    
+      <mat-card-header>
+        <mat-card-title class="card-title">
+          <p>Servicios</p>
+          <button mat-raised-button color="primary" [routerLink]="['/add-service', 1]">Añadir servicio</button>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="services">
+          <div class="service-container">
+            <img class="service-image" src="https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg">
+            <h3>Tour económico en Ancash</h3>
+            <div class="star-container">
+              <p>5</p>
+              <img src="../../../../assets/img/star.png">
+            </div>
+            <div class="price-container">
+              <p class="before">$150</p>
+              <p class="now">$140</p>
+            </div>
+            <div>
+              <button mat-button Class="delete">Delete</button>
+            </div>
           </div>
-          <div class="price-container">
-            <p class="before">$150</p>
-            <p class="now">$140</p>
+          <div class="service-container">
+            <img class="service-image" src="https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg">
+            <h3>Tour económico en Ancash</h3>
+            <div class="star-container">
+              <p>5</p>
+              <img src="../../../../assets/img/star.png">
+            </div>
+            <div class="price-container">
+              <p class="before">$150</p>
+              <p class="now">$140</p>
+            </div>
           </div>
-        </div>
-        <div class="service-container">
-          <img class="service-image" src="https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg">
-          <h3>Tour económico en Ancash</h3>
-          <div class="star-container">
-            <p>5</p>
-            <img src="../../../../assets/img/star.png">
+          <div class="service-container">
+            <img class="service-image" src="https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg">
+            <h3>Tour económico en Ancash</h3>
+            <div class="star-container">
+              <p>5</p>
+              <img src="../../../../assets/img/star.png">
+            </div>
+            <div class="price-container">
+              <p class="before">$150</p>
+              <p class="now">$140</p>
+            </div>
           </div>
-          <div class="price-container">
-            <p class="before">$150</p>
-            <p class="now">$140</p>
+          <div class="service-container">
+            <img class="service-image" src="https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg">
+            <h3>Tour económico en Ancash</h3>
+            <div class="star-container">
+              <p>5</p>
+              <img src="../../../../assets/img/star.png">
+            </div>
+            <div class="price-container">
+              <p class="before">$150</p>
+              <p class="now">$140</p>
+            </div>
           </div>
-        </div>
-        <div class="service-container">
-          <img class="service-image" src="https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg">
-          <h3>Tour económico en Ancash</h3>
-          <div class="star-container">
-            <p>5</p>
-            <img src="../../../../assets/img/star.png">
+          <div class="service-container">
+            <img class="service-image" src="https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg">
+            <h3>Tour económico en Ancash</h3>
+            <div class="star-container">
+              <p>5</p>
+              <img src="../../../../assets/img/star.png">
+            </div>
+            <div class="price-container">
+              <p class="before">$150</p>
+              <p class="now">$140</p>
+            </div>
           </div>
-          <div class="price-container">
-            <p class="before">$150</p>
-            <p class="now">$140</p>
-          </div>
-        </div>
-        <div class="service-container">
-          <img class="service-image" src="https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg">
-          <h3>Tour económico en Ancash</h3>
-          <div class="star-container">
-            <p>5</p>
-            <img src="../../../../assets/img/star.png">
-          </div>
-          <div class="price-container">
-            <p class="before">$150</p>
-            <p class="now">$140</p>
-          </div>
-        </div>
-        <div class="service-container">
-          <img class="service-image" src="https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg">
-          <h3>Tour económico en Ancash</h3>
-          <div class="star-container">
-            <p>5</p>
-            <img src="../../../../assets/img/star.png">
-          </div>
-          <div class="price-container">
-            <p class="before">$150</p>
-            <p class="now">$140</p>
+          <div class="service-container">
+            <img class="service-image" src="https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg">
+            <h3>Tour económico en Ancash</h3>
+            <div class="star-container">
+              <p>5</p>
+              <img src="../../../../assets/img/star.png">
+            </div>
+            <div class="price-container">
+              <p class="before">$150</p>
+              <p class="now">$140</p>
+            </div>
           </div>
         </div>
-        <div class="service-container">
-          <img class="service-image" src="https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg">
-          <h3>Tour económico en Ancash</h3>
-          <div class="star-container">
-            <p>5</p>
-            <img src="../../../../assets/img/star.png">
-          </div>
-          <div class="price-container">
-            <p class="before">$150</p>
-            <p class="now">$140</p>
-          </div>
-        </div>
-      </div>
-
-    </mat-card-content>
-  </mat-card>
+  
+      </mat-card-content>
+    </mat-card> -->
+  
+  
+  
+  
 </div>
-
-

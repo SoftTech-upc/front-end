@@ -21,6 +21,7 @@ import {FormsModule} from "@angular/forms";
 import { CustomerProfileComponent } from './customers/pages/customer-profile/customer-profile.component';
 import { AgenciesComponent } from './agencies/pages/agencies/agencies.component';
 import { ServicesComponent } from './services/pages/services/services.component';
+import { ServiceDescriptionComponent } from './services/pages/service-description/service-description.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ServicesComponent } from './services/pages/services/services.component'
     CustomerProfileComponent,
     AgenciesComponent,
     ServicesComponent,
+    ServiceDescriptionComponent,
   ],
   imports: [
     BrowserModule,
