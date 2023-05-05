@@ -46,9 +46,24 @@ export class AgencyProfileComponent implements OnInit {
   }
 
   deleteService(id: number){
-    this.agencyService.delete(id)
-    console.log("delete")
+    this.agencyService.deleteItem(id).subscribe(
+      () => console.log('Elemento eliminado'),
+      error => console.error(error)
+    );
+    this.getServices()
+
+
+
+
+    
+    // this.deleteService.deleteItem(id)
+    //   .subscribe(
+    //     () => console.log('Elemento eliminado'),
+    //     error => console.error(error)
+    //   );
   }
+
+
 
   getByIdAgency(id: number){
     this.agencyService.getById(id);

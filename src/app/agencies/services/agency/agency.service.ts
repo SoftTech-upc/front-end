@@ -53,10 +53,15 @@ export class AgencyService {
   }
 
   delete(id: any) {    
-    return this.http.delete(`${this.basePath}/${id}`, this.httpOptions)
+    return this.http.delete(`http://localhost:3000/services/`)
       .pipe(
         retry(2),
         catchError(this.handleError));
+  }
+
+  deleteItem(id: number): Observable<any> {
+    const url = `http://localhost:3000/services/${id}`;
+    return this.http.delete(url);
   }
 
 }

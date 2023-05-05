@@ -1,6 +1,6 @@
 <div class="contenedora">
-  <div class="grid">
-    <mat-card class="description-agency">
+  
+    <mat-card class="Perfil">
       <mat-card-content>
         <img src="{{this.agencyData.photo}}" class="foto_perfil">
         <div *ngIf="!edit" class="description-content">
@@ -45,6 +45,7 @@
             <mat-label>Teléfono</mat-label>
             <input type="number" name="phone_number" required matInput [(ngModel)]="this.agencyData.phone_number">
           </mat-form-field>
+          <br>
           <button mat-raised-button color="primary" >Guardar cambios</button>
         </form>
       </mat-card-content>
@@ -58,9 +59,6 @@
       <mat-card class="secction" style="padding-top: 2rem; padding-left: 2rem;">
           <mat-card-content>
               <p>Todos los servicios</p>
-  
-  
-  
   
   
               <div class="content_cards">
@@ -119,6 +117,7 @@
                               <p>$ {{ elemento.price}}</p>
                               <p>$ {{ elemento.new_price}}</p>
                           </div>
+                          <button mat-button style="background-color: rgb(238, 107, 107); color: #ffffff" (click)="deleteService(elemento.id)">Eliminar</button>
                       </mat-card-content>
                   </mat-card>
               </div>
@@ -220,7 +219,7 @@
   
       </mat-card-content>
     </mat-card> -->
-  </div>
+  
   
   
   
