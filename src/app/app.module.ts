@@ -4,9 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './auth/pages/login/login.component';
-import { MainComponent } from './components/main/main.component';
 import { SharedModule } from './components/shared/shared.module';
 import { AgencyProfileComponent } from './agencies/pages/agency-profile/agency-profile.component';
 
@@ -22,18 +20,21 @@ import {FormsModule} from "@angular/forms";
 import { CustomerProfileComponent } from './customers/pages/customer-profile/customer-profile.component';
 import { AgenciesComponent } from './agencies/pages/agencies/agencies.component';
 import { ServicesComponent } from './services/pages/services/services.component';
-
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AddServiceComponent } from "./services/pages/add-service/add-service.component";
+import { DashboardComponent } from "./services/pages/dashboard/dashboard.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     LoginComponent,
-    MainComponent,
     AgencyProfileComponent,
     CustomerProfileComponent,
     AgenciesComponent,
     ServicesComponent,
+    NavbarComponent,
+    AddServiceComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

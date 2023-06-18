@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/pages/login/login.component';
-import { MainModule } from './components/main/main.module';
 import {DashboardComponent} from "./services/pages/dashboard/dashboard.component";
 import {AddServiceComponent} from "./services/pages/add-service/add-service.component";
 import {AgencyProfileComponent} from "./agencies/pages/agency-profile/agency-profile.component";
@@ -13,7 +12,7 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'home', component: DashboardComponent},
   {path: 'tour', component: AddServiceComponent},
-  { path: 'tours', component: ServicesComponent},
+  {path: 'tours', component: ServicesComponent},
   {path: 'agencies', component: AgenciesComponent},
   {path: 'agency-profile/:id', component: AgencyProfileComponent},
   {path: 'tourist-profile/:id', component: CustomerProfileComponent},

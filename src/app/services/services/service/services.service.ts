@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HeaderComponent } from '../../../components/header/header.component';
 import { ServiceClass } from '../../model/service';
 import { Observable } from 'rxjs';
 @Injectable({
