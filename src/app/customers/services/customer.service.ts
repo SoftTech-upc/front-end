@@ -7,7 +7,7 @@ import {Customer} from "../model/customer";
   providedIn: 'root'
 })
 export class CustomerService {
-  basePath = "http://localhost:3000/customers/"
+  basePath = "http://localhost:3000/tourists/"
 
   httpOptions = {
     headers: new HttpHeaders({

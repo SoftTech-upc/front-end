@@ -12,12 +12,12 @@ import {ServicesComponent} from "./services/pages/services/services.component";
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'home', component: DashboardComponent},
-  {path: 'service', component: AddServiceComponent},
-  { path: 'services', component: ServicesComponent},
+  {path: 'tour', component: AddServiceComponent},
+  { path: 'tours', component: ServicesComponent},
   {path: 'agencies', component: AgenciesComponent},
   {path: 'agency-profile/:id', component: AgencyProfileComponent},
-  {path: 'customer-profile/:id', component: CustomerProfileComponent},
-  {path: 'add-service/:id', component: AddServiceComponent},
+  {path: 'tourist-profile/:id', component: CustomerProfileComponent},
+  {path: 'add-tour/:id', component: AddServiceComponent},
   {path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];
 

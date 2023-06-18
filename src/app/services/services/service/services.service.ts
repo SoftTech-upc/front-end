@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServicesService {
-  private url='http://localhost:3000/services'
+  private url='http://localhost:3000/tours'
   constructor(private http: HttpClient) { }
 
   getAll(){

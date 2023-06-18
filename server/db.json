@@ -1,5 +1,5 @@
 {
-  "customers": [
+  "tourists": [
     {
       "id": 1,
       "name": "Manuelito",
@@ -43,7 +43,7 @@
       "score": 3.8
     }
   ],
-  "services": [
+  "tours": [
     {
       "id": 1,
       "name": "Tour económico en Ancash",
@@ -155,7 +155,7 @@
       "service_id": 2
     }
   ],
-  "hired_services": [
+  "reservations": [
     {
       "id": 1,
       "amount": 2,
@@ -175,7 +175,7 @@
       "customer_id": 2
     }
   ],
-  "service_reviews": [
+  "tours_reviews": [
     {
       "id": 1,
       "date": "25-04-2023",
