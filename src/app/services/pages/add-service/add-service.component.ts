@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {ServicesService} from 'src/app/services/services/service/services.service';
 
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {ServiceClass} from 'src/app/services/model/service';
 import {ActivatedRoute} from "@angular/router";
+import {ServicesService} from "../../services/service/services.service";
 
 
 @Component({
@@ -50,10 +50,10 @@ export class AddServiceComponent {
       Dinput8:['']
     })
 
-    
+
   }
 
-  
+
 
 
   getFecha():string{

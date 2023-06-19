@@ -23,6 +23,7 @@ import { ServicesComponent } from './services/pages/services/services.component'
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AddServiceComponent } from "./services/pages/add-service/add-service.component";
 import { DashboardComponent } from "./services/pages/dashboard/dashboard.component";
+import { HomeComponent } from './shared/home/home.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DashboardComponent } from "./services/pages/dashboard/dashboard.compone
     ServicesComponent,
     NavbarComponent,
     AddServiceComponent,
-    DashboardComponent
+    DashboardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
