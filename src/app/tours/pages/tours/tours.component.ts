@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Tour} from "../../model/tour";
 import {TourService} from "../../services/tour.service";
 
@@ -7,7 +7,7 @@ import {TourService} from "../../services/tour.service";
   templateUrl: './tours.component.html',
   styleUrls: ['./tours.component.css']
 })
-export class ToursComponent {
+export class ToursComponent implements OnInit {
   arrayTours: Tour[]
   constructor(private tourService: TourService) {
     this.arrayTours = []
