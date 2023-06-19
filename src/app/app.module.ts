@@ -17,28 +17,24 @@ import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from "@angular/common/http";
 import {AgencyService} from "./agencies/services/agency/agency.service";
 import {FormsModule} from "@angular/forms";
-import { CustomerProfileComponent } from './customers/pages/customer-profile/customer-profile.component';
 import { AgenciesComponent } from './agencies/pages/agencies/agencies.component';
-import { ServicesComponent } from './services/pages/services/services.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AddServiceComponent } from "./services/pages/add-service/add-service.component";
-import { DashboardComponent } from "./services/pages/dashboard/dashboard.component";
 import { HomeComponent } from './shared/home/home.component';
 import { ToursComponent } from './tours/pages/tours/tours.component';
+import { TouristProfileComponent } from './tourists/pages/tourist-profile/tourist-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AgencyProfileComponent,
-    CustomerProfileComponent,
     AgenciesComponent,
-    ServicesComponent,
     NavbarComponent,
     AddServiceComponent,
-    DashboardComponent,
     HomeComponent,
-    ToursComponent
+    ToursComponent,
+    TouristProfileComponent
   ],
   imports: [
     BrowserModule,

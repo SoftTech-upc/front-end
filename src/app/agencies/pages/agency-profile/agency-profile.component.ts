@@ -30,18 +30,13 @@ export class AgencyProfileComponent implements OnInit {
       this.agencyData = response
     })
   }
-
-
-
   editAgency(): void {
     this.edit = true
   }
-
   onSubmit() {
     this.agencyService.update(this.agencyData.id, this.agencyData).subscribe((response: any) => {
       this.agencyData = response
       this.edit = false
     });
   }
-
 }

@@ -1,9 +1,9 @@
-export interface Customer {
+export interface Tourist {
   id: number;
   name: string;
-  last_name: string;
+  lastName: string;
   email: string;
-  phone_number: string;
+  phoneNumber: string;
   password: string;
   photo: string;
 }
