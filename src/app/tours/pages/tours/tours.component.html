@@ -1,0 +1,27 @@
+<mat-card class="h-auto rounded-2xl m-8">
+  <mat-card-content>
+    <p class="font-bold text-xl mx-auto mt-3">
+      All tours
+    </p>
+    <div class="flex flex-row flex-wrap gap-5">
+      <div class="min-w-30 w-72 flex items-center flex-col justify-center" *ngFor="let element of arrayTours">
+        <img class="w-full rounded-lg" src="{{ element.photo}}" alt="image of {{ element.name }}"/>
+
+        <div class="mx-auto mt-3">
+          <p class="font-bold text-lg">{{ element.name }}</p>
+        </div>
+
+        <div class="flex flex-row">
+          <p class="text-xl">{{ element.score }}</p>
+          <img class="h-8 w-8" src="../../../../assets/img/star.png">
+        </div>
+
+        <div class="mt-3 flex row font-bold text-2xl gap-3">
+          <p [ngStyle]="{'text-decoration-line': element.isOffer ? 'line-through' : 'none'}">
+            $ {{ element.price}}</p>
+          <p *ngIf="element.isOffer">$ {{ element.newPrice}}</p>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

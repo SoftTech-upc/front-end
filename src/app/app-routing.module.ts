@@ -5,14 +5,14 @@ import {AddServiceComponent} from "./services/pages/add-service/add-service.comp
 import {AgencyProfileComponent} from "./agencies/pages/agency-profile/agency-profile.component";
 import {CustomerProfileComponent} from "./customers/pages/customer-profile/customer-profile.component";
 import {AgenciesComponent} from "./agencies/pages/agencies/agencies.component";
-import {ServicesComponent} from "./services/pages/services/services.component";
 import {HomeComponent} from "./shared/home/home.component";
+import {ToursComponent} from "./tours/pages/tours/tours.component";
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'tour', component: AddServiceComponent},
-  {path: 'tours', component: ServicesComponent},
+  {path: 'tours', component: ToursComponent},
   {path: 'agencies', component: AgenciesComponent},
   {path: 'agency-profile/:id', component: AgencyProfileComponent},
   {path: 'tourist-profile/:id', component: CustomerProfileComponent},
