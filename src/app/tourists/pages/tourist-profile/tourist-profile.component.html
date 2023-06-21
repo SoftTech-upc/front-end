@@ -1,0 +1,48 @@
+<div class="grid grid-cols-12 gap-5 m-5">
+  <mat-card class="col-start-2 col-span-2 row-start-1 w-full">
+    <mat-card-content>
+      <div *ngIf="!edit" class="flex flex-col gap-1 justify-center items-center">
+        <img src="{{this.touristData.photo}}" class="w-28 h-28 rounded-full">
+        <p class="m-0 text-center font-medium">{{this.touristData.name}} {{this.touristData.lastName}}</p>
+        <h5 class="m-0">{{this.touristData.email}}</h5>
+        <p class="font-bold text-xs">Phone number:</p>
+        <p class="text-xs">{{this.touristData.phoneNumber}}</p>
+        <button mat-raised-button color="primary" (click)="editAgency()" >Edit information</button>
+      </div>
+
+      <form *ngIf="edit" (submit)="onSubmit()" #touristForm='ngForm' class="flex flex-col gap-1 justify-center items-center">
+        <mat-form-field>
+          <mat-label>Image</mat-label>
+          <input matInput name="photo" required [(ngModel)]="this.touristData.photo">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput name="name" required [(ngModel)]="this.touristData.name">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Last name</mat-label>
+          <input matInput name="last_name" required [(ngModel)]="this.touristData.lastName">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput name="email" required [(ngModel)]="this.touristData.email">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Phone number</mat-label>
+          <input type="number" name="phone_number" required matInput [(ngModel)]="this.touristData.phoneNumber">
+        </mat-form-field>
+        <button mat-raised-button color="primary" >Save changes</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="col-start-4 col-span-8 row-start-1 w-full">
+    <mat-card-content>
+      <p class="font-bold text-xl mx-auto mt-3">
+        Tours reserved by {{ this.touristData.name }} {{ this.touristData.lastName }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AgencyService } from '../../services/agency/agency.service';
+import {Agency} from "../../model/agency";
 
 @Component({
   selector: 'app-agencies',
@@ -8,18 +9,19 @@ import { AgencyService } from '../../services/agency/agency.service';
 })
 export class AgenciesComponent implements OnInit {
 
-  data_:any;
-  constructor(private agenciesService: AgencyService){}
-
+  arrayAgencies: Agency[]
+  constructor(private agencyService: AgencyService) {
+    this.arrayAgencies = []
+  }
   ngOnInit(): void {
-    this.getDates()
+    this.getAgencies()
   }
 
-  getDates(){
-    this.agenciesService.getAll()
-        .subscribe((data: any)=>{
-          this.data_= data;
-        })
+  getAgencies(){
+    this.agencyService.getAll()
+      .subscribe((response: any)=>{
+        this.arrayAgencies = response
+      })
   }
 
 }

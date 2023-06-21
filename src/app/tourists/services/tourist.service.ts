@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
-import {Agency} from "../../model/agency";
+import {Tourist} from "../model/tourist";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AgencyService {
-  basePath = "http://localhost:8105/agencies"
+export class TouristService {
+  basePath = "http://localhost:8105/tourists"
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -30,25 +30,24 @@ export class AgencyService {
     return throwError(() => new Error('Something happened with request, please try again later'));
   }
 
-  getAll(): Observable<Agency> {
-    return this.http.get<Agency>(this.basePath, this.httpOptions)
+  getAll(): Observable<Tourist> {
+    return this.http.get<Tourist>(this.basePath, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));
   }
 
-  getById(id: number): Observable<Agency> {
-    return this.http.get<Agency>(`${this.basePath}/${id}`, this.httpOptions)
+  getById(id: number): Observable<Tourist> {
+    return this.http.get<Tourist>(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));
   }
 
-  update(id: any, item: any): Observable<Agency> {
-    return this.http.put<Agency>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
+  update(id: any, item: any): Observable<Tourist> {
+    return this.http.put<Tourist>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));
   }
-
 }

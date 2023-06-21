@@ -1,0 +1,25 @@
+<mat-toolbar class="bg-cyan-300 flex gap-1">
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="options"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="text-center">
+    <img class="w-full" src="../../../assets/img/logo.png"/>
+  </div>
+
+  <mat-menu #options="matMenu">
+    <button mat-menu-item [routerLink]="['/agency/profile', 1]">My profile - Agencia</button>
+    <button mat-menu-item [routerLink]="['/tourist/profile', 1]">My profile - Cliente</button>
+    <button mat-menu-item routerLink="/offers">Log out</button>
+  </mat-menu>
+
+  <div>
+    <button mat-button routerLink="/home">Home</button>
+    <button mat-button routerLink="/tours">Tours</button>
+    <button mat-button routerLink="/agencies">Agencies</button>
+  </div>
+
+</mat-toolbar>
+
