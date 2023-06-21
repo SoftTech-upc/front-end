@@ -23,6 +23,8 @@ import { AddServiceComponent } from "./services/pages/add-service/add-service.co
 import { HomeComponent } from './shared/home/home.component';
 import { ToursComponent } from './tours/pages/tours/tours.component';
 import { TouristProfileComponent } from './tourists/pages/tourist-profile/tourist-profile.component';
+import { ToursReviewComponent } from './reviews/pages/tours-review/tours-review.component';
+import { AgencyReviewComponent } from './reviews/pages/agency-review/agency-review.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { TouristProfileComponent } from './tourists/pages/tourist-profile/touris
     AddServiceComponent,
     HomeComponent,
     ToursComponent,
-    TouristProfileComponent
+    TouristProfileComponent,
+    ToursReviewComponent,
+    AgencyReviewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+<mat-card class="m-4 p-4">
+    <form (submit)="onSubmit()" #tourReviewForm='ngForm' class="flex flex-col mt-4">
+    <div class="flex flex-row gap-5">
+        <mat-form-field class="w-48">
+          <mat-label>Puntuacion general</mat-label>
+          <input matInput type="number" name="score" max="5" required [(ngModel)]="this.tourReviewData.score">
+        </mat-form-field>
+      </div>
+      <div>
+      <mat-form-field>
+        <mat-label>Comentario (opcional)</mat-label>
+        <textarea matInput name="comment" [(ngModel)]="this.tourReviewData.comment"></textarea>
+      </mat-form-field>
+    </div>
+    <button type="submit" mat-raised-button color="primary" class="w-24 mt-5" (click)="onSubmit()">Continuar</button>
+</form>
+</mat-card>
