@@ -4,6 +4,7 @@ import { AgencyService } from "../../services/agency/agency.service";
 import {Agency} from "../../model/agency";
 import {NgForm} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
+import {TourService} from "../../../tours/services/tour.service";
 
 @Component({
   selector: 'app-agency-profile',
@@ -19,7 +20,7 @@ export class AgencyProfileComponent implements OnInit {
   @ViewChild('agencyForm', {static: false})
   agencyForm!: NgForm;
 
-  constructor(private agencyService: AgencyService, private route: ActivatedRoute) {
+  constructor(private agencyService: AgencyService, private tourService: TourService, private route: ActivatedRoute) {
     this.agencyData = {} as Agency
     this.edit = false
     this.agency_id = this.route.snapshot.paramMap.get('id');
@@ -38,5 +39,11 @@ export class AgencyProfileComponent implements OnInit {
       this.agencyData = response
       this.edit = false
     });
+  }
+
+  deleteTour(id: number, index: number) {
+      this.tourService.delete(id).subscribe((response: any) => {
+        this.agencyData.tours.splice(index, 1)
+      });
   }
 }

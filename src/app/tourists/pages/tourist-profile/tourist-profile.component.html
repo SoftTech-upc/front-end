@@ -10,7 +10,7 @@
         <button mat-raised-button color="primary" (click)="editAgency()" >Edit information</button>
       </div>
 
-      <form *ngIf="edit" (submit)="onSubmit()" #agencyForm='ngForm' class="flex flex-col gap-1 justify-center items-center">
+      <form *ngIf="edit" (submit)="onSubmit()" #touristForm='ngForm' class="flex flex-col gap-1 justify-center items-center">
         <mat-form-field>
           <mat-label>Image</mat-label>
           <input matInput name="photo" required [(ngModel)]="this.touristData.photo">
@@ -41,7 +41,6 @@
       <p class="font-bold text-xl mx-auto mt-3">
         Tours reserved by {{ this.touristData.name }} {{ this.touristData.lastName }}
       </p>
-
     </mat-card-content>
   </mat-card>
 </div>

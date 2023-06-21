@@ -19,10 +19,10 @@ import {AgencyService} from "./agencies/services/agency/agency.service";
 import {FormsModule} from "@angular/forms";
 import { AgenciesComponent } from './agencies/pages/agencies/agencies.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { AddServiceComponent } from "./services/pages/add-service/add-service.component";
 import { HomeComponent } from './shared/home/home.component';
 import { ToursComponent } from './tours/pages/tours/tours.component';
 import { TouristProfileComponent } from './tourists/pages/tourist-profile/tourist-profile.component';
+import { AddTourComponent } from './tours/pages/add-tour/add-tour.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +31,10 @@ import { TouristProfileComponent } from './tourists/pages/tourist-profile/touris
     AgencyProfileComponent,
     AgenciesComponent,
     NavbarComponent,
-    AddServiceComponent,
     HomeComponent,
     ToursComponent,
-    TouristProfileComponent
+    TouristProfileComponent,
+    AddTourComponent
   ],
   imports: [
     BrowserModule,

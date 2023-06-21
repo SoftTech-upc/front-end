@@ -57,4 +57,11 @@ export class TourService {
         retry(2),
         catchError(this.handleError));
   }
+
+  delete(id: any): Observable<Tour> {
+    return this.http.delete<Tour>(`${this.basePath}/${id}`, this.httpOptions)
+          .pipe(
+              retry(2),
+              catchError(this.handleError));
+  }
 }
