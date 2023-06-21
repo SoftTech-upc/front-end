@@ -43,7 +43,7 @@ export class AgencyReviewComponent implements OnInit {
         createdAgencyReviewId = response.id
       })
 
-      this.router.navigateByUrl('/agency/profile/1');
+      this.router.navigateByUrl('/home');
     }
   }
 }

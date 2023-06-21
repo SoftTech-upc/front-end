@@ -1,5 +1,9 @@
-<mat-card class="m-4 p-4">
+<mat-card class="m-4 p-4 half-width-card">
     <form (submit)="onSubmit()" #agencyReviewForm='ngForm' class="flex flex-col mt-4">
+        <div>
+            <h2>Puntuación de la agencia</h2>
+            <p>Ingrese una puntuación del 0.0 al 5.0</p>
+        </div>
     <div class="flex flex-row gap-5">
         <mat-form-field class="w-48">
           <mat-label>Profesionalismo</mat-label>
@@ -22,12 +26,15 @@
           <input matInput type="number" name="cost_score" max="5" required [(ngModel)]="this.agencyReviewData.cost_score">
         </mat-form-field>
       </div>
-      <div>
+      
       <mat-form-field>
         <mat-label>Comentario (opcional)</mat-label>
-        <textarea matInput name="comment" [(ngModel)]="this.agencyReviewData.comment"></textarea>
+        <textarea matInput name="comment" [(ngModel)]="this.agencyReviewData.comment" maxlength="360"></textarea>
       </mat-form-field>
-    </div>
-    <button type="submit" mat-raised-button color="primary" class="w-24 mt-5" (click)="onSubmit()">Finalizar</button>
+    
+      <div class="button-container">
+    <button type="submit" mat-raised-button color="primary" class="w-24 mt-5" routerLink="/home">Omitir</button>
+    <button type="submit" mat-raised-button color="primary" class="w-24 mt-5" (click)="onSubmit()" [disabled]="!agencyReviewForm.valid">Finalizar</button>
+      </div>
 </form>
 </mat-card>

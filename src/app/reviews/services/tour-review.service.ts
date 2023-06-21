@@ -9,7 +9,8 @@ import { TourReview } from '../model/tour-review';
 })
 export class TourReviewService {
 
-  basePath = "http://localhost:3000/tours_reviews"
+  //basePath = "http://localhost:3000/tours_reviews"
+  basePath = "http://localhost:8105/tours_reviews"
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
