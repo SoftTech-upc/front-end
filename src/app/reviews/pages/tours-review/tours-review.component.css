@@ -1,0 +1,8 @@
+.half-width-card {
+    width: 25%;
+    border-radius: 5%;
+  }
+  .button-container {
+    display: flex;
+    gap: 10px;
+  }

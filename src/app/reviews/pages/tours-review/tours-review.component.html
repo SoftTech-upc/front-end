@@ -1,0 +1,24 @@
+<mat-card class="m-6 p-4 half-width-card">
+    <form #tourReviewForm='ngForm' class="flex flex-col mt-4">
+    <div>
+        <h2>Puntuación general del tour</h2>
+        <p>Ingrese una puntuación del 0.0 al 5.0</p>
+    </div>
+    <div class="flex flex-row gap-5">
+        <mat-form-field class="w-48">
+          <mat-label>Puntuacion</mat-label>
+          <input matInput type="number" name="score" max="5" required [(ngModel)]="this.tourReviewData.score">
+        </mat-form-field>
+      </div>
+      
+      <mat-form-field>
+        <mat-label>Comentario (opcional)</mat-label>
+        <textarea matInput name="comment" maxlength="360" [(ngModel)]="this.tourReviewData.comment"></textarea>
+      </mat-form-field>
+    
+      <div class="button-container">
+    <button type="submit" mat-raised-button color="primary" class="w-24 mt-5" routerLink="/home">Omitir</button>
+    <button type="submit" mat-raised-button color="primary" class="w-24 mt-5" (click)="onSubmit()" [disabled]="!tourReviewForm.valid">Continuar</button>
+      </div>
+</form>
+</mat-card>

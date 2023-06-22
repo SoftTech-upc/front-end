@@ -10,6 +10,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 // import { MatInputModule } from '@angular/material/input'; // Importa MatInputModule
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 import { ReactiveFormsModule } from '@angular/forms';//formGroup
 
@@ -25,7 +27,9 @@ import { ReactiveFormsModule } from '@angular/forms';//formGroup
     MatMenuModule,
     MatCardModule,
     MatTooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports:[
     MatFormFieldModule,
@@ -35,7 +39,9 @@ import { ReactiveFormsModule } from '@angular/forms';//formGroup
     MatMenuModule,
     MatCardModule,
     MatTooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class SharedModule { }
