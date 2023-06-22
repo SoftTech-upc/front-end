@@ -37,8 +37,8 @@ export class AddReservationComponent implements OnInit{
     } else {
       let createdReservationId: number
       this.reservationData.customer_id = 1 // TODO: colocar el id del turista que este iniciado sesion
-      this.reservationData.service_id = 1 
-      this.reservationData.status = true
+      this.reservationData.service_id = 1 // TODO: enlazar con el id del tour a reservar
+      this.reservationData.status = "active"
       this.reservationService.create(this.reservationData).subscribe((response) => {
         createdReservationId = response.id
       })

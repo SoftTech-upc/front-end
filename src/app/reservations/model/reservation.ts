@@ -3,7 +3,7 @@ export interface Reservation {
     amount: number;
     price: number;
     scheduled_date: Date;
-    status: boolean;
+    status: string;
     service_id: number;
     customer_id: number;
 }
