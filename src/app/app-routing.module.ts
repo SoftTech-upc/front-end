@@ -9,6 +9,7 @@ import {ToursComponent} from "./tours/pages/tours/tours.component";
 import {TouristProfileComponent} from "./tourists/pages/tourist-profile/tourist-profile.component";
 import { AgencyReviewComponent } from './reviews/pages/agency-review/agency-review.component';
 import { ToursReviewComponent } from './reviews/pages/tours-review/tours-review.component';
+import { AddReservationComponent } from './reservations/pages/add-reservation/add-reservation.component';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'add-tour/:id', component: AddServiceComponent},
   {path: 'agency-review', component: AgencyReviewComponent},
   {path: 'tour-review', component: ToursReviewComponent},
+  {path: 'add-reservation', component: AddReservationComponent},
   {path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];
 
