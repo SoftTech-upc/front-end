@@ -26,6 +26,8 @@ import { AddTourComponent } from './tours/pages/add-tour/add-tour.component';
 import { ToursReviewComponent } from './reviews/pages/tours-review/tours-review.component';
 import { AgencyReviewComponent } from './reviews/pages/agency-review/agency-review.component';
 import { AddReservationComponent } from './reservations/pages/add-reservation/add-reservation.component';
+import { ToursDetailComponent } from './tours/pages/tours-detail/tours-detail.component';
+import { ActivityComponent } from './tours/pages/activity/activity.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { AddReservationComponent } from './reservations/pages/add-reservation/ad
     AddTourComponent,
     ToursReviewComponent,
     AgencyReviewComponent,
-    AddReservationComponent
+    AddReservationComponent,
+    ToursDetailComponent,
+    ActivityComponent
   ],
   imports: [
     BrowserModule,

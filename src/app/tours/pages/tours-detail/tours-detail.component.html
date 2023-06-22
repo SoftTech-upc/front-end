@@ -1,0 +1,35 @@
+<div class="m-4 p-4">
+  <mat-card class="col-start-2 col-span-2 row-start-1 w-full">
+    <mat-card-content>
+      <div *ngIf="!edit" class="flex flex-col gap-1 justify-center items-center">
+        <img src="{{this.tourDetailData.photo}}" class="w-100 h-80 rounded-lg">
+        <p class="m-0">{{this.tourDetailData.name}}</p>
+        <h5 class="m-0">{{this.tourDetailData.description}}</h5>
+        <p class="italic text-xs mt-5 text-center">{{this.tourDetailData.score}}</p>
+        <p class="font-bold mb-0 text-xs">Location:</p>
+        <p class="text-xs">{{this.tourDetailData.location}}</p>
+        <p class="font-bold text-xs">RUC:</p>
+        <p class="text-xs">{{this.tourDetailData.price}}</p>
+        <p class="text-xs">{{this.tourDetailData.newPrice}}</p>
+        <p class="font-bold text-xs">Phone number:</p>
+        <p class="text-xs">{{this.tourDetailData.score}}</p>
+        <p class="text-xs">{{this.tourDetailData.creationDate}}</p>
+        <p class="text-xs">{{this.tourDetailData.isOffer}}</p>
+        <button mat-raised-button color="primary" (click)="editAgency()" >Edit information</button>
+        <button mat-raised-button color="primary" routerLink="/add-reservation" >Add Reservation</button>
+      </div>
+
+      
+    </mat-card-content>
+  </mat-card>
+</div>
+<div class="m-4 p-4">
+  <mat-card>
+    <app-activity *ngFor="let activity of activities" [inputActivity]="activity"></app-activity>
+  </mat-card>
+</div>
+<!--<div class="m-4 p-4">
+  <mat-card>
+    <app-activity *ngFor="let activity of getActivitiesByTourId(tourDetailData.id)" [activity]="activity"></app-activity>
+  </mat-card>
+</div>-->
