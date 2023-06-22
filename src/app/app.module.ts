@@ -27,6 +27,25 @@ import { ToursReviewComponent } from './reviews/pages/tours-review/tours-review.
 import { AgencyReviewComponent } from './reviews/pages/agency-review/agency-review.component';
 import { AddReservationComponent } from './reservations/pages/add-reservation/add-reservation.component';
 
+
+
+
+
+import { CommonModule } from '@angular/common';
+
+//Material
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+//reactivos
+import { ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth/helpers/auth.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,9 +72,26 @@ import { AddReservationComponent } from './reservations/pages/add-reservation/ad
     FormsModule,
     MatTableModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    CommonModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
+    MatToolbarModule,
+    MatIconModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [AgencyService],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+  },AgencyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

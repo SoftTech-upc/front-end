@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="loggin">
     
       <img src="../../../../assets/img/logo.png" alt="logo login" />
@@ -35,5 +35,29 @@
         </button>
       </div>
    
+  </div>
+</div> -->
+
+
+<div class="body">
+  <div class="login">
+
+    <form #form="ngForm" (ngSubmit)="login(form)"> 
+      <h1>Login</h1>
+
+      <mat-form-field class="ancho" appearance="fill">
+          <mat-label>Usuario</mat-label>
+          <input type="text" matInput autocomplete="off" name="email" [(ngModel)]="cred.email" >
+        </mat-form-field>
+
+        <mat-form-field class="ancho" appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input type="password" matInput autocomplete="on" name="password" [(ngModel)]="cred.password">
+        </mat-form-field>
+
+        <button mat-raised-button class="ancho boton" color="primary" [disabled]="form.invalid">Ingresar</button>
+
+    </form>
+      
   </div>
 </div>
