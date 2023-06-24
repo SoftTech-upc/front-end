@@ -55,4 +55,12 @@ export class AgencyReviewService {
         retry(2),
         catchError(this.handleError));
   }
+
+  getAgencyReviewByTourId(agencyId: number): Observable<AgencyReview[]> {
+    const url = `${this.basePath}?agency_id=${agencyId}`; 
+    return this.http.get<AgencyReview[]>(url)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
 }

@@ -13,6 +13,7 @@ export class AgencyReviewComponent implements OnInit {
   agencyReviewData: AgencyReview
   agencyReviewId: any
   edit: boolean
+  agencyId: number;
 
   @ViewChild('tourForm', {static: false})
   tourForm!: NgForm;
@@ -20,10 +21,14 @@ export class AgencyReviewComponent implements OnInit {
   constructor(private agencyReviewService: AgencyReviewService, private route: ActivatedRoute, private router: Router) {
     this.agencyReviewData = {} as AgencyReview
     this.agencyReviewId= this.route.snapshot.paramMap.get('id');
-    this.edit = !!this.agencyReviewId;
+    this.edit = false
+    this.agencyId = 0;
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.agencyId = parseInt(params['id'], 10);
+    });
     if (this.edit) {
       this.agencyReviewService.getById(this.agencyReviewId).subscribe((response: any) => {
         this.agencyReviewData = response
@@ -38,12 +43,12 @@ export class AgencyReviewComponent implements OnInit {
       let createdAgencyReviewId: number
       this.agencyReviewData.date = new Date()
       this.agencyReviewData.customer_id = 1 // TODO: colocar el id de la agencia que este iniciado sesion
-      this.agencyReviewData.agency_id = 1 
+      this.agencyReviewData.agency_id = this.agencyId; 
       this.agencyReviewService.create(this.agencyReviewData).subscribe((response) => {
         createdAgencyReviewId = response.id
       })
 
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/agency-details/' + this.agencyId);
     }
   }
 }

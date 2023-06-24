@@ -1,40 +1,40 @@
 <mat-card class="m-4 p-4 half-width-card">
-    <form #agencyReviewForm='ngForm' class="flex flex-col mt-4">
-        <div>
-            <h2>Puntuación de la agencia</h2>
-            <p>Ingrese una puntuación del 0.0 al 5.0</p>
-        </div>
-    <div class="flex flex-row gap-5">
-        <mat-form-field class="w-48">
-          <mat-label>Profesionalismo</mat-label>
-          <input matInput type="number" name="professionalism_score" max="5" required [(ngModel)]="this.agencyReviewData.professionalism_score">
-        </mat-form-field>
-  
-        <mat-form-field class="w-48">
-          <mat-label>Seguridad</mat-label>
-          <input matInput type="number" name="security_score" max="5" required [(ngModel)]="this.agencyReviewData.security_score">
-        </mat-form-field>
+  <form #agencyReviewForm='ngForm' class="flex flex-col mt-4">
+      <div>
+          <h2>Agency Score</h2>
+          <p>Enter a score from 0.0 to 5.0</p>
       </div>
-      <div class="flex flex-row gap-5">
-        <mat-form-field class="w-48">
-          <mat-label>Calidad/Precio</mat-label>
-          <input matInput type="number" name="quality_score" max="5" required [(ngModel)]="this.agencyReviewData.quality_score">
-        </mat-form-field>
-  
-        <mat-form-field class="w-48">
-          <mat-label>Costos</mat-label>
-          <input matInput type="number" name="cost_score" max="5" required [(ngModel)]="this.agencyReviewData.cost_score">
-        </mat-form-field>
-      </div>
-      
-      <mat-form-field>
-        <mat-label>Comentario (opcional)</mat-label>
-        <textarea matInput name="comment" [(ngModel)]="this.agencyReviewData.comment" maxlength="360"></textarea>
+  <div class="flex flex-row gap-5">
+      <mat-form-field class="w-48">
+        <mat-label>Professionalism</mat-label>
+        <input matInput type="number" name="professionalism_score" max="5" required [(ngModel)]="this.agencyReviewData.professionalism_score">
       </mat-form-field>
+
+      <mat-form-field class="w-48">
+        <mat-label>Security</mat-label>
+        <input matInput type="number" name="security_score" max="5" required [(ngModel)]="this.agencyReviewData.security_score">
+      </mat-form-field>
+    </div>
+    <div class="flex flex-row gap-5">
+      <mat-form-field class="w-48">
+        <mat-label>Price/Quality</mat-label>
+        <input matInput type="number" name="quality_score" max="5" required [(ngModel)]="this.agencyReviewData.quality_score">
+      </mat-form-field>
+
+      <mat-form-field class="w-48">
+        <mat-label>Costs</mat-label>
+        <input matInput type="number" name="cost_score" max="5" required [(ngModel)]="this.agencyReviewData.cost_score">
+      </mat-form-field>
+    </div>
     
-      <div class="button-container">
-    <button type="submit" mat-raised-button color="primary" class="w-24 mt-5" routerLink="/home">Omitir</button>
-    <button type="submit" mat-raised-button color="primary" class="w-24 mt-5" (click)="onSubmit()" [disabled]="!agencyReviewForm.valid">Finalizar</button>
-      </div>
+    <mat-form-field>
+      <mat-label>Comment (optional)</mat-label>
+      <textarea matInput name="comment" [(ngModel)]="this.agencyReviewData.comment" maxlength="360"></textarea>
+    </mat-form-field>
+  
+    <div class="button-container">
+  <button type="submit" mat-raised-button color="primary" class="w-24 mt-5" routerLink="/home">Cancel</button>
+  <button type="submit" mat-raised-button color="primary" class="w-24 mt-5" (click)="onSubmit()" [disabled]="!agencyReviewForm.valid">Add review</button>
+    </div>
 </form>
 </mat-card>

@@ -1,0 +1,54 @@
+<div class="m-4 p-4">
+    <mat-card class="col-start-2 col-span-2 row-start-1 w-full">
+      <mat-card-content>
+        <div *ngIf="!edit" class="flex flex-col gap-1 justify-center items-center">
+          <img src="{{this.agencyDetailData.photo}}" class="w-100 h-80 rounded-lg">
+          <p class="font-bold text-xs">Tour:</p>
+          <p class="m-0">{{this.agencyDetailData.name}}</p>
+          <p class="font-bold text-xs">Description:</p>
+          <h5 class="m-0">{{this.agencyDetailData.description}}</h5>
+          <p class="font-bold text-xs">Score:</p>
+          <p class="text-xs mt-5 text-center">{{this.agencyDetailData.score}}</p>
+          <p class="font-bold mb-0 text-xs">Location:</p>
+          <p class="text-xs">{{this.agencyDetailData.location}}</p>
+          <p class="font-bold text-xs">Email:</p>
+          <p class="text-xs">{{this.agencyDetailData.email}}</p>
+          <p class="font-bold text-xs">Phone Number:</p>
+          <p class="text-xs">{{this.agencyDetailData.phoneNumber}}</p>
+          <p class="font-bold text-xs">RUC:</p>
+          <p class="text-xs">{{this.agencyDetailData.ruc}}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  <div class="m-4 p-4">
+    <mat-card>
+      <mat-card-content>
+        <h3>Agency Reviews</h3>
+        <div *ngFor="let element of agencyReview1">
+          <mat-card class="activity-card">
+            <mat-card-content>
+              <p class="font-bold text-xs">Date of Review:</p>
+              <p>{{ element.date | date:'dd/MM/yyyy HH:mm' }}</p>
+              <p class="font-bold text-xs">Comment:</p>
+              <p>{{ element.comment }}</p>
+              <p class="font-bold text-xs">Profesionalism:</p>
+              <p>{{ element.professionalism_score }}</p>
+              <p class="font-bold text-xs">Security:</p>
+              <p>{{ element.security_score }}</p>
+              <p class="font-bold text-xs">Quality:</p>
+              <p>{{ element.quality_score }}</p>
+              <p class="font-bold text-xs">Cost:</p>
+              <p>{{ element.cost_score }}</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div *ngIf="agencyReview1.length === 0">
+          <p>No reviews found for this tour.</p>
+        </div>
+        <button mat-raised-button color="primary" routerLink="/agency-review/{{agencyDetailData.id}}">Add Review</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

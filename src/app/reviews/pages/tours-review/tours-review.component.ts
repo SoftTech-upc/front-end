@@ -49,7 +49,7 @@ export class ToursReviewComponent {
         createdTourReviewId = response.id
       })
 
-      this.router.navigateByUrl('/agency-review');
+      this.router.navigateByUrl('/tour-details/'+ this.tourId);
     }
   }
 }

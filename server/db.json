@@ -54,10 +54,10 @@
       "creation_date": "12-04-2023",
       "photo": "https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg",
       "is_offer": true,
-      "agencie_id": 1
+      "agencieId": 1
     },
     {
-      "id": 1,
+      "id": 9,
       "name": "Tour premium en Junin",
       "score": 3,
       "price": 120,
@@ -66,19 +66,20 @@
       "creation_date": "09-02-2023",
       "photo": "https://static.emol.cl/emol50/Fotos/2020/12/18/file_20201218125224.jpg",
       "is_offer": false,
-      "agencie_id": 2
+      "agencieId": 2
     },
     {
       "id": 2,
-      "name": 3434,
+      "name": "tour 2",
       "score": 1,
       "price": 700,
       "new_price": 680,
       "location": "dfvdfv",
       "creation_date": "30/4/2023",
-      "photo": "https://static.emol.cl/emol50/Fotos/2020/12/18/file_20201218125224.jpg",
+      "photo": "https://concepto.de/wp-content/uploads/2015/03/paisaje-2-e1549600987975.jpg",
       "is_ofter": true,
-      "agencia_id": 0
+      "agencieId": 2,
+      "description": "descripcionn"
     },
     {
       "id": 3,
@@ -90,7 +91,7 @@
       "creation_date": "3/5/2023",
       "photo": "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg",
       "is_ofter": true,
-      "agencia_id": 0
+      "agencieId": 2
     },
     {
       "id": 4,
@@ -102,7 +103,7 @@
       "creation_date": "3/5/2023",
       "photo": "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg",
       "is_ofter": true,
-      "agencia_id": 0
+      "agencieId": 2
     },
     {
       "id": 5,
@@ -114,7 +115,7 @@
       "creation_date": "3/5/2023",
       "photo": "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg",
       "is_ofter": true,
-      "agencia_id": 0
+      "agencieId": 1
     },
     {
       "id": 6,
@@ -126,7 +127,7 @@
       "creation_date": "3/5/2023",
       "photo": "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg",
       "is_ofter": true,
-      "agencia_id": 0
+      "agencieId": 2
     },
     {
       "name": "tour 1",
@@ -152,6 +153,29 @@
       "creationDate": "2023-06-24T03:50:54.236Z",
       "agencieId": 1,
       "id": 8
+    },
+    {
+      "name": "tour 3",
+      "description": "descripcion",
+      "location": "aaaaaa",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Cuesta_del_obispo_01.jpg/640px-Cuesta_del_obispo_01.jpg",
+      "price": 799,
+      "isOffer": false,
+      "score": 0,
+      "creationDate": "2023-06-24T08:24:06.517Z",
+      "id": 10
+    },
+    {
+      "photo": "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/gcs-colombia/paisaje-sostenible-GCS.jpg?crop=0%2C114%2C1638%2C900&wid=4000&hei=2200&scl=0.4095",
+      "name": "tour 4",
+      "description": "descripcion",
+      "location": "aaaaeeee",
+      "price": 400,
+      "isOffer": false,
+      "score": 0,
+      "creationDate": "2023-06-24T08:27:11.546Z",
+      "agencieId": 2,
+      "id": 11
     }
   ],
   "activities": [
@@ -203,7 +227,7 @@
       "id": 1,
       "amount": 2,
       "price": 298,
-      "scheduled_date": "19-05-2023",
+      "scheduled_date": "2023-06-30T05:00:00.000Z",
       "status": "active",
       "tour_id": 1,
       "customer_id": 1
@@ -212,7 +236,7 @@
       "id": 2,
       "amount": 2,
       "price": 49,
-      "scheduled_date": "19-05-2023",
+      "scheduled_date": "2023-06-30T05:00:00.000Z",
       "status": "active",
       "tour_id": 2,
       "customer_id": 2
@@ -225,6 +249,15 @@
       "tour_id": 8,
       "status": "active",
       "id": 3
+    },
+    {
+      "id": 2,
+      "amount": 2,
+      "price": 45,
+      "scheduled_date": "2023-06-30T05:00:00.000Z",
+      "status": "active",
+      "tour_id": 2,
+      "customer_id": 2
     }
   ],
   "tours_reviews": [
@@ -251,6 +284,14 @@
       "customer_id": 1,
       "tour_id": 5,
       "id": 3
+    },
+    {
+      "score": 5,
+      "comment": "buen tourrrr",
+      "date": "2023-06-24T17:40:01.702Z",
+      "customer_id": 2,
+      "tour_id": 7,
+      "id": 4
     }
   ],
   "agency_reviews": [
@@ -275,6 +316,28 @@
       "cost_score": 2,
       "customer_id": 2,
       "agency_id": 2
+    },
+    {
+      "professionalism_score": 4,
+      "security_score": 3,
+      "quality_score": 5,
+      "cost_score": 2,
+      "comment": "precios elevados",
+      "date": "2023-06-24T17:31:07.520Z",
+      "customer_id": 1,
+      "agency_id": 1,
+      "id": 3
+    },
+    {
+      "professionalism_score": 5,
+      "security_score": 5,
+      "quality_score": 5,
+      "cost_score": 5,
+      "comment": "excelente servicio",
+      "date": "2023-06-24T17:35:17.615Z",
+      "customer_id": 1,
+      "agency_id": 2,
+      "id": 4
     }
   ]
 }

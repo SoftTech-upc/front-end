@@ -6,6 +6,8 @@ import {NgForm} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
 import {TourService} from "../../../tours/services/tour.service";
 import { Tour } from 'src/app/tours/model/tour';
+import { AgencyReview } from 'src/app/reviews/model/agency-review';
+import { AgencyReviewService } from 'src/app/reviews/services/agency-review.service';
 
 @Component({
   selector: 'app-agency-profile',
@@ -18,21 +20,24 @@ export class AgencyProfileComponent implements OnInit {
   edit: Boolean
   agency_id: any;
   tours1: Tour[];
+  agencyReview1: AgencyReview[];
 
   @ViewChild('agencyForm', {static: false})
   agencyForm!: NgForm;
 
-  constructor(private agencyService: AgencyService, private tourService: TourService, private route: ActivatedRoute) {
+  constructor(private agencyService: AgencyService, private agencyReviewService: AgencyReviewService, private tourService: TourService, private route: ActivatedRoute) {
     this.agencyData = {} as Agency
     this.edit = false
     this.agency_id = this.route.snapshot.paramMap.get('id');
     this.tours1 = [];
+    this.agencyReview1 = [];
   }
 
   ngOnInit(): void {
     this.agencyService.getById(this.agency_id).subscribe((response: any) => {
       this.agencyData = response
       this.getTourByTourId(this.agencyData.id);
+      this.getAgencyReviewByTourId(this.agencyData.id);
     })
   }
   editAgency(): void {
@@ -60,6 +65,18 @@ export class AgencyProfileComponent implements OnInit {
         }
       });
       this.tours1 = tourss;
+    });
+  }
+
+  getAgencyReviewByTourId(agencyId: number): void {
+    this.agencyReviewService.getAgencyReviewByTourId(agencyId).subscribe((response: any) => {
+      const agencyRevieww: AgencyReview[] = [];
+      response.forEach((agencyReview: AgencyReview) => {
+        if (agencyReview.agency_id === agencyId) {
+          agencyRevieww.push(agencyReview);
+        }
+      });
+      this.agencyReview1 = agencyRevieww;
     });
   }
 }
