@@ -7,6 +7,11 @@ import {HomeComponent} from "./shared/home/home.component";
 import {ToursComponent} from "./tours/pages/tours/tours.component";
 import {TouristProfileComponent} from "./tourists/pages/tourist-profile/tourist-profile.component";
 import {AddTourComponent} from "./tours/pages/add-tour/add-tour.component";
+import { AgencyReviewComponent } from './reviews/pages/agency-review/agency-review.component';
+import { ToursReviewComponent } from './reviews/pages/tours-review/tours-review.component';
+import { AddReservationComponent } from './reservations/pages/add-reservation/add-reservation.component';
+import { ToursDetailComponent } from './tours/pages/tours-detail/tours-detail.component';
+import { ActivityComponent } from './tours/pages/activity/activity.component';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
@@ -17,6 +22,11 @@ const routes: Routes = [
   {path: 'tourist/profile/:id', component: TouristProfileComponent},
   {path: 'tour/add', component: AddTourComponent},
   {path: 'tour/edit/:id', component: AddTourComponent},
+  {path: 'agency-review', component: AgencyReviewComponent},
+  {path: 'tour-review', component: ToursReviewComponent},
+  {path: 'add-reservation', component: AddReservationComponent},
+  {path: 'tour-details/:id', component: ToursDetailComponent},
+  {path: 'activity', component: ActivityComponent},
   {path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];
 
