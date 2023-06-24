@@ -127,6 +127,31 @@
       "photo": "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg",
       "is_ofter": true,
       "agencia_id": 0
+    },
+    {
+      "name": "tour 1",
+      "description": "descripcion",
+      "location": "peru",
+      "photo": "https://culturademontania.org.ar/Relatos/travesia_femenina_nueve_cumbres_nevado_cachi_8.jpg",
+      "price": 123,
+      "newPrice": null,
+      "isOffer": false,
+      "score": 0,
+      "creationDate": "2023-06-24T03:42:39.230Z",
+      "agencieId": 1,
+      "id": 7
+    },
+    {
+      "name": "tourrr",
+      "description": "aaaaaa",
+      "location": "Cerro Ancash",
+      "photo": "https://e1.pxfuel.com/desktop-wallpaper/994/439/desktop-wallpaper-fondo-escritorio-paisaje-campo-amanecer-amanecer.jpg",
+      "price": 1222,
+      "isOffer": false,
+      "score": 0,
+      "creationDate": "2023-06-24T03:50:54.236Z",
+      "agencieId": 1,
+      "id": 8
     }
   ],
   "activities": [
@@ -134,25 +159,43 @@
       "id": 1,
       "name": "Escalar montaña",
       "description": "Escalar el cerro Ancash",
-      "service_id": 1
+      "tourId": 1
     },
     {
       "id": 2,
       "name": "Almuerzo",
       "description": "Almuerzo en la cumbre",
-      "service_id": 1
+      "tourId": 1
     },
     {
       "id": 3,
       "name": "Escalar montaña",
       "description": "Escalar el cerro Junin",
-      "service_id": 2
+      "tourId": 2
     },
     {
       "id": 4,
       "name": "Campamento",
       "description": "Campamento en el pueblo",
-      "service_id": 2
+      "tourId": 2
+    },
+    {
+      "id": 5,
+      "name": "Actividad 1",
+      "description": "caminar",
+      "tourId": 8
+    },
+    {
+      "id": 6,
+      "name": "Actividad 2",
+      "description": "correr",
+      "tourId": 8
+    },
+    {
+      "id": 7,
+      "name": "Actividad 3",
+      "description": "descansar",
+      "tourId": 8
     }
   ],
   "reservations": [
@@ -162,7 +205,7 @@
       "price": 298,
       "scheduled_date": "19-05-2023",
       "status": "active",
-      "service_id": 1,
+      "tour_id": 1,
       "customer_id": 1
     },
     {
@@ -171,8 +214,17 @@
       "price": 49,
       "scheduled_date": "19-05-2023",
       "status": "active",
-      "service_id": 2,
+      "tour_id": 2,
       "customer_id": 2
+    },
+    {
+      "amount": 1,
+      "price": 123,
+      "scheduled_date": "2023-06-30T05:00:00.000Z",
+      "customer_id": 1,
+      "tour_id": 8,
+      "status": "active",
+      "id": 3
     }
   ],
   "tours_reviews": [
@@ -182,7 +234,7 @@
       "comment": "Muy buen servicio",
       "score": 5,
       "customer_id": 1,
-      "service_id": 1
+      "tour_id": 1
     },
     {
       "id": 2,
@@ -190,7 +242,15 @@
       "comment": "Servicio regular",
       "score": 3,
       "customer_id": 2,
-      "service_id": 2
+      "tour_id": 2
+    },
+    {
+      "score": 5,
+      "comment": "buen servicio",
+      "date": "2023-06-24T06:26:14.337Z",
+      "customer_id": 1,
+      "tour_id": 5,
+      "id": 3
     }
   ],
   "agency_reviews": [

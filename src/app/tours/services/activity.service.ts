@@ -1,13 +1,13 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable, Input } from '@angular/core';
-import { Observable, catchError, retry, throwError } from 'rxjs';
+import { Observable, catchError, map, retry, throwError } from 'rxjs';
 import { Activity } from '../model/activity';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ActivityService {
-  private basePath= 'http://localhost:3000/activities'
+  private basePath= 'http://localhost:8105/activities'
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -35,6 +35,13 @@ export class ActivityService {
       .pipe(
         retry(2),
         catchError(this.handleError));
+  }
+
+  getAll1(): Observable<Activity[]> {
+    return this.http.get<Activity[]>(this.basePath, this.httpOptions).pipe(
+      map((response: Activity[]) => response),
+      catchError(this.handleError)
+    );
   }
 
   getById(id: number): Observable<Activity> {
@@ -66,4 +73,5 @@ export class ActivityService {
       );
   }
   
+
 }

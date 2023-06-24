@@ -13,6 +13,7 @@ export class AddReservationComponent implements OnInit{
   reservationData: Reservation
   reservationId: any
   edit: boolean
+  tourId: number;
 
   @ViewChild('reservationForm', {static: false})
   reservationForm!: NgForm;
@@ -20,10 +21,14 @@ export class AddReservationComponent implements OnInit{
   constructor(private reservationService: ReservationService, private route: ActivatedRoute, private router: Router) {
     this.reservationData = {} as Reservation
     this.reservationId= this.route.snapshot.paramMap.get('id');
-    this.edit = !!this.reservationId;
+    this.edit = false;
+    this.tourId = 0;
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.tourId = parseInt(params['id'], 10);
+    });
     if (this.edit) {
       this.reservationService.getById(this.reservationId).subscribe((response: any) => {
         this.reservationData = response
@@ -37,7 +42,7 @@ export class AddReservationComponent implements OnInit{
     } else {
       let createdReservationId: number
       this.reservationData.customer_id = 1 // TODO: colocar el id del turista que este iniciado sesion
-      this.reservationData.service_id = 1 // TODO: enlazar con el id del tour a reservar
+      this.reservationData.tour_id = this.tourId;
       this.reservationData.status = "active"
       this.reservationService.create(this.reservationData).subscribe((response) => {
         createdReservationId = response.id

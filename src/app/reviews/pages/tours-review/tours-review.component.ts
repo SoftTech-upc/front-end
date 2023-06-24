@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ToursReviewComponent {
   tourReviewData: TourReview
   tourReviewId: any
+  tourId: number;
   edit: boolean
 
   @ViewChild('tourForm', {static: false})
@@ -20,14 +21,19 @@ export class ToursReviewComponent {
   constructor(private tourReviewService: TourReviewService, private route: ActivatedRoute, private router: Router) {
     this.tourReviewData = {} as TourReview
     this.tourReviewId= this.route.snapshot.paramMap.get('id');
-    this.edit = !!this.tourReviewId;
+    this.edit = false;
+    this.tourId = 0;
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.tourId = parseInt(params['id'], 10);
+    });
+
     if (this.edit) {
       this.tourReviewService.getById(this.tourReviewId).subscribe((response: any) => {
-        this.tourReviewData = response
-      })
+        this.tourReviewData = response;
+      });
     }
   }
 
@@ -38,7 +44,7 @@ export class ToursReviewComponent {
       let createdTourReviewId: number
       this.tourReviewData.date = new Date()
       this.tourReviewData.customer_id = 1 // TODO: colocar el id de la agencia que este iniciado sesion
-      this.tourReviewData.tour_id = 1 
+      this.tourReviewData.tour_id = this.tourId;
       this.tourReviewService.create(this.tourReviewData).subscribe((response) => {
         createdTourReviewId = response.id
       })

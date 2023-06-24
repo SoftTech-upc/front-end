@@ -4,6 +4,6 @@ export interface Reservation {
     price: number;
     scheduled_date: Date;
     status: string;
-    service_id: number;
+    tour_id: number;
     customer_id: number;
 }

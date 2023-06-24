@@ -56,4 +56,11 @@ export class TourReviewService {
         retry(2),
         catchError(this.handleError));
   }
+  getTourReviewByTourId(tourId: number): Observable<TourReview[]> {
+    const url = `${this.basePath}?tourId=${tourId}`; 
+    return this.http.get<TourReview[]>(url)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
 }

@@ -3,33 +3,66 @@
     <mat-card-content>
       <div *ngIf="!edit" class="flex flex-col gap-1 justify-center items-center">
         <img src="{{this.tourDetailData.photo}}" class="w-100 h-80 rounded-lg">
+        <p class="font-bold text-xs">Tour:</p>
         <p class="m-0">{{this.tourDetailData.name}}</p>
+        <p class="font-bold text-xs">Description:</p>
         <h5 class="m-0">{{this.tourDetailData.description}}</h5>
-        <p class="italic text-xs mt-5 text-center">{{this.tourDetailData.score}}</p>
+        <p class="font-bold text-xs">Score:</p>
+        <p class="text-xs mt-5 text-center">{{this.tourDetailData.score}}</p>
         <p class="font-bold mb-0 text-xs">Location:</p>
         <p class="text-xs">{{this.tourDetailData.location}}</p>
-        <p class="font-bold text-xs">RUC:</p>
+        <p class="font-bold text-xs">Price:</p>
         <p class="text-xs">{{this.tourDetailData.price}}</p>
+        <p class="font-bold text-xs">Offer Price:</p>
         <p class="text-xs">{{this.tourDetailData.newPrice}}</p>
-        <p class="font-bold text-xs">Phone number:</p>
-        <p class="text-xs">{{this.tourDetailData.score}}</p>
-        <p class="text-xs">{{this.tourDetailData.creationDate}}</p>
-        <p class="text-xs">{{this.tourDetailData.isOffer}}</p>
-        <button mat-raised-button color="primary" (click)="editAgency()" >Edit information</button>
-        <button mat-raised-button color="primary" routerLink="/add-reservation" >Add Reservation</button>
+        <p class="font-bold text-xs">Creation Date:</p>
+        <p class="text-xs">{{ this.tourDetailData.creationDate | date:'dd/MM/yyyy' }}</p>
+        <p class="font-bold text-xs">Is Available?</p>
+        <p class="text-xs">{{ this.tourDetailData.isOffer ? 'Yes' : 'No' }}</p>
+        <button mat-raised-button color="primary" routerLink="/add-reservation/{{tourDetailData.id}}" >Add Reservation</button>
       </div>
 
       
     </mat-card-content>
   </mat-card>
 </div>
+
 <div class="m-4 p-4">
   <mat-card>
-    <app-activity *ngFor="let activity of activities" [inputActivity]="activity"></app-activity>
+    <mat-card-content>
+      <h3>Activities</h3>
+      <div *ngFor="let element of activities1">
+        <mat-card class="activity-card">
+          <mat-card-content>
+            <h4>{{ element.name }}</h4>
+            <p>{{ element.description }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div *ngIf="activities1.length === 0">
+        <p>No activities found for this tour.</p>
+      </div>
+    </mat-card-content>
   </mat-card>
 </div>
-<!--<div class="m-4 p-4">
+
+<div class="m-4 p-4">
   <mat-card>
-    <app-activity *ngFor="let activity of getActivitiesByTourId(tourDetailData.id)" [activity]="activity"></app-activity>
+    <mat-card-content>
+      <h3>Tour Reviews</h3>
+      <div *ngFor="let element of tourReview1">
+        <mat-card class="activity-card">
+          <mat-card-content>
+            <p>{{ element.date | date:'dd/MM/yyyy HH:mm' }}</p>
+            <p>{{ element.comment }}</p>
+            <p>{{ element.score }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div *ngIf="tourReview1.length === 0">
+        <p>No reviews found for this tour.</p>
+      </div>
+      <button mat-raised-button color="primary" routerLink="/tour-review/{{tourDetailData.id}}">Add Review</button>
+    </mat-card-content>
   </mat-card>
-</div>-->
+</div>
