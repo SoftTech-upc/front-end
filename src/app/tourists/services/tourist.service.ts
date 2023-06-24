@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {catchError, Observable, retry, throwError} from "rxjs";
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from "@angular/common/http";
+import {catchError, map, Observable, retry, throwError} from "rxjs";
 import {Tourist} from "../model/tourist";
+import { Credentials } from 'src/app/auth/model/credentials';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TouristService {
-  basePath = "http://localhost:8105/tourists"
+  basePath = "http://localhost:8105/api/tourists"
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -50,4 +51,26 @@ export class TouristService {
         retry(2),
         catchError(this.handleError));
   }
+
+  login(cards: Credentials){
+    return this.http.post('http://localhost:8105/login', cards,{
+      observe: 'response'
+    }).pipe(map((response: HttpResponse<any>)=>{
+      const body = response.body;
+      const headers =  response.headers;
+
+      const bearerToken = headers.get('Authorization')!;
+      const token = bearerToken.replace('Bearer ','');
+
+      localStorage.setItem('token', token);
+
+      return body;
+    }))
+  }
+
+  getToken(){
+    return localStorage.getItem('token');
+  }
+
+
 }

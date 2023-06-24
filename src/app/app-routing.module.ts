@@ -10,25 +10,18 @@ import {AddTourComponent} from "./tours/pages/add-tour/add-tour.component";
 import { AgencyReviewComponent } from './reviews/pages/agency-review/agency-review.component';
 import { ToursReviewComponent } from './reviews/pages/tours-review/tours-review.component';
 import { AddReservationComponent } from './reservations/pages/add-reservation/add-reservation.component';
-import { ToursDetailComponent } from './tours/pages/tours-detail/tours-detail.component';
-import { ActivityComponent } from './tours/pages/activity/activity.component';
-import { AgencyDetailsComponent } from './agencies/pages/agency-details/agency-details.component';
+import { AuthGuard } from './auth/helpers/auth.guard';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'tours', component: ToursComponent},
-  {path: 'agencies', component: AgenciesComponent},
-  {path: 'agency/profile/:id', component: AgencyProfileComponent},
-  {path: 'tourist/profile/:id', component: TouristProfileComponent},
-  {path: 'tour/add/:id', component: AddTourComponent},
-  {path: 'tour/edit/:id', component: AddTourComponent},
-  {path: 'agency-review/:id', component: AgencyReviewComponent},
-  {path: 'tour-review/:id', component: ToursReviewComponent},
-  {path: 'add-reservation/:id', component: AddReservationComponent},
-  {path: 'tour-details/:id', component: ToursDetailComponent},
-  {path: 'agency-details/:id', component: AgencyDetailsComponent},
-  {path: 'activity', component: ActivityComponent},
+  {path: 'home', component: HomeComponent, canActivate:[AuthGuard]},
+  {path: 'tours', component: ToursComponent, canActivate:[AuthGuard]},
+  {path: 'agencies', component: AgenciesComponent, canActivate:[AuthGuard]},
+  {path: 'agency-profile/:id', component: AgencyProfileComponent, canActivate:[AuthGuard]},
+  {path: 'tourist-profile/:id', component: TouristProfileComponent, canActivate:[AuthGuard]},
+  {path: 'agency-review', component: AgencyReviewComponent, canActivate:[AuthGuard]},
+  {path: 'tour-review', component: ToursReviewComponent, canActivate:[AuthGuard]},
+  {path: 'add-reservation', component: AddReservationComponent, canActivate:[AuthGuard]},
   {path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];
 
