@@ -4,7 +4,7 @@
       All agencies
     </p>
     <div class="flex flex-row flex-wrap gap-5">
-      <div class="min-w-30 w-72 flex items-center flex-col justify-center" *ngFor="let element of arrayAgencies">
+      <div class="min-w-30 w-72 flex items-center flex-col justify-center" *ngFor="let element of arrayAgencies" routerLink="/agency-details/{{element.id}}">
         <img class="w-full rounded-lg" src="{{ element.photo}}" alt="image of {{ element.name }}"/>
 
         <div class="mx-auto mt-3">
