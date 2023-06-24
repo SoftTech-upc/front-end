@@ -41,6 +41,38 @@
       <p class="font-bold text-xl mx-auto mt-3">
         Tours reserved by {{ this.touristData.name }} {{ this.touristData.lastName }}
       </p>
+      <div class="w-full flex justify-center mt-10" *ngIf="reservations1.length === 0">
+        <p class="font-medium text-lg">No tours published</p>
+      </div>
+      <div class="flex flex-row flex-wrap gap-5">
+        <div class="min-w-30 w-72 flex items-center flex-col justify-center" *ngFor="let element of reservations1; let i = index">
+
+          <div class="mx-auto mt-3">
+            <p class="font-bold text-lg">{{ element.scheduled_date| date:'dd/MM/yyyy' }}</p>
+          </div>
+
+          <div class="flex flex-row">
+            <p class="text-xl">{{ element.amount }}</p>
+          </div>
+
+          <div class="flex flex-row">
+            <p class="text-xl">{{ element.price }}</p>
+          </div>
+
+          <div class="flex flex-row">
+            <p class="text-xl">{{ element.status }}</p>
+          </div>
+
+          <div class="flex flex-row gap-3">
+            <button mat-icon-button>
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button>
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>

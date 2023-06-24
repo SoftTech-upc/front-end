@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'agencies', component: AgenciesComponent},
   {path: 'agency/profile/:id', component: AgencyProfileComponent},
   {path: 'tourist/profile/:id', component: TouristProfileComponent},
-  {path: 'tour/add', component: AddTourComponent},
+  {path: 'tour/add/:id', component: AddTourComponent},
   {path: 'tour/edit/:id', component: AddTourComponent},
   {path: 'agency-review', component: AgencyReviewComponent},
   {path: 'tour-review/:id', component: ToursReviewComponent},

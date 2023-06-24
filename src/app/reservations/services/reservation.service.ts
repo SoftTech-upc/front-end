@@ -59,4 +59,12 @@ export class ReservationService {
         retry(2),
         catchError(this.handleError));
   }
+
+  getReservationByTouristId(touristId: number): Observable<Reservation[]> {
+    const url = `${this.basePath}?customerId=${touristId}`; 
+    return this.http.get<Reservation[]>(url)
+      .pipe(
+        catchError(this.handleError)
+      );
+  } 
 }
