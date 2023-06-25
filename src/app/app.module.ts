@@ -48,6 +48,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/helpers/auth.interceptor';
+import { RegisterAgencyComponent } from './auth/pages/register-agency/register-agency.component';
+import { RegisterTouristComponent } from './auth/pages/register-tourist/register-tourist.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { AuthInterceptor } from './auth/helpers/auth.interceptor';
     AddReservationComponent,
     ToursDetailComponent,
     ActivityComponent,
-    AgencyDetailsComponent
+    AgencyDetailsComponent,
+    RegisterAgencyComponent,
+    RegisterTouristComponent
   ],
   imports: [
     BrowserModule,

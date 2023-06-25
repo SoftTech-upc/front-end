@@ -68,6 +68,13 @@ export class TouristService {
     }))
   }
 
+  create(item: any): Observable<Tourist> {
+    return this.http.post<Tourist>(this.basePath, JSON.stringify(item), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
   getToken(){
     return localStorage.getItem('token');
   }

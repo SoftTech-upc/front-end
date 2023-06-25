@@ -1,0 +1,41 @@
+<div class="h-full flex justify-center items-center m-5">
+  <mat-card class="p-8">
+    <mat-card-content class="flex flex-col items-center justify-center">
+      <h1 class="text-center">Register Tourist</h1>
+      <form #registerTouristForm="ngForm" (ngSubmit)="onSubmit()" class="flex flex-col">
+        <mat-form-field class="w-72" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput autocomplete="off" name="email" required [(ngModel)]="this.touristData.email">
+        </mat-form-field>
+
+        <mat-form-field class="w-72" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput autocomplete="off" name="password" required [(ngModel)]="this.touristData.password">
+        </mat-form-field>
+
+        <mat-form-field class="w-72" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input type="text" matInput autocomplete="off" name="name" required [(ngModel)]="this.touristData.name">
+        </mat-form-field>
+
+        <mat-form-field class="w-72" appearance="fill">
+          <mat-label>Last name</mat-label>
+          <input type="text" matInput autocomplete="off" name="lastName" required [(ngModel)]="this.touristData.lastName">
+        </mat-form-field>
+
+        <mat-form-field class="w-72" appearance="fill">
+          <mat-label>Photo</mat-label>
+          <input type="text" matInput autocomplete="off" name="photo" required [(ngModel)]="this.touristData.photo">
+        </mat-form-field>
+
+        <mat-form-field class="w-72" appearance="fill">
+          <mat-label>Phone number</mat-label>
+          <input type="text" matInput autocomplete="off" name="phoneNumber" required [(ngModel)]="this.touristData.phoneNumber">
+        </mat-form-field>
+
+        <button mat-raised-button class="w-72" color="primary">Register</button>
+      </form>
+      <div class="text-center underline underline-offset-4 mt-5 hover:cursor-pointer" routerLink="/login">Back to login</div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -12,9 +12,13 @@ import { ToursReviewComponent } from './reviews/pages/tours-review/tours-review.
 import { AddReservationComponent } from './reservations/pages/add-reservation/add-reservation.component';
 import { AuthGuard } from './auth/helpers/auth.guard';
 import {ToursDetailComponent} from "./tours/pages/tours-detail/tours-detail.component";
+import {RegisterAgencyComponent} from "./auth/pages/register-agency/register-agency.component";
+import {RegisterTouristComponent} from "./auth/pages/register-tourist/register-tourist.component";
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
+  {path: 'register/agency', component:RegisterAgencyComponent},
+  {path: 'register/tourist', component:RegisterTouristComponent},
   {path: 'home', component: HomeComponent, canActivate:[AuthGuard]},
   {path: 'tours', component: ToursComponent, canActivate:[AuthGuard]},
   {path: 'agencies', component: AgenciesComponent, canActivate:[AuthGuard]},

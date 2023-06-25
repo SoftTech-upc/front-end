@@ -44,6 +44,13 @@ export class AgencyService {
         catchError(this.handleError));
   }
 
+  create(item: any): Observable<Agency> {
+    return this.http.post<Agency>(this.basePath, JSON.stringify(item), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
   update(id: any, item: any): Observable<Agency> {
     return this.http.put<Agency>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(

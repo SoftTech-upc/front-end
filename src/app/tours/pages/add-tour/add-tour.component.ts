@@ -63,6 +63,6 @@ export class AddTourComponent implements OnInit {
         this.activityService.create(activity).subscribe()
       })
     }
-    this.router.navigateByUrl('/agency/profile/1');
+    this.router.navigate(['/agency/profile', 1])
   }
 }
