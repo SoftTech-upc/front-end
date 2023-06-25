@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from "@angular/common/http";
 import {catchError, map, Observable, retry, throwError} from "rxjs";
 import {Tourist} from "../model/tourist";
-import { Credentials } from 'src/app/auth/model/credentials';
+import { Credential } from 'src/app/auth/model/credential';
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +52,7 @@ export class TouristService {
         catchError(this.handleError));
   }
 
-  login(cards: Credentials){
+  login(cards: Credential){
     return this.http.post('http://localhost:8105/login', cards,{
       observe: 'response'
     }).pipe(map((response: HttpResponse<any>)=>{

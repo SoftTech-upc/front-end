@@ -11,4 +11,5 @@ export interface Agency {
   ruc: string;
   score: number;
   tours: Tour[];
+  reviews: any[];
 }

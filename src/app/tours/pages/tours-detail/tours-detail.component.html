@@ -1,8 +1,8 @@
-<div class="m-4 p-4">
-  <mat-card class="col-start-2 col-span-2 row-start-1 w-full">
+<div class="grid grid-cols-12 gap-5 m-4 p-4">
+  <mat-card class="col-start-2 col-span-2 row-start-1 row-span-2 w-full">
     <mat-card-content>
       <div *ngIf="!edit" class="flex flex-col gap-1 justify-center items-center">
-        <img src="{{this.tourDetailData.photo}}" class="w-100 h-80 rounded-lg">
+        <img src="{{this.tourDetailData.photo}}" class="w-36 h-36 rounded-lg">
         <p class="font-bold text-xs">Tour:</p>
         <p class="m-0">{{this.tourDetailData.name}}</p>
         <p class="font-bold text-xs">Description:</p>
@@ -19,16 +19,14 @@
         <p class="text-xs">{{ this.tourDetailData.creationDate | date:'dd/MM/yyyy' }}</p>
         <p class="font-bold text-xs">Is Available?</p>
         <p class="text-xs">{{ this.tourDetailData.isOffer ? 'Yes' : 'No' }}</p>
-        <button mat-raised-button color="primary" routerLink="/add-reservation/{{tourDetailData.id}}" >Add Reservation</button>
+        <button mat-raised-button color="primary" routerLink="/tour/reservation/{{this.tourDetailData.id}}" >Add Reservation</button>
       </div>
 
-      
+
     </mat-card-content>
   </mat-card>
-</div>
 
-<div class="m-4 p-4">
-  <mat-card>
+  <mat-card class="col-start-4 col-span-8 row-start-1">
     <mat-card-content>
       <h3>Activities</h3>
       <div *ngFor="let element of activities1">
@@ -44,10 +42,8 @@
       </div>
     </mat-card-content>
   </mat-card>
-</div>
 
-<div class="m-4 p-4">
-  <mat-card>
+  <mat-card class="col-start-4 col-span-8 row-start-2">
     <mat-card-content>
       <h3>Tour Reviews</h3>
       <div *ngFor="let element of tourReview1">
@@ -62,7 +58,15 @@
       <div *ngIf="tourReview1.length === 0">
         <p>No reviews found for this tour.</p>
       </div>
-      <button mat-raised-button color="primary" routerLink="/tour-review/{{tourDetailData.id}}">Add Review</button>
+      <button mat-raised-button color="primary" routerLink="/tour/review/{{tourDetailData.id}}">Add Review</button>
     </mat-card-content>
   </mat-card>
+</div>
+
+<div class="">
+
+</div>
+
+<div class="m-4 p-4">
+
 </div>

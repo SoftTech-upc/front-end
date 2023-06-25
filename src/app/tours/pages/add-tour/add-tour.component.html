@@ -46,18 +46,18 @@
     <div *ngFor="let activity of activities; let i = index" class="flex flex-row gap-5">
       <mat-form-field>
         <mat-label>Title</mat-label>
-        <input matInput name="title_{{i}}" [(ngModel)]="activity.title" required>
+        <input matInput name="title_{{i}}" [(ngModel)]="activity.name" required>
       </mat-form-field>
       <mat-form-field class="w-full">
         <mat-label>Description</mat-label>
         <input matInput name="description_{{i}}" [(ngModel)]="activity.description" required>
       </mat-form-field>
-      <button mat-icon-button (click)="removeActivity(i)">
+      <button type="button" mat-icon-button (click)="removeActivity(i)">
         <mat-icon>close</mat-icon>
       </button>
     </div>
 
-    <button type="submit" mat-raised-button color="primary" class="w-24 mt-5" routerLink="/tours">Save</button>
+    <button type="submit" mat-raised-button color="primary" class="w-24 mt-5" [disabled]="!tourForm.valid">Save</button>
   </form>
 </mat-card>
 

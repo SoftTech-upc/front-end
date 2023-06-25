@@ -7,7 +7,7 @@ import {Agency} from "../../model/agency";
   providedIn: 'root'
 })
 export class AgencyService {
-  basePath = "http://localhost:8105/agencies"
+  basePath = "http://localhost:8105/api/agencies"
 
   httpOptions = {
     headers: new HttpHeaders({

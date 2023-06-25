@@ -4,7 +4,7 @@
       Offers for you
     </p>
     <div class="flex flex-row flex-wrap gap-5">
-      <div class="w-72 flex items-center flex-col justify-center" *ngFor="let element of arrayPrice">
+      <div class="w-72 flex items-center flex-col justify-center hover:cursor-pointer" *ngFor="let element of arrayPrice" routerLink='/tour/details/{{element.id}}'>
         <img class="w-full h-44 rounded-lg" src="{{ element.photo}}" alt="image of {{ element.name }}"/>
 
         <div class="mx-auto mt-3">
@@ -32,7 +32,7 @@
       Most popular
     </p>
     <div class="flex flex-row flex-wrap gap-5">
-      <div class="w-72 flex items-center flex-col justify-center" *ngFor="let element of arrayPrice">
+      <div class="w-72 flex items-center flex-col justify-center hover:cursor-pointer" *ngFor="let element of arrayPrice" routerLink='/tour/details/{{element.id}}'>
         <img class="w-full h-44 rounded-lg" src="{{ element.photo}}" alt="image of {{ element.name }}"/>
 
         <div class="mx-auto mt-3">
@@ -60,7 +60,7 @@
       New tours
     </p>
     <div class="flex flex-row flex-wrap gap-5">
-      <div class="w-72 flex items-center flex-col justify-center" *ngFor="let element of arrayPrice">
+      <div class="w-72 flex items-center flex-col justify-center hover:cursor-pointer" *ngFor="let element of arrayPrice" routerLink='/tour/details/{{element.id}}'>
         <img class="w-full h-44 rounded-lg" src="{{ element.photo}}" alt="image of {{ element.name }}"/>
 
         <div class="mx-auto mt-3">

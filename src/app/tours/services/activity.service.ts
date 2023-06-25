@@ -7,10 +7,11 @@ import { Activity } from '../model/activity';
   providedIn: 'root'
 })
 export class ActivityService {
-  private basePath= 'http://localhost:8105/activities'
+  private basePath= 'http://localhost:8105/api/activities'
 
   httpOptions = {
     headers: new HttpHeaders({
+      'Authorization': localStorage.getItem('token') || '',
       'Content-Type': 'application/json',
     })
   }
@@ -66,12 +67,12 @@ export class ActivityService {
   }
 
   getActivitiesByTourId(tourId: number): Observable<Activity[]> {
-    const url = `${this.basePath}?tourId=${tourId}`; 
+    const url = `${this.basePath}?tourId=${tourId}`;
     return this.http.get<Activity[]>(url)
       .pipe(
         catchError(this.handleError)
       );
   }
-  
+
 
 }

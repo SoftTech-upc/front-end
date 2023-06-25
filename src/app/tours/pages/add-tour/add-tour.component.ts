@@ -3,6 +3,8 @@ import {NgForm} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Tour} from "../../model/tour";
 import {TourService} from "../../services/tour.service";
+import {ActivityService} from "../../services/activity.service";
+import {Activity} from "../../model/activity";
 
 @Component({
   selector: 'app-add-tour',
@@ -11,7 +13,7 @@ import {TourService} from "../../services/tour.service";
 })
 export class AddTourComponent implements OnInit {
   tourData: Tour
-  activities: { title: string, description: string }[] = [];
+  activities: Activity[]
   tourId: any
   agencyId:any
   edit: boolean
@@ -19,18 +21,15 @@ export class AddTourComponent implements OnInit {
   @ViewChild('tourForm', {static: false})
   tourForm!: NgForm;
 
-  constructor(private tourService: TourService, private route: ActivatedRoute, private router: Router) {
+  constructor(private tourService: TourService, private activityService: ActivityService,private route: ActivatedRoute, private router: Router) {
     this.tourData = {} as Tour
     this.tourId= this.route.snapshot.paramMap.get('id');
-    //this.edit = false;
     this.edit = !!this.tourId;
-    this.agencyId = 0;
+    this.agencyId = 1;
+    this.activities = []
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.agencyId = parseInt(params['id'], 10);
-    });
     if (this.edit) {
       this.tourService.getById(this.tourId).subscribe((response: any) => {
         this.tourData = response
@@ -39,7 +38,7 @@ export class AddTourComponent implements OnInit {
   }
 
   addActivity() {
-    this.activities.push({ title: '', description: '' });
+    this.activities.push({ name: '', description: '', tourId: 0});
   }
 
   removeActivity(index: number) {
@@ -59,7 +58,11 @@ export class AddTourComponent implements OnInit {
         createdTourId = response.id
       })
 
-      this.router.navigateByUrl('/tours');
+      this.activities.forEach((activity) => {
+        activity.tourId = createdTourId
+        this.activityService.create(activity).subscribe()
+      })
     }
+    this.router.navigateByUrl('/agency/profile/1');
   }
 }

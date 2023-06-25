@@ -1,63 +1,18 @@
-<!-- <div class="container">
-  <div class="loggin">
-    
-      <img src="../../../../assets/img/logo.png" alt="logo login" />
-      <div>
-        <h1>Login</h1>
-      </div>
-      <div>
-        <mat-form-field class="ancho" appearance="fill">
-          <mat-label>Usuario</mat-label>
-          <input
-            type="text"
-            matInput
-            autocomplete="off"
-            formControlName="usuario"
-          />
-        </mat-form-field>
-      </div>
+<div class="flex flex-col w-full h-full mt-72 items-center justify-center">
+  <h1>Login</h1>
+  <form #form="ngForm" (ngSubmit)="login(form)" class="flex flex-col">
+    <mat-form-field class="w-72" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="text" matInput autocomplete="off" name="email" [(ngModel)]="credentialData.email">
+    </mat-form-field>
 
-      <div>
-        <mat-form-field class="ancho" appearance="fill">
-          <mat-label>Contraseña</mat-label>
-          <input
-            type="password"
-            matInput
-            autocomplete="on"
-            formControlName="password"
-          />
-        </mat-form-field>
-      </div>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput autocomplete="on" name="password" [(ngModel)]="credentialData.password">
+    </mat-form-field>
 
-      <div>
-        <button mat-raised-button class="ancho boton" color="primary" routerLink="/inicio">
-          Ingresar
-        </button>
-      </div>
-   
-  </div>
-</div> -->
-
-
-<div class="body">
-  <div class="login">
-
-    <form #form="ngForm" (ngSubmit)="login(form)"> 
-      <h1>Login</h1>
-
-      <mat-form-field class="ancho" appearance="fill">
-          <mat-label>Usuario</mat-label>
-          <input type="text" matInput autocomplete="off" name="email" [(ngModel)]="cred.email" >
-        </mat-form-field>
-
-        <mat-form-field class="ancho" appearance="fill">
-          <mat-label>Contraseña</mat-label>
-          <input type="password" matInput autocomplete="on" name="password" [(ngModel)]="cred.password">
-        </mat-form-field>
-
-        <button mat-raised-button class="ancho boton" color="primary" [disabled]="form.invalid">Ingresar</button>
-
-    </form>
-      
-  </div>
+    <button mat-raised-button color="primary">Login</button>
+  </form>
 </div>
+
+

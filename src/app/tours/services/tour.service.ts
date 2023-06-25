@@ -7,14 +7,16 @@ import {Tour} from "../model/tour";
   providedIn: 'root'
 })
 export class TourService {
-  private basePath= 'http://localhost:8105/tours'
+  private basePath= 'http://localhost:8105/api/tours'
 
   httpOptions = {
     headers: new HttpHeaders({
+      'Authorization': localStorage.getItem('token') || '',
       'Content-Type': 'application/json',
     })
   }
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -65,10 +67,10 @@ export class TourService {
               catchError(this.handleError));
   }
   getTourByTourId(agencyId: number): Observable<Tour[]> {
-    const url = `${this.basePath}?agencyId=${agencyId}`; 
+    const url = `${this.basePath}?agencyId=${agencyId}`;
     return this.http.get<Tour[]>(url)
       .pipe(
         catchError(this.handleError)
       );
-  } 
+  }
 }

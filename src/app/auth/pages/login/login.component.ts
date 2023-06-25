@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Credentials } from '../../model/credentials';
+import { Credential } from '../../model/credential';
 import { Router } from '@angular/router';
 import { TouristService } from 'src/app/tourists/services/tourist.service';
 import { TourService } from '../../../tours/services/tour.service';
@@ -10,17 +10,13 @@ import { TourService } from '../../../tours/services/tour.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  cred: Credentials = {
-    email:'',
-    password:''
-  }
-  constructor(private router: Router, private tourService: TouristService){
-    
+  credentialData: Credential
+  constructor(private router: Router, private touristService: TouristService){
+    this.credentialData = {} as Credential
   }
   login(form: NgForm){
-    console.log("Form value: ", form.value)
-    this.tourService.login(this.cred).subscribe(response => {
-      this.router.navigate(['/']);
+    this.touristService.login(this.credentialData).subscribe(response => {
+      this.router.navigate(['/home']);
     })
   }
 }
