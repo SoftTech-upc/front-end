@@ -42,7 +42,7 @@ export class TouristProfileComponent implements OnInit {
     this.touristService.getById(this.tourist_id).subscribe((response: any) => {
       this.touristData = response
       this.getReservationByTouristId(this.touristData.id);
-      this.getTourReviewByTouristId(this.touristData.id);
+      // this.getTourReviewByTouristId(this.touristData.id);
       this.getAgencyReviewByTouristId(this.touristData.id);
     })
   }
@@ -70,17 +70,17 @@ export class TouristProfileComponent implements OnInit {
     });
   }
   
-  getTourReviewByTouristId(tourId: number): void {
-    this.tourReviewService.getTourReviewByTourId(tourId).subscribe((response: any) => {
-      const tourRevieww: TourReview[] = [];
-      response.forEach((tourReview: TourReview) => {
-        if (tourReview.customer_id === tourId) {
-          tourRevieww.push(tourReview);
-        }
-      });
-      this.tourReview1 = tourRevieww;
-    });
-  }
+  // getTourReviewByTouristId(tourId: number): void {
+  //   this.tourReviewService.getTourReviewByTourId(tourId).subscribe((response: any) => {
+  //     const tourRevieww: TourReview[] = [];
+  //     response.forEach((tourReview: TourReview) => {
+  //       if (tourReview. === tourId) {
+  //         tourRevieww.push(tourReview);
+  //       }
+  //     });
+  //     this.tourReview1 = tourRevieww;
+  //   });
+  // }
 
   getAgencyReviewByTouristId(tourId: number): void {
     this.agencyReviewService.getAgencyReviewByTourId(tourId).subscribe((response: any) => {
