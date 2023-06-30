@@ -8,11 +8,11 @@ import { Reservation } from '../model/reservation';
 })
 export class ReservationService {
 
-  //private basePath= 'http://localhost:3000/reservations'
-  private basePath= 'http://localhost:8105/reservations'
+  private basePath= 'http://localhost:8105/api/reservations'
 
   httpOptions = {
     headers: new HttpHeaders({
+      'Authorization': localStorage.getItem('token') || '',
       'Content-Type': 'application/json',
     })
   }
@@ -61,10 +61,10 @@ export class ReservationService {
   }
 
   getReservationByTouristId(touristId: number): Observable<Reservation[]> {
-    const url = `${this.basePath}?customerId=${touristId}`; 
+    const url = `${this.basePath}?customerId=${touristId}`;
     return this.http.get<Reservation[]>(url)
       .pipe(
         catchError(this.handleError)
       );
-  } 
+  }
 }

@@ -18,9 +18,8 @@ export class ToursDetailComponent implements OnInit{
   edit: Boolean
   activities: Activity[];
   tourDetail_id: any;
-  activities1: Activity[];
-  tourReview1: TourReview[];
   tourReviewData: TourReview
+  displayedColumns: string[] = ['name', 'date', 'comment', 'score'];
 
   @ViewChild('tourDetailForm', {static: false})
   tourDetailForm!: NgForm;
@@ -35,8 +34,6 @@ export class ToursDetailComponent implements OnInit{
     this.tourReviewData = {} as TourReview;
     this.edit = false;
     this.activities = [];
-    this.activities1 = [];
-    this.tourReview1 = [];
     this.tourDetail_id = this.route.snapshot.paramMap.get('id');
   }
 

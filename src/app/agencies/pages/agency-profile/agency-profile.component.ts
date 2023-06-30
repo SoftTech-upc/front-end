@@ -5,8 +5,6 @@ import {Agency} from "../../model/agency";
 import {NgForm} from "@angular/forms";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {TourService} from "../../../tours/services/tour.service";
-import { Tour } from 'src/app/tours/model/tour';
-import { AgencyReview } from 'src/app/reviews/model/agency-review';
 import { AgencyReviewService } from 'src/app/reviews/services/agency-review.service';
 
 @Component({
@@ -19,6 +17,7 @@ export class AgencyProfileComponent implements OnInit {
   agencyData: Agency
   edit: Boolean
   agencyId: any;
+  displayedColumns: string[] = ['name', 'date', 'comment', 'score'];
 
   @ViewChild('agencyForm', {static: false})
   agencyForm!: NgForm;

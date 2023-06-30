@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'agencies', component: AgenciesComponent, canActivate:[AuthGuard]},
   {path: 'agency/profile/:id', component: AgencyProfileComponent, canActivate:[AuthGuard]},
   {path: 'tourist/profile/:id', component: TouristProfileComponent, canActivate:[AuthGuard]},
-  {path: 'agency-review', component: AgencyReviewComponent, canActivate:[AuthGuard]},
+  {path: 'agency/review/:id', component: AgencyReviewComponent, canActivate:[AuthGuard]},
   {path: 'tour/review/:id', component: ToursReviewComponent, canActivate:[AuthGuard]},
   {path: 'tour/add', component: AddTourComponent, canActivate:[AuthGuard]},
   {path: 'tour/edit/:id', component: AddTourComponent, canActivate:[AuthGuard]},

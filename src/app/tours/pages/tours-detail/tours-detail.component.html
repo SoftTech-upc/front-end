@@ -5,7 +5,7 @@
         <img src="{{this.tourDetailData.photo}}" class="w-36 h-36 rounded-lg">
         <p class="font-bold text-xs">Tour:</p>
         <p class="m-0">{{this.tourDetailData.name}}</p>
-        <p class="font-bold text-xs">Description:</p>
+        <p class="font-bold text-xs text-center">Description:</p>
         <h5 class="m-0">{{this.tourDetailData.description}}</h5>
         <p class="font-bold text-xs">Score:</p>
         <p class="text-xs mt-5 text-center">{{this.tourDetailData.score}}</p>
@@ -19,7 +19,9 @@
         <p class="text-xs">{{ this.tourDetailData.creationDate | date:'dd/MM/yyyy' }}</p>
         <p class="font-bold text-xs">Is Available?</p>
         <p class="text-xs">{{ this.tourDetailData.isOffer ? 'Yes' : 'No' }}</p>
-        <button mat-raised-button color="primary" routerLink="/tour/reservation/{{this.tourDetailData.id}}" >Add Reservation</button>
+        <button mat-raised-button color="primary" routerLink="/tour/reservation/{{this.tourDetailData.id}}">Add
+          Reservation
+        </button>
       </div>
 
 
@@ -41,37 +43,48 @@
 
   <mat-card class="col-start-4 col-span-9 row-start-2">
     <mat-card-content>
-      <p class="font-bold text-xl mx-auto mt-3">Tour Reviews</p>
-      <div *ngFor="let element of tourReview1">
-        <mat-card class="activity-card">
-          <mat-card-content>
-            <p>{{ element.date | date:'dd/MM/yyyy HH:mm' }}</p>
-            <p>{{ element.comment }}</p>
-            <p>{{ element.score }}</p>
-          </mat-card-content>
-        </mat-card>
+      <div class="w-full flex justify-between mb-2">
+        <p class="font-bold text-xl mx-auto mt-3">Tour Reviews</p>
+        <button mat-raised-button color="primary" routerLink="/tour/review/{{tourDetailData.id}}">Add Review</button>
       </div>
-      <div class="w-full flex justify-center mt-10" *ngIf="tourDetailData.reviews?.length === 0">
+
+      <div class="w-full flex justify-center mt-10" *ngIf="!this.tourDetailData.reviews?.length">
         <p class="font-medium text-lg">No reviews found for this tour</p>
       </div>
-      <div class="flex flex-row flex-wrap gap-5">
-        <div class="min-w-30 w-72 flex items-center flex-col justify-center" *ngFor="let element of this.tourDetailData.reviews; let i = index">
+      <table mat-table [dataSource]="this.tourDetailData.reviews">
 
-          <div class="mx-auto mt-3">
-            <p class="font-bold text-lg">{{ element.comment }}</p>
-          </div>
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
 
-          <div class="mx-auto mt-3">
-            <p class="font-bold text-lg">{{ element.date }}</p>
-          </div>
 
-          <div class="flex flex-row">
-            <p class="text-xl">{{ element.score }}</p>
-          </div>
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name</th>
+          <td mat-cell *matCellDef="let element"> {{element.tourist.name}} {{element.tourist.lastName}}</td>
+        </ng-container>
 
-        </div>
-      </div>
-      <button mat-raised-button color="primary" routerLink="/tour/review/{{tourDetailData.id}}">Add Review</button>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Date</th>
+          <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="comment">
+          <th mat-header-cell *matHeaderCellDef> Comment</th>
+          <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score</th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
     </mat-card-content>
   </mat-card>
 </div>

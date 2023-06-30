@@ -1,5 +1,5 @@
 <div class="grid grid-cols-12 gap-5 m-5">
-  <mat-card class="col-start-2 col-span-2 row-start-1 row-span-2 w-full">
+  <mat-card class="col-start-1 col-span-3 row-start-1 row-span-2 w-full">
     <mat-card-content>
       <div *ngIf="!edit" class="flex flex-col gap-1 justify-center items-center">
         <img src="{{this.agencyData.photo}}" class="w-28 h-28 rounded-full">
@@ -49,7 +49,7 @@
     </mat-card-content>
   </mat-card>
 
-  <mat-card class="col-start-4 col-span-8 row-start-1 w-full">
+  <mat-card class="col-start-4 col-span-9 row-start-1 w-full">
     <mat-card-content>
       <div class="flex flex-row justify-between">
         <p class="font-bold text-xl mx-auto mt-3">Tours from {{ this.agencyData.name }} </p>
@@ -90,30 +90,48 @@
     </mat-card-content>
   </mat-card>
 
-  <mat-card class="col-start-4 col-span-8 row-start-2 w-full">
+  <mat-card class="col-start-4 col-span-9 row-start-2 w-full">
     <mat-card-content>
-      <h3>Agency Reviews</h3>
-      <div *ngFor="let element of this.agencyData.reviews">
-        <mat-card class="activity-card">
-          <mat-card-content>
-            <p class="font-bold text-xs">Date of Review:</p>
-            <p>{{ element.date | date:'dd/MM/yyyy HH:mm' }}</p>
-            <p class="font-bold text-xs">Comment:</p>
-            <p>{{ element.comment }}</p>
-            <p class="font-bold text-xs">Profesionalism:</p>
-            <p>{{ element.professionalism_score }}</p>
-            <p class="font-bold text-xs">Security:</p>
-            <p>{{ element.security_score }}</p>
-            <p class="font-bold text-xs">Quality:</p>
-            <p>{{ element.quality_score }}</p>
-            <p class="font-bold text-xs">Cost:</p>
-            <p>{{ element.cost_score }}</p>
-          </mat-card-content>
-        </mat-card>
+      <div class="flex flex-row justify-between">
+        <p class="font-bold text-xl mx-auto mt-3">Agency Reviews</p>
+        <button mat-raised-button color="primary" routerLink="/agency/review/{{this.agencyId}}">Add review</button>
       </div>
       <div class="w-full flex justify-center mt-10" *ngIf="!this.agencyData.reviews?.length">
         <p class="font-medium text-lg">No reviews found for this tour</p>
       </div>
+      <table mat-table [dataSource]="this.agencyData.reviews" *ngIf="this.agencyData.reviews?.length">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.tourist.name}} {{element.tourist.lastName}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="comment">
+          <th mat-header-cell *matHeaderCellDef> Comment </th>
+          <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
     </mat-card-content>
   </mat-card>
 </div>

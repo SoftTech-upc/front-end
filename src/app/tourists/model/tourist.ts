@@ -6,4 +6,5 @@ export interface Tourist {
   phoneNumber: string;
   password: string;
   photo: string;
+  reservations: any[]
 }

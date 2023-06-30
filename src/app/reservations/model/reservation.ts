@@ -1,9 +1,12 @@
+import {Tourist} from "../../tourists/model/tourist";
+import {Tour} from "../../tours/model/tour";
+
 export interface Reservation {
     id: number;
     amount: number;
     price: number;
-    scheduled_date: Date;
+    scheduledDate: Date;
     status: string;
-    tour_id: number;
-    customer_id: number;
+    tour: Tour;
+    tourist: Tourist;
 }

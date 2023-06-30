@@ -22,8 +22,9 @@ export class TouristProfileComponent implements OnInit {
   tourist_id: any;
   reservations1: Reservation[];
   reservationId: number;
-  tourReview1: TourReview[]; 
-  agencyReview1: AgencyReview[]; 
+  tourReview1: TourReview[];
+  agencyReview1: AgencyReview[];
+  displayedColumns: string[] = ['name', 'amount', 'scheduledDate', 'status'];
 
   @ViewChild('touristForm', {static: false})
   touristForm!: NgForm;
@@ -41,9 +42,6 @@ export class TouristProfileComponent implements OnInit {
   ngOnInit(): void {
     this.touristService.getById(this.tourist_id).subscribe((response: any) => {
       this.touristData = response
-      this.getReservationByTouristId(this.touristData.id);
-      // this.getTourReviewByTouristId(this.touristData.id);
-      this.getAgencyReviewByTouristId(this.touristData.id);
     })
   }
 
@@ -55,42 +53,6 @@ export class TouristProfileComponent implements OnInit {
     this.touristService.update(this.touristData.id, this.touristData).subscribe((response: any) => {
       this.touristData = response
       this.edit = false
-    });
-  }
-
-  getReservationByTouristId(reservationId: number): void {
-    this.reservationService.getReservationByTouristId(reservationId).subscribe((response: any) => {
-      const reservationss: Reservation[] = [];
-      response.forEach((reservation: Reservation) => {
-        if (reservation.customer_id === reservationId) {
-          reservationss.push(reservation);
-        }
-      });
-      this.reservations1 = reservationss;
-    });
-  }
-  
-  // getTourReviewByTouristId(tourId: number): void {
-  //   this.tourReviewService.getTourReviewByTourId(tourId).subscribe((response: any) => {
-  //     const tourRevieww: TourReview[] = [];
-  //     response.forEach((tourReview: TourReview) => {
-  //       if (tourReview. === tourId) {
-  //         tourRevieww.push(tourReview);
-  //       }
-  //     });
-  //     this.tourReview1 = tourRevieww;
-  //   });
-  // }
-
-  getAgencyReviewByTouristId(tourId: number): void {
-    this.agencyReviewService.getAgencyReviewByTourId(tourId).subscribe((response: any) => {
-      const agencyRevieww: AgencyReview[] = [];
-      response.forEach((agencyReview: AgencyReview) => {
-        if (agencyReview.customer_id === tourId) {
-          agencyRevieww.push(agencyReview);
-        }
-      });
-      this.agencyReview1 = agencyRevieww;
     });
   }
 }
