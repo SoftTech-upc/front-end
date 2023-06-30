@@ -1,11 +1,14 @@
+import { Agency } from "src/app/agencies/model/agency";
+import { Tourist } from "src/app/tourists/model/tourist";
+
 export interface AgencyReview {
   id: number;
   date: Date;
   comment: string;
-  professionalism_score: number;
-  security_score: number;
-  quality_score: number;
-  cost_score: number;
-  customer_id: number;
-  agency_id: number;
+  professionalismScore: number;
+  securityScore: number;
+  qualityScore: number;
+  costScore: number;
+  tourist: Tourist;
+  agency: Agency;
 }

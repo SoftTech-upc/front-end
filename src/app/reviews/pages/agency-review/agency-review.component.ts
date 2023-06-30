@@ -3,6 +3,8 @@ import { AgencyReview } from '../../model/agency-review';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { AgencyReviewService } from '../../services/agency-review.service';
+import { Tourist } from 'src/app/tourists/model/tourist';
+import { Agency } from 'src/app/agencies/model/agency';
 
 @Component({
   selector: 'app-agency-review',
@@ -12,43 +14,31 @@ import { AgencyReviewService } from '../../services/agency-review.service';
 export class AgencyReviewComponent implements OnInit {
   agencyReviewData: AgencyReview
   agencyReviewId: any
+  agencyId: any;
   edit: boolean
-  agencyId: number;
+  touristId: any
 
   @ViewChild('tourForm', {static: false})
   tourForm!: NgForm;
 
   constructor(private agencyReviewService: AgencyReviewService, private route: ActivatedRoute, private router: Router) {
     this.agencyReviewData = {} as AgencyReview
-    this.agencyReviewId= this.route.snapshot.paramMap.get('id');
+    this.agencyId= this.route.snapshot.paramMap.get('id');
     this.edit = false
-    this.agencyId = 0;
+    //this.agencyId = localStorage.getItem('id');
+    this.touristId = localStorage.getItem('id');
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.agencyId = parseInt(params['id'], 10);
-    });
-    if (this.edit) {
-      this.agencyReviewService.getById(this.agencyReviewId).subscribe((response: any) => {
-        this.agencyReviewData = response
-      })
-    }
+
   }
 
   onSubmit() {
-    if (this.edit) {
-      this.agencyReviewService.update(this.agencyReviewId, this.agencyReviewData).subscribe()
-    } else {
-      let createdAgencyReviewId: number
-      this.agencyReviewData.date = new Date()
-      this.agencyReviewData.customer_id = 1 // TODO: colocar el id de la agencia que este iniciado sesion
-      this.agencyReviewData.agency_id = this.agencyId; 
-      this.agencyReviewService.create(this.agencyReviewData).subscribe((response) => {
-        createdAgencyReviewId = response.id
-      })
-
-      this.router.navigateByUrl('/agency-details/' + this.agencyId);
-    }
+    this.agencyReviewData.date = new Date()
+      this.agencyReviewData.tourist = {id: this.touristId } as Tourist
+      this.agencyReviewData.agency = {id: this.agencyId } as Agency
+      this.agencyReviewService.create(this.agencyReviewData).subscribe()
+      this.router.navigate(['agency/profile', this.agencyId])
+    
   }
 }

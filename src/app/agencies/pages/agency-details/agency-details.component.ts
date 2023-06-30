@@ -36,7 +36,7 @@ export class AgencyDetailsComponent implements OnInit{
   ngOnInit(): void {
     this.agencyService.getById(this.tourDetail_id).subscribe((response: any) => {
       this.agencyDetailData = response;
-      this.getAgencyReviewByTourId(this.agencyDetailData.id);
+      // this.getAgencyReviewByTourId(this.agencyDetailData.id);
     });
   }
   
@@ -50,15 +50,15 @@ export class AgencyDetailsComponent implements OnInit{
     });
   }
 
-  getAgencyReviewByTourId(agencyId: number): void {
-    this.agencyReviewService.getAgencyReviewByTourId(agencyId).subscribe((response: any) => {
-      const tourRevieww: AgencyReview[] = [];
-      response.forEach((agencyReview: AgencyReview) => {
-        if (agencyReview.agency_id === agencyId) {
-          tourRevieww.push(agencyReview);
-        }
-      });
-      this.agencyReview1 = tourRevieww;
-    });
-  }
+  // getAgencyReviewByTourId(agencyId: number): void {
+  //   this.agencyReviewService.getAgencyReviewByTourId(agencyId).subscribe((response: any) => {
+  //     const tourRevieww: AgencyReview[] = [];
+  //     response.forEach((agencyReview: AgencyReview) => {
+  //       if (agencyReview.agency_id === agencyId) {
+  //         tourRevieww.push(agencyReview);
+  //       }
+  //     });
+  //     this.agencyReview1 = tourRevieww;
+  //   });
+  // }
 }

@@ -9,9 +9,10 @@ import { AgencyReview } from '../model/agency-review';
 })
 export class AgencyReviewService {
   //basePath = "http://localhost:3000/agency_reviews"
-  basePath = "http://localhost:8105/agency_reviews"
+  basePath = "http://localhost:8105/api/agency_review"
   httpOptions = {
     headers: new HttpHeaders({
+      'Authorization': localStorage.getItem('token') || '',
       'Content-Type': 'application/json',
     })
   }
