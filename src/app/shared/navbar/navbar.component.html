@@ -10,8 +10,8 @@
   </div>
 
   <mat-menu #options="matMenu">
-    <button mat-menu-item [routerLink]="['/agency/profile', 1]" *ngIf="this.type == '1'">My profile</button>
-    <button mat-menu-item [routerLink]="['/tourist/profile', 1]" *ngIf="this.type == '0'">My profile</button>
+    <button mat-menu-item [routerLink]="['/agency/profile', this.currentId]" *ngIf="this.type == '1'">My profile</button>
+    <button mat-menu-item [routerLink]="['/tourist/profile', this.currentId]" *ngIf="this.type == '0'">My profile</button>
     <button mat-menu-item (click)="logOut()">Log out</button>
   </mat-menu>
 

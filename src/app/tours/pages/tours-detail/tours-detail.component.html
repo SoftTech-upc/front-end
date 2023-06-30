@@ -43,10 +43,8 @@
 
   <mat-card class="col-start-4 col-span-9 row-start-2">
     <mat-card-content>
-      <div class="w-full flex justify-between mb-2">
-        <p class="font-bold text-xl mx-auto mt-3">Reservations</p>
-        <button mat-raised-button color="primary" routerLink="/tour/review/{{tourDetailData.id}}" *ngIf="this.type == '0'">Add Review</button>
-      </div>
+      <p class="font-bold text-xl mx-auto mt-3">Reservations</p>
+
 
       <div class="w-full flex justify-center mt-10" *ngIf="!this.tourDetailData.reservations?.length">
         <p class="font-medium text-lg">No reservations for this tour</p>

@@ -9,8 +9,10 @@ import {Router} from "@angular/router";
 export class NavbarComponent {
 
   type: any
+  currentId: any
   constructor(private router: Router) {
     this.type = localStorage.getItem('type')
+    this.currentId = localStorage.getItem('id')
   }
 
   logOut() {
