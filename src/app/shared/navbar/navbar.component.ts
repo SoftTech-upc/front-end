@@ -8,7 +8,9 @@ import {Router} from "@angular/router";
 })
 export class NavbarComponent {
 
+  type: any
   constructor(private router: Router) {
+    this.type = localStorage.getItem('type')
   }
 
   logOut() {

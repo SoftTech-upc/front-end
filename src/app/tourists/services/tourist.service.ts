@@ -64,7 +64,7 @@ export class TouristService {
 
 
       this.getTouristByEmail(body.userDetails.username).subscribe((response: any) => {
-        localStorage.setItem('id', response.body.id);
+        localStorage.setItem('id', response.id);
         localStorage.setItem('type', '0')
       })
 

@@ -19,7 +19,7 @@
         <p class="text-xs">{{ this.tourDetailData.creationDate | date:'dd/MM/yyyy' }}</p>
         <p class="font-bold text-xs">Is Available?</p>
         <p class="text-xs">{{ this.tourDetailData.isOffer ? 'Yes' : 'No' }}</p>
-        <button mat-raised-button color="primary" routerLink="/tour/reservation/{{this.tourDetailData.id}}">Add
+        <button mat-raised-button color="primary" routerLink="/tour/reservation/{{this.tourDetailData.id}}" *ngIf="this.type == '0'">Add
           Reservation
         </button>
       </div>
@@ -45,7 +45,7 @@
     <mat-card-content>
       <div class="w-full flex justify-between mb-2">
         <p class="font-bold text-xl mx-auto mt-3">Tour Reviews</p>
-        <button mat-raised-button color="primary" routerLink="/tour/review/{{tourDetailData.id}}">Add Review</button>
+        <button mat-raised-button color="primary" routerLink="/tour/review/{{tourDetailData.id}}" *ngIf="this.type == '0'">Add Review</button>
       </div>
 
       <div class="w-full flex justify-center mt-10" *ngIf="!this.tourDetailData.reviews?.length">

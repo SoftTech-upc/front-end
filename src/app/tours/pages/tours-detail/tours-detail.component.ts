@@ -20,6 +20,7 @@ export class ToursDetailComponent implements OnInit{
   tourDetail_id: any;
   tourReviewData: TourReview
   displayedColumns: string[] = ['name', 'date', 'comment', 'score'];
+  type: any
 
   @ViewChild('tourDetailForm', {static: false})
   tourDetailForm!: NgForm;
@@ -36,6 +37,7 @@ export class ToursDetailComponent implements OnInit{
     this.edit = false;
     this.activities = [];
     this.tourDetail_id = this.route.snapshot.paramMap.get('id');
+    this.type = localStorage.getItem('type')
   }
 
   ngOnInit(): void {
@@ -58,5 +60,4 @@ export class ToursDetailComponent implements OnInit{
       this.edit = false
     });
   }
-
 }

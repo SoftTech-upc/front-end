@@ -12,7 +12,7 @@
         <p class="text-xs">{{this.agencyData.ruc}}</p>
         <p class="font-bold text-xs">Phone number:</p>
         <p class="text-xs">{{this.agencyData.phoneNumber}}</p>
-        <button mat-raised-button color="primary" (click)="editAgency()" >Edit information</button>
+        <button mat-raised-button color="primary" (click)="editAgency()" *ngIf="this.type == '1'">Edit information</button>
       </div>
 
       <form *ngIf="edit" (submit)="onSubmit()" #agencyForm='ngForm' class="flex flex-col gap-1 justify-center items-center">
@@ -53,7 +53,7 @@
     <mat-card-content>
       <div class="flex flex-row justify-between">
         <p class="font-bold text-xl mx-auto mt-3">Tours from {{ this.agencyData.name }} </p>
-        <button mat-raised-button color="primary" routerLink="/tour/add">Add tour</button>
+        <button mat-raised-button color="primary" routerLink="/tour/add" *ngIf="this.type == '1'">Add tour</button>
       </div>
       <div class="w-full flex justify-center mt-10" *ngIf="!this.agencyData.tours?.length">
         <p class="font-medium text-lg">No tours published</p>
@@ -77,7 +77,7 @@
             <p *ngIf="element.isOffer">$ {{ element.newPrice}}</p>
           </div>
 
-          <div class="flex flex-row gap-3">
+          <div class="flex flex-row gap-3" *ngIf="this.type == '1'">
             <button mat-icon-button [routerLink]="['/tour/edit', element.id]">
               <mat-icon>edit</mat-icon>
             </button>
@@ -94,7 +94,7 @@
     <mat-card-content>
       <div class="flex flex-row justify-between mb-2">
         <p class="font-bold text-xl mx-auto mt-3">Agency Reviews</p>
-        <button mat-raised-button color="primary" routerLink="/agency/review/{{this.agencyId}}">Add review</button>
+        <button mat-raised-button color="primary" routerLink="/agency/review/{{this.agencyId}}" *ngIf="this.type == '0'">Add review</button>
       </div>
       <div class="w-full flex justify-center mt-10" *ngIf="!this.agencyData.reviews?.length">
         <p class="font-medium text-lg">No reviews found for this tour</p>
