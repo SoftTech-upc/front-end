@@ -17,7 +17,7 @@ export class AgencyProfileComponent implements OnInit {
   agencyData: Agency
   edit: Boolean
   agencyId: any;
-  displayedColumns: string[] = ['name', 'date', 'comment', 'score'];
+  displayedColumns: string[] = ['name', 'date', 'comment', 'professionalismScore', 'securityScore', 'qualityScore', 'costScore'];
 
   @ViewChild('agencyForm', {static: false})
   agencyForm!: NgForm;
@@ -46,7 +46,6 @@ export class AgencyProfileComponent implements OnInit {
   }
   onSubmit() {
     this.agencyService.update(this.agencyData.id, this.agencyData).subscribe((response: any) => {
-      this.agencyData = response
       this.edit = false
     });
   }

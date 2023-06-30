@@ -59,7 +59,7 @@
         <p class="font-medium text-lg">No tours published</p>
       </div>
       <div class="flex flex-row flex-wrap gap-5">
-        <div class="min-w-30 w-72 flex items-center flex-col justify-center" *ngFor="let element of this.agencyData.tours; let i = index">
+        <div class="min-w-30 w-72 flex items-center flex-col justify-center hover:cursor-pointer" *ngFor="let element of this.agencyData.tours; let i = index" routerLink='/tour/details/{{element.id}}'>
           <img class="w-full rounded-lg" src="{{ element.photo}}" alt="image of {{ element.name }}"/>
 
           <div class="mx-auto mt-3">
@@ -92,7 +92,7 @@
 
   <mat-card class="col-start-4 col-span-9 row-start-2 w-full">
     <mat-card-content>
-      <div class="flex flex-row justify-between">
+      <div class="flex flex-row justify-between mb-2">
         <p class="font-bold text-xl mx-auto mt-3">Agency Reviews</p>
         <button mat-raised-button color="primary" routerLink="/agency/review/{{this.agencyId}}">Add review</button>
       </div>
@@ -114,7 +114,7 @@
         <!-- Weight Column -->
         <ng-container matColumnDef="date">
           <th mat-header-cell *matHeaderCellDef> Date </th>
-          <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.createdAt | date:'yyyy-MM-dd'}} </td>
         </ng-container>
 
         <!-- Symbol Column -->
@@ -124,9 +124,24 @@
         </ng-container>
 
         <!-- Symbol Column -->
-        <ng-container matColumnDef="score">
-          <th mat-header-cell *matHeaderCellDef> Score </th>
-          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        <ng-container matColumnDef="professionalismScore">
+          <th mat-header-cell *matHeaderCellDef> Professionalism score </th>
+          <td mat-cell *matCellDef="let element"> {{element.professionalismScore}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="securityScore">
+          <th mat-header-cell *matHeaderCellDef> Security score </th>
+          <td mat-cell *matCellDef="let element"> {{element.securityScore}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="qualityScore">
+          <th mat-header-cell *matHeaderCellDef> Quality score </th>
+          <td mat-cell *matCellDef="let element"> {{element.qualityScore}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="costScore">
+          <th mat-header-cell *matHeaderCellDef> Cost score </th>
+          <td mat-cell *matCellDef="let element"> {{element.costScore}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

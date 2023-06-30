@@ -39,6 +39,27 @@ export class TourService {
         catchError(this.handleError));
   }
 
+  getAllByScore(): Observable<Tour> {
+    return this.http.get<Tour>(this.basePath + "/score", this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
+  getAllByNew(): Observable<Tour> {
+    return this.http.get<Tour>(this.basePath + "/offer", this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
+  getAllByDate(): Observable<Tour> {
+    return this.http.get<Tour>(this.basePath + "/date", this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
   getById(id: number): Observable<Tour> {
     return this.http.get<Tour>(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(

@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from "@angular/forms";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {Tour} from "../../model/tour";
 import {TourService} from "../../services/tour.service";
 import {Activity} from "../../model/activity";
@@ -28,7 +28,8 @@ export class ToursDetailComponent implements OnInit{
     private tourService: TourService,
     private activityService: ActivityService,
     private tourReviewService: TourReviewService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.tourDetailData = {} as Tour;
     this.tourReviewData = {} as TourReview;
@@ -40,6 +41,14 @@ export class ToursDetailComponent implements OnInit{
   ngOnInit(): void {
     this.tourService.getById(this.tourDetail_id).subscribe((response: any) => {
       this.tourDetailData = response;
+    });
+
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        this.tourService.getById(this.tourDetail_id).subscribe((response: any) => {
+          this.tourDetailData = response;
+        });
+      }
     });
   }
 

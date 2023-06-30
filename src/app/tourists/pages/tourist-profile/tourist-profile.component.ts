@@ -51,7 +51,6 @@ export class TouristProfileComponent implements OnInit {
 
   onSubmit() {
     this.touristService.update(this.touristData.id, this.touristData).subscribe((response: any) => {
-      this.touristData = response
       this.edit = false
     });
   }

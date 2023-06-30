@@ -23,21 +23,21 @@ export class HomeComponent implements OnInit {
   }
 
   getPriceData(){
-    this.tourService.getAll()
+    this.tourService.getAllByDate()
       .subscribe((response: any)=>{
         this.arrayPrice = response.slice(0, 5)
       })
   }
 
   getScoreData(){
-    this.tourService.getAll()
+    this.tourService.getAllByScore()
       .subscribe((response: any)=>{
         this.arrayScore = response.slice(0, 5)
       })
   }
 
   getNewData(){
-    this.tourService.getAll()
+    this.tourService.getAllByNew()
       .subscribe((response: any)=>{
         this.arrayNew = response.slice(0, 5)
       })
