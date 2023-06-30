@@ -7,4 +7,6 @@ export interface Tourist {
   password: string;
   photo: string;
   reservations: any[]
+  tourReviews: any[]
+  agencyReviews: any[]
 }

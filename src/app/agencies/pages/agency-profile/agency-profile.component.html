@@ -53,7 +53,7 @@
     <mat-card-content>
       <div class="flex flex-row justify-between">
         <p class="font-bold text-xl mx-auto mt-3">Tours from {{ this.agencyData.name }} </p>
-        <button mat-raised-button color="primary" routerLink="/tour/add" *ngIf="this.type == '1'">Add tour</button>
+        <button mat-raised-button color="primary" routerLink="/tour/add" *ngIf="this.type == '1' && this.currentId == this.agencyId">Add tour</button>
       </div>
       <div class="w-full flex justify-center mt-10" *ngIf="!this.agencyData.tours?.length">
         <p class="font-medium text-lg">No tours published</p>

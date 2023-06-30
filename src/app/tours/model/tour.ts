@@ -16,4 +16,5 @@ export interface Tour {
   agency: Agency;
   activities: Activity[];
   reviews: TourReview[];
+  reservations: any[]
 }

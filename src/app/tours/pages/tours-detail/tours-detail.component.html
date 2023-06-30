@@ -1,5 +1,5 @@
 <div class="grid grid-cols-12 gap-5 m-4 p-4">
-  <mat-card class="col-start-1 col-span-3 row-start-1 row-span-2 w-full">
+  <mat-card class="col-start-1 col-span-3 row-start-1 row-span-3 w-full">
     <mat-card-content>
       <div *ngIf="!edit" class="flex flex-col gap-1 justify-center items-center">
         <img src="{{this.tourDetailData.photo}}" class="w-36 h-36 rounded-lg">
@@ -44,6 +44,58 @@
   <mat-card class="col-start-4 col-span-9 row-start-2">
     <mat-card-content>
       <div class="w-full flex justify-between mb-2">
+        <p class="font-bold text-xl mx-auto mt-3">Reservations</p>
+        <button mat-raised-button color="primary" routerLink="/tour/review/{{tourDetailData.id}}" *ngIf="this.type == '0'">Add Review</button>
+      </div>
+
+      <div class="w-full flex justify-center mt-10" *ngIf="!this.tourDetailData.reservations?.length">
+        <p class="font-medium text-lg">No reservations for this tour</p>
+      </div>
+      <table mat-table [dataSource]="this.tourDetailData.reservations" *ngIf="this.tourDetailData.reservations?.length">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.tourist.name}} {{element.tourist.lastName}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef> Amount </th>
+          <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="scheduledDate">
+          <th mat-header-cell *matHeaderCellDef> Scheduled date </th>
+          <td mat-cell *matCellDef="let element"> {{element.scheduledDate}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsReservation"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsReservation;"></tr>
+      </table>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="col-start-4 col-span-9 row-start-3">
+    <mat-card-content>
+      <div class="w-full flex justify-between mb-2">
         <p class="font-bold text-xl mx-auto mt-3">Tour Reviews</p>
         <button mat-raised-button color="primary" routerLink="/tour/review/{{tourDetailData.id}}" *ngIf="this.type == '0'">Add Review</button>
       </div>
@@ -51,7 +103,7 @@
       <div class="w-full flex justify-center mt-10" *ngIf="!this.tourDetailData.reviews?.length">
         <p class="font-medium text-lg">No reviews found for this tour</p>
       </div>
-      <table mat-table [dataSource]="this.tourDetailData.reviews">
+      <table mat-table [dataSource]="this.tourDetailData.reviews" *ngIf="this.tourDetailData.reviews?.length">
 
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -87,12 +139,4 @@
 
     </mat-card-content>
   </mat-card>
-</div>
-
-<div class="">
-
-</div>
-
-<div class="m-4 p-4">
-
 </div>

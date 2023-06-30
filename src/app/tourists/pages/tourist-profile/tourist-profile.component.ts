@@ -25,6 +25,8 @@ export class TouristProfileComponent implements OnInit {
   tourReview1: TourReview[];
   agencyReview1: AgencyReview[];
   displayedColumns: string[] = ['name', 'amount', 'scheduledDate', 'status'];
+  displayedColumnsTourReview: string[] = ['name', 'date', 'comment', 'score'];
+  displayedColumnsAgencyReview: string[] = ['name', 'date', 'comment', 'professionalismScore', 'securityScore', 'qualityScore', 'costScore'];
 
   @ViewChild('touristForm', {static: false})
   touristForm!: NgForm;

@@ -85,27 +85,40 @@
   <mat-card class="col-start-4 col-span-9 row-start-2 w-full">
     <mat-card-content>
       <p class="font-bold text-xl mx-auto mt-3">My Tours Reviews</p>
-      <div *ngFor="let element of tourReview1">
-        <mat-card class="activity-card">
-          <mat-card-content>
-            <p class="font-bold text-xs">Date of Review:</p>
-            <p>{{ element.date | date:'dd/MM/yyyy HH:mm' }}</p>
-            <p class="font-bold text-xs">Comment:</p>
-            <p>{{ element.comment }}</p>
-            <p class="font-bold text-xs">Score:</p>
-            <p>{{ element.score }}</p>
-            <div class="flex flex-row gap-3">
-              <button mat-icon-button>
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-icon-button>
-                <mat-icon>delete</mat-icon>
-              </button>
-            </div>
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <div class="w-full flex justify-center mt-10" *ngIf="tourReview1.length === 0">
+      <table mat-table [dataSource]="this.touristData.tourReviews" *ngIf="this.touristData.tourReviews.length">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name</th>
+          <td mat-cell *matCellDef="let element"> {{element.tour.name}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Date</th>
+          <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="comment">
+          <th mat-header-cell *matHeaderCellDef> Comment</th>
+          <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Score</th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsTourReview"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsTourReview;"></tr>
+      </table>
+      <div class="w-full flex justify-center mt-10" *ngIf="!this.touristData.tourReviews.length">
         <p class="font-medium text-lg">No reviews found for this tour.</p>
       </div>
     </mat-card-content>
@@ -114,33 +127,112 @@
   <mat-card class="col-start-4 col-span-9 row-start-3 w-full">
     <mat-card-content>
       <p class="font-bold text-xl mx-auto mt-3">My Agency Reviews</p>
-      <div *ngFor="let element of agencyReview1">
-        <mat-card>
-          <mat-card-content>
-            <p class="font-bold text-xs">Date of Review:</p>
-            <p>{{ element.date | date:'dd/MM/yyyy HH:mm' }}</p>
-            <p class="font-bold text-xs">Comment:</p>
-            <p>{{ element.comment }}</p>
-            <p class="font-bold text-xs">Profesionalism:</p>
-            <p>{{ element.professionalismScore }}</p>
-            <p class="font-bold text-xs">Security:</p>
-            <p>{{ element.securityScore }}</p>
-            <p class="font-bold text-xs">Quality:</p>
-            <p>{{ element.qualityScore }}</p>
-            <p class="font-bold text-xs">Cost:</p>
-            <p>{{ element.costScore }}</p>
-            <div class="flex flex-row gap-3">
-              <button mat-icon-button>
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-icon-button>
-                <mat-icon>delete</mat-icon>
-              </button>
-            </div>
-          </mat-card-content>
-        </mat-card>
+      <table mat-table [dataSource]="this.touristData.agencyReviews" *ngIf="this.touristData.agencyReviews.length">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.agency.name}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.createdAt | date:'yyyy-MM-dd'}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="comment">
+          <th mat-header-cell *matHeaderCellDef> Comment </th>
+          <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="professionalismScore">
+          <th mat-header-cell *matHeaderCellDef> Professionalism score </th>
+          <td mat-cell *matCellDef="let element"> {{element.professionalismScore}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="securityScore">
+          <th mat-header-cell *matHeaderCellDef> Security score </th>
+          <td mat-cell *matCellDef="let element"> {{element.securityScore}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="qualityScore">
+          <th mat-header-cell *matHeaderCellDef> Quality score </th>
+          <td mat-cell *matCellDef="let element"> {{element.qualityScore}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="costScore">
+          <th mat-header-cell *matHeaderCellDef> Cost score </th>
+          <td mat-cell *matCellDef="let element"> {{element.costScore}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsAgencyReview"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsAgencyReview;"></tr>
+      </table>
+      <div class="w-full flex justify-center mt-10" *ngIf="!this.touristData.agencyReviews.length">
+        <p class="font-medium text-lg">No reviews found for this tour.</p>
       </div>
-      <div class="w-full flex justify-center mt-10" *ngIf="agencyReview1.length === 0">
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="col-start-4 col-span-9 row-start-3 w-full">
+    <mat-card-content>
+      <p class="font-bold text-xl mx-auto mt-3">My Agency Reviews</p>
+      <table mat-table [dataSource]="this.touristData.agencyReviews" *ngIf="this.touristData.agencyReviews.length">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.agency.name}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.createdAt | date:'yyyy-MM-dd'}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="comment">
+          <th mat-header-cell *matHeaderCellDef> Comment </th>
+          <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="professionalismScore">
+          <th mat-header-cell *matHeaderCellDef> Professionalism score </th>
+          <td mat-cell *matCellDef="let element"> {{element.professionalismScore}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="securityScore">
+          <th mat-header-cell *matHeaderCellDef> Security score </th>
+          <td mat-cell *matCellDef="let element"> {{element.securityScore}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="qualityScore">
+          <th mat-header-cell *matHeaderCellDef> Quality score </th>
+          <td mat-cell *matCellDef="let element"> {{element.qualityScore}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="costScore">
+          <th mat-header-cell *matHeaderCellDef> Cost score </th>
+          <td mat-cell *matCellDef="let element"> {{element.costScore}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsAgencyReview"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsAgencyReview;"></tr>
+      </table>
+      <div class="w-full flex justify-center mt-10" *ngIf="!this.touristData.agencyReviews.length">
         <p class="font-medium text-lg">No reviews found for this tour.</p>
       </div>
     </mat-card-content>

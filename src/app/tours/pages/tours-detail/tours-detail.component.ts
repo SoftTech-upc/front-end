@@ -20,6 +20,7 @@ export class ToursDetailComponent implements OnInit{
   tourDetail_id: any;
   tourReviewData: TourReview
   displayedColumns: string[] = ['name', 'date', 'comment', 'score'];
+  displayedColumnsReservation: string[] = ['name', 'amount', 'scheduledDate', 'status'];
   type: any
 
   @ViewChild('tourDetailForm', {static: false})

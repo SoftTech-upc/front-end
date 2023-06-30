@@ -18,6 +18,7 @@ export class AgencyProfileComponent implements OnInit {
   edit: Boolean
   agencyId: any;
   type: any;
+  currentId: any
   displayedColumns: string[] = ['name', 'date', 'comment', 'professionalismScore', 'securityScore', 'qualityScore', 'costScore'];
 
   @ViewChild('agencyForm', {static: false})
@@ -28,6 +29,7 @@ export class AgencyProfileComponent implements OnInit {
     this.edit = false
     this.agencyId = this.route.snapshot.paramMap.get('id');
     this.type = localStorage.getItem('type')
+    this.currentId = localStorage.getItem('id')
   }
 
   ngOnInit(): void {
