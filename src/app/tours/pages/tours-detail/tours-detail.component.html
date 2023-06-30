@@ -51,8 +51,30 @@
           </mat-card-content>
         </mat-card>
       </div>
-      <div class="w-full flex justify-center mt-10" *ngIf="tourReview1.length === 0">
+      <div class="w-full flex justify-center mt-10" *ngIf="tourDetailData.reviews?.length === 0">
         <p class="font-medium text-lg">No reviews found for this tour</p>
+      </div>
+      <div class="flex flex-row flex-wrap gap-5">
+        <div class="min-w-30 w-72 flex items-center flex-col justify-center" *ngFor="let element of this.tourDetailData.reviews; let i = index">
+
+          <div class="mx-auto mt-3">
+            <p class="font-bold text-lg">{{ element.comment }}</p>
+          </div>
+
+          <div class="mx-auto mt-3">
+            <p class="font-bold text-lg">{{ element.date }}</p>
+          </div>
+
+          <div class="flex flex-row">
+            <p class="text-xl">{{ element.score }}</p>
+          </div>
+
+          <div class="flex flex-row gap-3">
+            <button mat-icon-button [routerLink]="['/tour/edit', element.id]">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+        </div>
       </div>
       <button mat-raised-button color="primary" routerLink="/tour/review/{{tourDetailData.id}}">Add Review</button>
     </mat-card-content>
