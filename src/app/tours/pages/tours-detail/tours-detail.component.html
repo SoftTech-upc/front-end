@@ -69,11 +69,6 @@
             <p class="text-xl">{{ element.score }}</p>
           </div>
 
-          <div class="flex flex-row gap-3">
-            <button mat-icon-button [routerLink]="['/tour/edit', element.id]">
-              <mat-icon>edit</mat-icon>
-            </button>
-          </div>
         </div>
       </div>
       <button mat-raised-button color="primary" routerLink="/tour/review/{{tourDetailData.id}}">Add Review</button>
