@@ -3,7 +3,7 @@ import { OnInit } from "@angular/core";
 import { AgencyService } from "../../services/agency/agency.service";
 import {Agency} from "../../model/agency";
 import {NgForm} from "@angular/forms";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {TourService} from "../../../tours/services/tour.service";
 import { Tour } from 'src/app/tours/model/tour';
 import { AgencyReview } from 'src/app/reviews/model/agency-review';
@@ -18,21 +18,29 @@ export class AgencyProfileComponent implements OnInit {
 
   agencyData: Agency
   edit: Boolean
-  agency_id: any;
+  agencyId: any;
 
   @ViewChild('agencyForm', {static: false})
   agencyForm!: NgForm;
 
-  constructor(private agencyService: AgencyService, private agencyReviewService: AgencyReviewService, private tourService: TourService, private route: ActivatedRoute) {
+  constructor(private agencyService: AgencyService, private agencyReviewService: AgencyReviewService, private tourService: TourService, private route: ActivatedRoute, private router: Router) {
     this.agencyData = {} as Agency
     this.edit = false
-    this.agency_id = this.route.snapshot.paramMap.get('id');
+    this.agencyId = this.route.snapshot.paramMap.get('id');
   }
 
   ngOnInit(): void {
-    this.agencyService.getById(this.agency_id).subscribe((response: any) => {
+    this.agencyService.getById(this.agencyId).subscribe((response: any) => {
       this.agencyData = response
     })
+
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        this.agencyService.getById(this.agencyId).subscribe((response: any) => {
+          this.agencyData = response
+        })
+      }
+    });
   }
   editAgency(): void {
     this.edit = true

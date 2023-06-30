@@ -5,6 +5,7 @@ import {Tour} from "../../model/tour";
 import {TourService} from "../../services/tour.service";
 import {ActivityService} from "../../services/activity.service";
 import {Activity} from "../../model/activity";
+import {Agency} from "../../../agencies/model/agency";
 
 @Component({
   selector: 'app-add-tour',
@@ -14,8 +15,9 @@ import {Activity} from "../../model/activity";
 export class AddTourComponent implements OnInit {
   tourData: Tour
   activities: Activity[]
+  deleteActivity: any
   tourId: any
-  agencyId:any
+  agencyId: any
   edit: boolean
 
   @ViewChild('tourForm', {static: false})
@@ -23,9 +25,10 @@ export class AddTourComponent implements OnInit {
 
   constructor(private tourService: TourService, private activityService: ActivityService,private route: ActivatedRoute, private router: Router) {
     this.tourData = {} as Tour
-    this.tourId= this.route.snapshot.paramMap.get('id');
+    this.tourId = this.route.snapshot.paramMap.get('id');
     this.edit = !!this.tourId;
-    this.agencyId = 1;
+    this.deleteActivity = []
+    this.agencyId = localStorage.getItem('id');
     this.activities = []
   }
 
@@ -33,36 +36,49 @@ export class AddTourComponent implements OnInit {
     if (this.edit) {
       this.tourService.getById(this.tourId).subscribe((response: any) => {
         this.tourData = response
+        this.activities = response.activities
       })
     }
   }
 
   addActivity() {
-    this.activities.push({ name: '', description: '', tourId: 0});
+    this.activities.push({id: 0, name: '', description: '', tour: {id: this.tourId} as Tour});
   }
 
   removeActivity(index: number) {
+    this.deleteActivity.push(this.activities[index].id);
     this.activities.splice(index, 1);
   }
 
   onSubmit() {
     if (this.edit) {
       this.tourService.update(this.tourId, this.tourData).subscribe()
+      this.activities.forEach((activity) => {
+        if(activity.id == 0) {
+          this.activityService.create(activity).subscribe()
+        } else {
+          activity.tour = {id: this.tourId} as Tour
+          this.activityService.update(activity.id ,activity).subscribe()
+        }
+      })
+
+      this.deleteActivity.forEach((id: any) => {
+        this.activityService.delete(id).subscribe()
+      })
     } else {
       let createdTourId: number
       this.tourData.isOffer = !!this.tourData.newPrice
-      this.tourData.score = 0
       this.tourData.creationDate = new Date()
-      this.tourData.agencieId = this.agencyId;
+      this.tourData.agency = {id: this.agencyId } as Agency
       this.tourService.create(this.tourData).subscribe((response) => {
         createdTourId = response.id
+        this.activities.forEach((activity) => {
+          activity.tour = {id: createdTourId} as Tour
+          this.activityService.create(activity).subscribe()
+        })
       })
 
-      this.activities.forEach((activity) => {
-        activity.tourId = createdTourId
-        this.activityService.create(activity).subscribe()
-      })
     }
-    this.router.navigate(['/agency/profile', 1])
+    this.router.navigate(['/agency/profile', this.agencyId])
   }
 }

@@ -1,5 +1,5 @@
 <div class="grid grid-cols-12 gap-5 m-4 p-4">
-  <mat-card class="col-start-2 col-span-2 row-start-1 row-span-2 w-full">
+  <mat-card class="col-start-1 col-span-3 row-start-1 row-span-2 w-full">
     <mat-card-content>
       <div *ngIf="!edit" class="flex flex-col gap-1 justify-center items-center">
         <img src="{{this.tourDetailData.photo}}" class="w-36 h-36 rounded-lg">
@@ -26,26 +26,22 @@
     </mat-card-content>
   </mat-card>
 
-  <mat-card class="col-start-4 col-span-8 row-start-1">
+  <mat-card class="col-start-4 col-span-9 row-start-1">
     <mat-card-content>
-      <h3>Activities</h3>
-      <div *ngFor="let element of activities1">
-        <mat-card class="activity-card">
-          <mat-card-content>
-            <h4>{{ element.name }}</h4>
-            <p>{{ element.description }}</p>
-          </mat-card-content>
-        </mat-card>
+      <p class="font-bold text-xl mx-auto mt-3">Activities</p>
+      <div *ngFor="let element of this.tourDetailData.activities">
+        <p class="font-bold text-lg">{{ element.name }}</p>
+        <p>{{ element.description }}</p>
       </div>
-      <div *ngIf="activities1.length === 0">
-        <p>No activities found for this tour.</p>
+      <div class="w-full flex justify-center mt-10" *ngIf="!this.tourDetailData.activities?.length">
+        <p class="font-medium text-lg">No activities found for this tour.</p>
       </div>
     </mat-card-content>
   </mat-card>
 
-  <mat-card class="col-start-4 col-span-8 row-start-2">
+  <mat-card class="col-start-4 col-span-9 row-start-2">
     <mat-card-content>
-      <h3>Tour Reviews</h3>
+      <p class="font-bold text-xl mx-auto mt-3">Tour Reviews</p>
       <div *ngFor="let element of tourReview1">
         <mat-card class="activity-card">
           <mat-card-content>
@@ -55,8 +51,8 @@
           </mat-card-content>
         </mat-card>
       </div>
-      <div *ngIf="tourReview1.length === 0">
-        <p>No reviews found for this tour.</p>
+      <div class="w-full flex justify-center mt-10" *ngIf="tourReview1.length === 0">
+        <p class="font-medium text-lg">No reviews found for this tour</p>
       </div>
       <button mat-raised-button color="primary" routerLink="/tour/review/{{tourDetailData.id}}">Add Review</button>
     </mat-card-content>

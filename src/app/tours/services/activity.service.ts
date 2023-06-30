@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable, Input } from '@angular/core';
 import { Observable, catchError, map, retry, throwError } from 'rxjs';
 import { Activity } from '../model/activity';
+import {Tour} from "../model/tour";
 
 @Injectable({
   providedIn: 'root'
@@ -38,13 +39,6 @@ export class ActivityService {
         catchError(this.handleError));
   }
 
-  getAll1(): Observable<Activity[]> {
-    return this.http.get<Activity[]>(this.basePath, this.httpOptions).pipe(
-      map((response: Activity[]) => response),
-      catchError(this.handleError)
-    );
-  }
-
   getById(id: number): Observable<Activity> {
     return this.http.get<Activity>(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(
@@ -66,12 +60,11 @@ export class ActivityService {
         catchError(this.handleError));
   }
 
-  getActivitiesByTourId(tourId: number): Observable<Activity[]> {
-    const url = `${this.basePath}?tourId=${tourId}`;
-    return this.http.get<Activity[]>(url)
+  delete(id: any): Observable<Activity> {
+    return this.http.delete<Activity>(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(
-        catchError(this.handleError)
-      );
+        retry(2),
+        catchError(this.handleError));
   }
 
 

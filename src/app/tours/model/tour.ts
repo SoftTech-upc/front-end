@@ -1,3 +1,6 @@
+import {Agency} from "../../agencies/model/agency";
+import {Activity} from "./activity";
+
 export interface Tour {
   id: number;
   name: string;
@@ -9,5 +12,6 @@ export interface Tour {
   creationDate: Date;
   photo: any;
   isOffer: boolean;
-  agencieId: number;
+  agency: Agency;
+  activities: Activity[]
 }

@@ -1,7 +1,7 @@
 import {Tour} from "../../tours/model/tour";
 
 export interface Agency {
-  id: number;
+  id: any;
   name: string;
   email: string;
   password: string;

@@ -12,7 +12,7 @@
   <mat-menu #options="matMenu">
     <button mat-menu-item [routerLink]="['/agency/profile', 1]">My profile - Agencia</button>
     <button mat-menu-item [routerLink]="['/tourist/profile', 1]">My profile - Cliente</button>
-    <button mat-menu-item routerLink="/login">Log out</button>
+    <button mat-menu-item (click)="logOut()">Log out</button>
   </mat-menu>
 
   <div>

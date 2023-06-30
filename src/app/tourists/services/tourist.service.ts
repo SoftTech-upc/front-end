@@ -57,15 +57,38 @@ export class TouristService {
       observe: 'response'
     }).pipe(map((response: HttpResponse<any>)=>{
       const body = response.body;
-      const headers =  response.headers;
 
-      const bearerToken = headers.get('Authorization')!;
-      const token = bearerToken.replace('Bearer ','');
+      const token = 'Bearer ' + body.token;
 
       localStorage.setItem('token', token);
 
+
+      this.getTouristByEmail(body.userDetails.username).subscribe((response: any) => {
+        localStorage.setItem('id', response.body.id);
+        localStorage.setItem('type', '0')
+      })
+
+      this.getAgencyByEmail(body.userDetails.username).subscribe((response: any) => {
+        localStorage.setItem('id', response.id);
+        localStorage.setItem('type', '1')
+      })
+
       return body;
     }))
+  }
+
+  getTouristByEmail(email: any) {
+    return this.http.get(`${this.basePath}/email/${email}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
+  getAgencyByEmail(email: any) {
+    return this.http.get(`http://localhost:8105/api/agencies/email/${email}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
   }
 
   create(item: any): Observable<Tourist> {
